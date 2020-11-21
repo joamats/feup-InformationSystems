@@ -2,7 +2,7 @@ PRAGMA foreign_keys = ON;
 
 INSERT INTO organizer(name, password, address, vat_num) VALUES('ola', 'boss', 'av', 222);
 INSERT INTO organizer(name, password, address, vat_num) VALUES('oi', 'rrrrr', 'av', 333);
-INSERT INTO event(date, local, theme, organizer) VALUES('nunca','porto','eng', 1);
+INSERT INTO event(date, local, theme, organizer) VALUES('27/02/2000','porto','eng', 1);
 INSERT INTO ParticipantPackage VALUES ('premium',1,33,'coffee break', 100);
 INSERT INTO PartnerPackage VALUES ('nice package',1,'social media post');
 INSERT INTO SponsorPackage VALUES ('gold',1, 100, 200, 'workshop spotlight');
@@ -23,7 +23,7 @@ INSERT INTO Sponsor VALUES(1, 150, 'paid', 'gold', 1);
 INSERT INTO Partner VALUES(2, 'logistics', 'nice package', 1);
 
 -- SELECT * FROM organizer;
--- SELECT * FROM event;
+SELECT * FROM event;
 -- SELECT * FROM ParticipantPackage;
 -- SELECT * FROM PartnerPackage;
 -- -- SELECT * FROM SponsorPackage;
@@ -32,6 +32,6 @@ INSERT INTO Partner VALUES(2, 'logistics', 'nice package', 1);
 -- -- SELECT * FROM Speaker;
 -- SELECT * FROM Staff;
 
-SELECT * FROM Entity;
-SELECT * FROM Sponsor;
-SELECT * FROM Partner;
+-- SELECT * FROM Entity;
+-- SELECT * FROM Sponsor;
+-- SELECT * FROM Partner;

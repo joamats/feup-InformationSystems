@@ -26,14 +26,17 @@ CREATE TABLE organizer (
 
 CREATE TABLE event (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
-    date text NOT NULL,
+    date DATE NOT NULL,
     local text NOT NULL,
     theme text NOT NULL,
-    price_min integer DEFAULT 0 NOT NULL,   -- different from rel. model
-    price_max integer DEFAULT 0 NOT NULL,   -- different from rel. model
-    num_participants integer DEFAULT 0,   -- how to compute this??
+    price_min integer DEFAULT 0 NOT NULL,   
+    price_max integer DEFAULT 0 NOT NULL,   
+    num_participants integer DEFAULT 0,   
     maxNum_participants integer,
     daysTill_event integer,
+    codeForSpeakers UNIQUE, -- not included in deliverable 1
+    codeForPartners UNIQUE, -- not included in deliverable 1
+    codeForStaff UNIQUE,    -- not included in deliverable 1
     organizer integer REFERENCES organizer NOT NULL,
     CONSTRAINT availableSeats 
     CHECK(maxNum_participants IS NULL 
@@ -131,7 +134,7 @@ CREATE TABLE Partner(
 
 
 
-CHECK (Sponsor.financialSupport_amount >
-	SponsorPackage.financialSupport_range_min
-    AND Sponsor.financialSupport_amount <   
-    SponsorPackage.financialSupport_range_max );
+-- CHECK (Sponsor.financialSupport_amount >
+-- 	SponsorPackage.financialSupport_range_min
+--     AND Sponsor.financialSupport_amount <   
+--     SponsorPackage.financialSupport_range_max );
