@@ -14,12 +14,9 @@ You can find here detailed documentation about **cBooking**:
   * [User Stories](#User-Stories)
   * [UI Mockups](#UI-Mockups)
 
-<br></br>
-
   ## Product Vision
   Most event organizers are faced with the need to work with loads of different technologies for the management of people and entities who participate in their events. **cBooking** gathers it all in a single plataform, providing the organizer with tools to register, track and manage whoever is going to participante in their event.
 
-<br></br>
 
   ## Description of the Topic
   A tech company wants to create a platform to automate the management of conferences. The platform is expected to announce events and support the logistics of conferences, by allowing the registration of participants, speakers, partners, sponsors and staff. Taking these features in consideration, the company elaborated the following list of requirements:
@@ -76,8 +73,7 @@ The editable diagram can be found [here](https://app.diagrams.net/?fbclid=IwAR1a
 
 ![UML-Classes-Diagram](docs/UML_Classes.png)
 
-<br></br>
-# Relational Model of the Database
+## Relational Model of the Database
 
 **Organizer**(ID_num, name, password, logotype, address, VAT_num )
 
@@ -159,7 +155,6 @@ SponsorPackage.financialSupport_range_max )
 
 NOT NULL ( supportType, package, event)
 
-<br></br>
 
 ## Website Map Diagram
 
@@ -168,7 +163,6 @@ The editable diagram can be found [here](https://app.diagrams.net/#Hjoamats%2FPr
 
 ![Relational-Model-of-the-Database](docs/Website_Plan.png)
 
-<br></br>
 
 ## User Stories
 
@@ -181,7 +175,5 @@ The editable diagram can be found [here](https://app.diagrams.net/#Hjoamats%2FPr
 | As an organizer, I want to be able to define registration packages for participants, sponsors and partners, so that different prices, features and perks can be applied to different persons or entities. | Must Have | M |
 | As a cBooking user, I want to see the details about each event, namely date, location, available registration packages, featured speakers, staff, validated sponsors and partners, so that I can be better informed. | Should Have | M | 
 | As a cBooking user, I want to search events, sorted by a specific detail, so that I can easily find events that I like. | Could Have | S | 
-
-<br></br>
 
 ## UI Mockups
