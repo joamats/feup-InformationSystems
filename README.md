@@ -73,7 +73,7 @@ The most recent versions of Topic Description, UML Classes Diagram, and Relation
 
 The editable diagram can be found [here](https://app.diagrams.net/?fbclid=IwAR1a7G6Dzc8LV772jwXzXuobzEi9GBw6hw7QulK5O39BuPO0flrY2Vo14QI#Hjoamats%2FProjetoESIN%2Fmain%2Fdocs%2Fdrawio%2FUML%20Classes).
 
-![UML-Classes-Diagram](docs/UML_Classes.png)
+![UML-Classes-Diagram](docs/UML-Classes.png)
 
 # Relational Model of the Database
 
@@ -164,7 +164,7 @@ NOT NULL ( supportType, package, event)
 The editable diagram can be found [here](https://app.diagrams.net/?fbclid=IwAR1a7G6Dzc8LV772jwXzXuobzEi9GBw6hw7QulK5O39BuPO0flrY2Vo14QI#Hjoamats%2FProjetoESIN%2Fmain%2Fdocs%2Fdrawio%2FWebsite%20Plan.drawio).
 
 
-![Relational-Model-of-the-Database](docs/Website_Plan.png)
+![Relational-Model-of-the-Database](docs/Website-Plan.png)
 
 
 ## User Stories
