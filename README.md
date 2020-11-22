@@ -15,6 +15,7 @@ You can find here detailed documentation about **cBooking**:
   * [UI Mockups](#UI-Mockups)
   * [Project Management](#Project-Management)
 
+The most recent versions of Topic Description, UML Classes Diagram, and Relational Model of the Database are updated here.
 
 
   ## Product Vision
@@ -27,11 +28,11 @@ You can find here detailed documentation about **cBooking**:
     
 * The private interface must display relevant data, such as payments tracking, and lists of participants, speakers, staff, sponsors, partners. 
 
-* The **organizer** must have a name, password, address, and VAT number. A logotype is optional. A unique identifying number should be generated to each one of them.
+* The **organizer** must have a name, email, password, address, and VAT number. A logotype is optional. A unique identifying number should be generated to each one of them.
 
 * Each organizer can create as many events as wished. 
 
-* Each **event** must have an organizer, date, location, theme, price range, and (current) number of participants. A maximum number of participants can also exist. A unique identifying number should be given to each event.
+* Each **event** must have an organizer, name, date, location, theme, price range, (current) number of participants. A maximum number of participants can also exist, as well as an image for description. A unique identifying number should be given to each event
 
 * If existent, the maximum number of participants must be higher than the (current) number of participants.
 
@@ -60,6 +61,7 @@ You can find here detailed documentation about **cBooking**:
 
     * **partner** must be associated with an existing event, have a chosen package, and a support type.
 
+* Upon registering in an event, each speaker, partner and staff member will have to insert a pre-defined and exclusive code, according to the role, provided by the organizer.
 
 * If an event is deleted, all the associated classes must be deleted too, except the organizer.
 
@@ -69,21 +71,23 @@ You can find here detailed documentation about **cBooking**:
 
 ## UML Classes Diagram
 
-The editable diagram can be found [here](https://app.diagrams.net/?fbclid=IwAR1a7G6Dzc8LV772jwXzXuobzEi9GBw6hw7QulK5O39BuPO0flrY2Vo14QI#Hjoamats%2FProjetoESIN%2Fmain%2FUML%20Classes).
+The editable diagram can be found [here](https://app.diagrams.net/?fbclid=IwAR1a7G6Dzc8LV772jwXzXuobzEi9GBw6hw7QulK5O39BuPO0flrY2Vo14QI#Hjoamats%2FProjetoESIN%2Fmain%2Fdocs%2Fdrawio%2FUML%20Classes).
 
 ![UML-Classes-Diagram](docs/UML_Classes.png)
 
 # Relational Model of the Database
 
-**Organizer**(ID_num, name, password, logotype, address, VAT_num )
+**Organizer**(ID_num, name, email, password, logotype, address, VAT_num )
 
-NOT NULL(name, password, address, VAT_number)
+NOT NULL(name, email, password, address, VAT_number)
 
-UNIQUE(VAT_number)
+UNIQUE(email, VAT_number)
 
-**Event**(ID_num, date, local,  theme, price_range_min, price_range_max, num_participants, maxNum_participants, daysTill_event, organizer -> Organizer)
+**Event**(ID_num, name, date, local, theme, price_range_min, price_range_max, num_participants, maxNum_participants, daysTill_event, image, codeForSpeakers, codeForStaff, codeForPartners, organizer -> Organizer)
 
-NOT NULL( date, local, theme, price_range_min, organizer)
+NOT NULL( name, date, local, theme, price_range_min, organizer)
+
+UNIQUE ( codeForSpeakers, codeForStaff, codeForPartners )
 
 DEFAULT( num_participants = 0 )
 
@@ -157,7 +161,7 @@ NOT NULL ( supportType, package, event)
 
 ## Website Map Diagram
 
-The editable diagram can be found [here](https://app.diagrams.net/#Hjoamats%2FProjetoESIN%2Fmain%2FWebsite%20Plan.drawio).
+The editable diagram can be found [here](https://app.diagrams.net/?fbclid=IwAR1a7G6Dzc8LV772jwXzXuobzEi9GBw6hw7QulK5O39BuPO0flrY2Vo14QI#Hjoamats%2FProjetoESIN%2Fmain%2Fdocs%2Fdrawio%2FWebsite%20Plan.drawio).
 
 
 ![Relational-Model-of-the-Database](docs/Website_Plan.png)
@@ -200,6 +204,9 @@ User Interface Mockups were developed to plan the website's design, using Adobe 
 The flow of work of this project is being done with the tool GitHub Projects. The board with tasks can be found [here](https://github.com/joamats/ProjetoESIN/projects/1).
 
 The logic behing the flow followed was suggested by Prof. João Silva, synthetised in the following diagram.
+
+<br> </br>
+
 ![](docs/project_management_ProfJoaoSilva.png)
 
 

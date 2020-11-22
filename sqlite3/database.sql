@@ -17,6 +17,7 @@ DROP TABLE IF EXISTS Partner;
 
 CREATE TABLE organizer (
     id integer PRIMARY KEY AUTOINCREMENT,
+    email text UNIQUE,
     name text NOT NULL,
     password text NOT NULL, -- to encrypt later
     logotype text, -- to be a URL or path
@@ -26,6 +27,7 @@ CREATE TABLE organizer (
 
 CREATE TABLE event (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name text NOT NULL,
     date DATE NOT NULL,
     local text NOT NULL,
     theme text NOT NULL,
@@ -34,9 +36,10 @@ CREATE TABLE event (
     num_participants integer DEFAULT 0,   
     maxNum_participants integer,
     daysTill_event integer,
-    codeForSpeakers UNIQUE, -- not included in deliverable 1
-    codeForPartners UNIQUE, -- not included in deliverable 1
-    codeForStaff UNIQUE,    -- not included in deliverable 1
+    image text,
+    codeForSpeakers UNIQUE, 
+    codeForPartners UNIQUE, 
+    codeForStaff UNIQUE,    
     organizer integer REFERENCES organizer NOT NULL,
     CONSTRAINT availableSeats 
     CHECK(maxNum_participants IS NULL 
