@@ -13,10 +13,12 @@ You can find here detailed documentation about **cBooking**:
   * [Website Map Diagram](#Website-Map-Diagram)
   * [User Stories](#User-Stories)
   * [UI Mockups](#UI-Mockups)
+  * [Project Management](#Project-Management)
+
+
 
   ## Product Vision
   Most event organizers are faced with the need to work with loads of different technologies for the management of people and entities who participate in their events. **cBooking** gathers it all in a single plataform, providing the organizer with tools to register, track and manage whoever is going to participante in their event.
-
 
   ## Description of the Topic
   A tech company wants to create a platform to automate the management of conferences. The platform is expected to announce events and support the logistics of conferences, by allowing the registration of participants, speakers, partners, sponsors and staff. Taking these features in consideration, the company elaborated the following list of requirements:
@@ -65,15 +67,13 @@ You can find here detailed documentation about **cBooking**:
 
 * As an extra, it would be nice to have a public interface with a search feature implemented, with the possibility of looking for all existing events, sorted by theme, organizer, speaker, dates, localization and price range.
 
-<br></br>
-
 ## UML Classes Diagram
 
 The editable diagram can be found [here](https://app.diagrams.net/?fbclid=IwAR1a7G6Dzc8LV772jwXzXuobzEi9GBw6hw7QulK5O39BuPO0flrY2Vo14QI#Hjoamats%2FProjetoESIN%2Fmain%2FUML%20Classes).
 
 ![UML-Classes-Diagram](docs/UML_Classes.png)
 
-## Relational Model of the Database
+# Relational Model of the Database
 
 **Organizer**(ID_num, name, password, logotype, address, VAT_num )
 
@@ -155,7 +155,6 @@ SponsorPackage.financialSupport_range_max )
 
 NOT NULL ( supportType, package, event)
 
-
 ## Website Map Diagram
 
 The editable diagram can be found [here](https://app.diagrams.net/#Hjoamats%2FProjetoESIN%2Fmain%2FWebsite%20Plan.drawio).
@@ -176,4 +175,31 @@ The editable diagram can be found [here](https://app.diagrams.net/#Hjoamats%2FPr
 | As a cBooking user, I want to see the details about each event, namely date, location, available registration packages, featured speakers, staff, validated sponsors and partners, so that I can be better informed. | Should Have | M | 
 | As a cBooking user, I want to search events, sorted by a specific detail, so that I can easily find events that I like. | Could Have | S | 
 
+
 ## UI Mockups
+
+User Interface Mockups were developed to plan the website's design, using Adobe XD.
+
+![](docs/uiMockups/índex-cbooking.png)
+![](docs/uiMockups/about-philosophy.png)
+![](docs/uiMockups/about-contacts.png)
+![](docs/uiMockups/events.png)
+![](docs/uiMockups/events-details.png)
+![](docs/uiMockups/events-roleSelection.png)
+![](docs/uiMockups/events-Person-EntityCreation.png)
+![](docs/uiMockups/events-FinalRegistrationCreation.png)
+![](docs/uiMockups/events-Confirmation.png)
+![](docs/uiMockups/createEvent.png)
+![](docs/uiMockups/createEvent-corporateDetails.png)
+![](docs/uiMockups/createEvent-Confirmation.png)
+![](docs/uiMockups/signIn.png)
+![](docs/uiMockups/signIn-ConferenceDashboard.png)
+
+## Project Management
+
+The flow of work of this project is being done with the tool GitHub Projects. The board with tasks can be found [here](https://github.com/joamats/ProjetoESIN/projects/1).
+
+The logic behing the flow followed was suggested by Prof. João Silva, synthetised in the following diagram.
+![](docs/project_management_ProfJoaoSilva.png)
+
+
