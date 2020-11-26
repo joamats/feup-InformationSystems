@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <title>cBooking</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="style.css" rel="stylesheet">
+        <link href="layout.css" rel="stylesheet">
+    </head>
+    
+    <body>
+        <header>
+            <nav class="topnav">
+                <a class="active" href="index.html"><img src="images/logo.png" alt="logo" width="60"></a>
+                <input type="text" placeholder="Search...">
+                <img src="images/search.svg" alt="search">
+                <a href="about.html">About</a>
+                <a href="index.html">Events</a>
+                <a href="index.html">Become an Organizer</a>
+                <a href="index.html">Sign in</a>
+            </nav>
+        </header>
+        <br>
+        <h1>Web Summit</h1>
+        <form action="save.php" method="get">
+            <fieldset>
+                <legend>
+                    Sponsor Registration
+                </legend>
+               
+                <label>Sponsor's name:
+                    <br>
+                    <input type="text" name="name">
+                </label>
+                <br>
+                <label>Website link:
+                    <br>
+                    <input type="text" name="weblink">
+                </label>
+                <br>
+                <label>Financial Support Amount:
+                    <br>
+                    <input type="number" name="financialSupport_amount">
+                </label>
+                <br>
+                <label>Logotype:
+                    <br>
+                    <input type="file" name="logo" accept="image/*">
+                </label>                   
+                <br><br>
+
+                <input type="submit" value="Submit">
+            </fieldset>
+        </form>
+        <footer>
+            <p>&copy; cBooking, 2020</p>
+        </footer>
+    </body>
+</html>
