@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <title>cBooking</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="style.css" rel="stylesheet">
+        <link href="layout.css" rel="stylesheet">
+    </head>
+    
+    <body>
+        <header>
+            <nav class="topnav">
+                <a class="active" href="index.html"><img src="images/logo.png" alt="logo" width="60"></a>
+                <a href="index.html">Sign Out</a>
+            </nav>
+        </header>
+        <br>
+        <h1>EVENT DASHBOARD</h1>
+        <h2>Signed in as an Organizer</h2>
+        <br>
+        <h1>Web Summit 2020</h1>
+        <h2>Participants</h2>
+        <table>
+            <tr>
+                <td>ID</td><td>Name</td>
+                <td>Email</td><td>Phone Number</td>
+                <td>Adress</td><td>VAT Number</td>
+                <td>Payment</td>
+            </tr>
+            <tr>
+                <td>10234</td><td>João Carlos Matos</td>
+                <td>joaocarlos@gmail.com</td><td>+351934567899</td>
+                <td>Rua Lorem Ipsum, 1234</td><td>432 354 345</td>
+                <td>Not paid</td>
+            </tr>
+        </table>
+
+        <h2>Speakers</h2>
+        <table>
+            <tr>
+                <td>ID</td><td>Name</td>
+                <td>Email</td><td>Phone Number</td>
+                <td>Adress</td><td>VAT Number</td>
+                <td>Payment</td>
+            </tr>
+            <tr>
+                <td>10234</td><td>João Carlos Matos</td>
+                <td>joaocarlos@gmail.com</td><td>+351934567899</td>
+                <td>Rua Lorem Ipsum, 1234</td><td>432 354 345</td>
+                <td>Not paid</td>
+            </tr>
+        </table>
+        <h2>Staff</h2>
+        <table>
+            <tr>
+                <td>ID</td><td>Name</td>
+                <td>Email</td><td>Phone Number</td>
+                <td>Adress</td><td>VAT Number</td>
+                <td>Payment</td>
+            </tr>
+            <tr>
+                <td>10234</td><td>João Carlos Matos</td>
+                <td>joaocarlos@gmail.com</td><td>+351934567899</td>
+                <td>Rua Lorem Ipsum, 1234</td><td>432 354 345</td>
+                <td>Not paid</td>
+            </tr>
+        </table>
+        <h2>Sponsors</h2>
+        <table>
+            <tr>
+                <td>ID</td><td>Name</td>
+                <td>Email</td><td>Phone Number</td>
+                <td>Adress</td><td>VAT Number</td>
+                <td>Payment</td>
+            </tr>
+            <tr>
+                <td>10234</td><td>João Carlos Matos</td>
+                <td>joaocarlos@gmail.com</td><td>+351934567899</td>
+                <td>Rua Lorem Ipsum, 1234</td><td>432 354 345</td>
+                <td>Not paid</td>
+            </tr>
+        </table>
+        <h2>Partners</h2>
+        <table>
+            <tr>
+                <td>ID</td><td>Name</td>
+                <td>Email</td><td>Phone Number</td>
+                <td>Adress</td><td>VAT Number</td>
+                <td>Payment</td>
+            </tr>
+            <tr>
+                <td>10234</td><td>João Carlos Matos</td>
+                <td>joaocarlos@gmail.com</td><td>+351934567899</td>
+                <td>Rua Lorem Ipsum, 1234</td><td>432 354 345</td>
+                <td>Not paid</td>
+            </tr>
+        </table>
+        <h2>Edit this Event</h2>
+        <form action="save.php" method="get">
+            <fieldset>
+                <legend>
+                    Event's Codes
+                </legend>
+
+                <label>Code for Speakers:
+                    <br>
+                    <input type="text" name="name" value="SpeakerWEBSUMMIT2020">
+                </label>
+                <br>
+                <label>Code for Staff:
+                    <br>
+                    <input type="text" name="name" value="StaffWEBSUMMIT2020">
+                </label>
+                <br>
+                
+                
+                <br><br>
+
+                <input type="submit" value="Submit">
+            </fieldset>
+        </form>
+        <form action="save.php" method="get">
+            <fieldset>
+                <legend>
+                    New Package
+                </legend>
+
+                <label>Package Target:
+                    <br>
+                    <select name="target">
+                        <option value="Participant">Participant</option>
+                        <option value="Sponsor">Sponsor</option>
+                        <option value="Partner">Partner</option>
+                    </select>
+                </label>
+                <br>
+                <label>Package's name:
+                    <br>
+                    <input type="text" name="name">
+                </label>
+                <br>
+                <label>Features:
+                    <br>
+                    <input type="text" name="features">
+                </label>
+                <br>
+                <label>Maximum number of Part:
+                    <br>
+                    <input type="text" name="features">
+                </label>
+                
+                <br><br>
+
+                <input type="submit" value="Submit">
+            </fieldset>
+        </form>
+        <h1>My Events</h1>
+        <h2><a>Web Summit 2019</a></h2>
+        <h2><a>Web Summit 2018</a></h2>
+        <h2><a>Tech Meetup Porto</a></h2>
+        <a>Create a new Event</a>
+        <footer>
+            <p>&copy; cBooking, 2020</p>
+        </footer>
+    </body>
+</html>
