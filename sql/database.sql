@@ -1,4 +1,3 @@
-
 PRAGMA foreign_keys = ON;
 
 DROP TABLE IF EXISTS organizer;
@@ -76,14 +75,14 @@ CREATE TABLE SponsorPackage (
 CREATE TABLE Person (
     id integer PRIMARY KEY AUTOINCREMENT,
     name text NOT NULL,
-    email text NOT NULL UNIQUE,
-    phone_num integer NOT NULL UNIQUE
+    email text NOT NULL, -- different from current UML and stuff
+    phone_num integer NOT NULL -- different """"""
 );
 
 CREATE TABLE Participant(
     id integer PRIMARY KEY REFERENCES Person,
     address text NOT NULL,
-    vat_num integer NOT NULL UNIQUE,
+    vat_num integer NOT NULL, -- different!!
     paymentValidation_status text DEFAULT 'not paid',
     package text,
     event integer,
@@ -111,9 +110,9 @@ CREATE TABLE Staff (
 
 CREATE TABLE Entity(
     id integer PRIMARY KEY AUTOINCREMENT,
-    name text NOT NULL UNIQUE,
-    logotype text NOT NULL UNIQUE,
-    website_link text UNIQUE
+    name text NOT NULL, -- different
+    logotype text NOT NULL, -- different
+    website_link text -- different
 );
 
 
