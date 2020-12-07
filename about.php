@@ -6,10 +6,11 @@
 
 <br>
 
-<h1 id="titlePhilosophy"> OUR PHILOSOPHY</h1>
+
+<h1 id="titlePhilosophy">OUR PHILOSOPHY</h1>
 
 <section id="text1">
-    <h2>Participants, Speakers, Staff, Sponsors, Partners <b>together</b></h2>
+    <h2>Participants, Speakers, Staff, Sponsors, and Partners <b>together</b></h2>
     <p>
         Most event organizers are faced with the need to work with loads of different technologies for the
         management of people and entities who participate in their events.
@@ -42,12 +43,8 @@
     <img src="images/transparency.png" alt="transparency image">
 </section>
 
-
-
     <h1 id="titleContacts"> WHO WE ARE</h1>
     <h2 id="titleUs"> Two <b>Biomedical Engineering</b> Students, learning how to construct a website</h2>
-
-
 
 <section id="Peralta">
     <img src="images/peralta.png" alt="Guilherme Peralta">
