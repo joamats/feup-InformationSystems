@@ -47,7 +47,7 @@
     <h2 id="titleUs"> Two <b>Biomedical Engineering</b> Students, learning how to construct a website</h2>
 
 <section id="Peralta">
-    <img src="images/peralta.png" alt="Guilherme Peralta">
+    <img class= "profilePic" src="images/peralta.png" alt="Guilherme Peralta">
     <p><b>Guilherme Peralta</b></p>
     <p>Ovar, Portugal</p>
     <p>21 years old</p>
@@ -63,7 +63,7 @@
 <br>
 
 <section id="Matos">
-    <img src="images/matos.png" alt="João Matos">
+    <img class= "profilePic" src="images/matos.png" alt="João Matos">
     <p><b>João Matos</b></p>
     <p>Porto, Portugal</p>
     <p>20 years old</p>

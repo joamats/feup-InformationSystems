@@ -1,10 +1,10 @@
 @import "css/style_general.css";
 
-#text1 h2 b, #text2 h2 b{
+#text1 h2 b, #text2 h2 b, #titleUs b, #Peralta b, #Matos b{
     color: var(--blue-dark);
-    font-weight: bolder;
-
+    font-weight: 800;
 }
+
 
 h1, #titleUs, #text1, #img2{
     padding-left: 5rem;
@@ -21,6 +21,8 @@ h1, #titleUs, #text1, #img2{
 #text2, #img1 {
     padding-right: 5rem;
 }
+ 
+
 
 #Peralta, #Matos {
     padding: 3rem;  
@@ -32,7 +34,7 @@ h1, #titleUs, #text1, #img2{
     text-align: center;
 }
 
-#Peralta img, #Matos img {
+.profilePic {
     object-fit: cover;
     border-radius: 50%;
 }
