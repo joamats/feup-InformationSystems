@@ -35,12 +35,23 @@
             global $dbh;
             $stmt = $dbh -> prepare('SELECT * FROM event WHERE id = ?');
             $stmt -> execute(array($eventId));
-            $event = $stmt -> fetchAll();
+            $event = $stmt -> fetch();
             return $event;
         } 
         catch(PDOException $e) {
             $err = $e -> getMessage(); 
         }
+    }
+
+    function getEventDateById($eventId){
+        // $eventInfo = getEventInfoById($eventId);
+        // $eventDate = $eventInfo['date'];
+        global $dbh;
+        $stmt = $dbh -> prepare('SELECT date FROM event WHERE id = ?');
+        $stmt -> execute(array($eventId));
+        $eventDate = $stmt -> fetch() ['date'];
+        
+        return $eventDate;
     }
     
 

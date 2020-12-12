@@ -6,8 +6,10 @@
 <?php 
     include('templates/header_public.html');
     include('helpers/printArray.php');
+    include('helpers/dates.php');
     require_once('database/events.php'); 
     require_once('database/packages.php'); 
+    require_once('database/events_derivedAttributes.php');
     $event = getEventInfoById(1);
     printArray($event);
 
@@ -19,6 +21,12 @@
 
     $sponsorsPackages = getAllSponsorPackagesById(1);
     printArray($sponsorsPackages);
+ 
+    computeMaxNumParticipantsById(2);
+    computePriceMinById(1);
+    computePriceMaxById(1);
+
+
 
 ?>
 

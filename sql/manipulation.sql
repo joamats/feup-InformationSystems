@@ -111,16 +111,13 @@ PRAGMA foreign_keys = ON;
 
 -- Participant Packages for Event #3
 
-INSERT INTO ParticipantPackage(name, event, price, features, maxNum_participants)
-VALUES ('Basic', 3, 0, "Access to Meetup", 50);
+-- INSERT INTO ParticipantPackage(name, event, price, features, maxNum_participants)
+-- VALUES ('Basic', 3, 0, "Access to Meetup", 50);
 
--- Sponsor Packages for Event #3
+-- -- Sponsor Packages for Event #3
 
-INSERT INTO SponsorPackage(name, event, financialSupport_range_min, financialSupport_range_max, perks)
-VALUES ('Main Sponsor', 3, 500, 1000, "Naming sponsor for the Meetup");
-
-
-
+-- INSERT INTO SponsorPackage(name, event, financialSupport_range_min, financialSupport_range_max, perks)
+-- VALUES ('Main Sponsor', 3, 500, 1000, "Naming sponsor for the Meetup");
 
 
 
