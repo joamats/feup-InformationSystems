@@ -1,0 +1,40 @@
+/*
+    selection_role
+*/
+
+h2 {
+    position: absolute;
+    top: 18%;
+    left: 10%;
+    font-weight: 800;
+    font-size: 3.5rem;
+    color: var(--blue-dark);
+}
+
+h3 {
+    position: absolute;
+    top: 26%;
+    left: 50%;
+    font-weight: 600;
+    font-size: 3rem;
+    color: var(--organge-light);
+}
+
+ul{
+    position: absolute;
+    top:45%;
+    left:18%;
+    list-style-type: none;
+}
+
+
+
+ul a{
+    position: relative;
+    font-weight: 500;
+    font-size: 2em;
+}
+#footer {
+    position: absolute;
+    bottom: 0;
+}
