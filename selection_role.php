@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <?php include('templates/head.html'); ?>
+
+<link href="css/style_selection_role.css" rel="stylesheet">
+
 <?php
     include('templates/header_public.html');
 ?>
-<link href="css/style_selection_role.css" rel="stylesheet">
+
 
 <h2>Registration for Event:</h2>
 <h3>What's your Role?</h3>

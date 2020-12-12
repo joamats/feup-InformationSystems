@@ -1,0 +1,46 @@
+@import "css/style_general.css";
+
+.listEvents {
+  padding-left: 2rem;
+  padding-right: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.listEvents article {
+    background-color: var(--gray-light);
+    padding: 1rem; 
+    margin: 1rem;
+    display: grid;
+  }
+
+.listEvents article h3 {
+    margin: 0;
+    padding-left: 1rem;
+  }
+  
+.listEvents article img {
+    padding: 0;
+    width: 20rem;
+    height: 10rem;
+    object-fit: cover;
+    margin: 1em;
+  }
+
+.pEvents {
+    text-align: left;
+    display: grid;
+    grid-template-columns: 1fr 5fr auto;
+    grid-template-rows: auto auto auto auto;
+}
+
+.pEvents i {
+  grid-column: 1;
+}
+
+.pEvents a {
+  grid-column: 3;
+  grid-row: 4;
+}
+
+

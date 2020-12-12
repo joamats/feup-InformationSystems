@@ -2,16 +2,6 @@
     Header_Public
 */
 
-body {
-    margin-left: 3em;
-    margin-right: 3em;
-}
-
-#header {
-
-    margin: auto;
-}
-
 #header > a {
 
     text-align: center;

@@ -1,0 +1,27 @@
+@import "css/style_general.css";
+
+
+h1 {
+    text-align: left;
+    padding-left: 2em;
+}
+
+.pEvents i{
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-bottom: 0.5em;
+    color: var(--orange-dark);
+}
+
+.textEvents, h3 {
+    padding-left: 1rem;
+  }
+
+.fas {
+    color: var(--gray-dark);
+    padding-left: 0.5em;
+}
+
+h3 > a:hover, .fas:hover {
+    color: var(--orange-dark);
+}

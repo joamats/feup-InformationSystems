@@ -18,7 +18,7 @@ html {
     --blue-light: #89dfd7;
 
     --orange-dark: #ff9b07;
-    --organge-light: #ffd495;
+    --orange-ligt: #ffd495;
 
     --gray-light: #dededf;
     --gray-dark: #252525;
@@ -29,10 +29,6 @@ html {
     height: 100%;
  }
 
- body {
-    margin: 0 auto;
-    background-color: white;
-}
 
  a {
     text-decoration: none;
@@ -43,4 +39,9 @@ html {
 a:focus, a:hover {
     text-decoration: none;
     color: var(--orange-dark);
+}
+
+#footer {
+    position: fixed;
+    bottom: 0;
 }

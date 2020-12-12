@@ -68,6 +68,63 @@ PRAGMA foreign_keys = ON;
 -- UPDATE event SET image = '4.jpg' WHERE id = 4;
 -- UPDATE event SET image = '5.jpg' WHERE id = 5;
 
+-- Participant Packages for Event #1
+
+-- INSERT INTO ParticipantPackage(name, event, price, features, maxNum_participants)
+-- VALUES ('Basic', 1, 10, "Access to Main Stage", 500);
+
+-- INSERT INTO ParticipantPackage(name, event, price, features, maxNum_participants)
+-- VALUES ('Premium', 1, 100, "Access to Main Stage, Access to Startups Fair", 100);
+
+-- INSERT INTO ParticipantPackage(name, event, price, features, maxNum_participants)
+-- VALUES ('Diamond', 1, 500, "Access to Main Stage, Access to Startups Fair, Entry to VIP zone", 50);
+
+-- -- Partner Packages for Event #1
+
+-- INSERT INTO PartnerPackage(name, event, perks)
+-- VALUES ('Institucional', 1, "Pitch during Starting Session, Logotype on website");
+
+-- INSERT INTO PartnerPackage(name, event, perks)
+-- VALUES ('Conferences', 1, "Logotype on website");
+
+-- -- Sponsor Packages for Event #1
+
+-- INSERT INTO SponsorPackage(name, event, financialSupport_range_min, financialSupport_range_max, perks)
+-- VALUES ('Bronze', 1, 200, 400, "Logotype in Website");
+
+-- INSERT INTO SponsorPackage(name, event, financialSupport_range_min, financialSupport_range_max, perks)
+-- VALUES ('Silver', 1, 500, 1000, "Logotype in Website, Coffee-Break Adverts");
+
+-- INSERT INTO SponsorPackage(name, event, financialSupport_range_min, financialSupport_range_max, perks)
+-- VALUES ('Gold', 1, 1200, 2500, "Logotype in Website, Coffee-Break Adverts, Lunch with Speaker");
+
+-- Participant Packages for Event #2
+
+-- INSERT INTO ParticipantPackage(name, event, price, features, maxNum_participants)
+-- VALUES ('Basic', 2, 0, "Access to Workshop", 25);
+
+-- -- Partner Packages for Event #2
+
+-- INSERT INTO PartnerPackage(name, event, perks)
+-- VALUES ('Ingredients Partnership', 2, "Short Presentation of the Company during Workshop");
+
+-- Participant Packages for Event #3
+
+INSERT INTO ParticipantPackage(name, event, price, features, maxNum_participants)
+VALUES ('Basic', 3, 0, "Access to Meetup", 50);
+
+-- Sponsor Packages for Event #3
+
+INSERT INTO SponsorPackage(name, event, financialSupport_range_min, financialSupport_range_max, perks)
+VALUES ('Main Sponsor', 3, 500, 1000, "Naming sponsor for the Meetup");
+
+
+
+
+
 
 SELECT * FROM organizer JOIN Person USING (id);
 SELECT * FROM event;
+SELECT * FROM ParticipantPackage;
+SELECT * FROM PartnerPackage;
+SELECT * FROM SponsorPackage;

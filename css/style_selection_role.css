@@ -27,13 +27,12 @@ ul{
     list-style-type: none;
 }
 
-
-
 ul a{
     position: relative;
     font-weight: 500;
     font-size: 2em;
 }
+
 #footer {
     position: absolute;
     bottom: 0;
