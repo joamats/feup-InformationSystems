@@ -1,10 +1,13 @@
 <!DOCTYPE html>
-<?php include('templates/header_public.html'); ?>
+<?php include('templates/head.html'); ?>
+<link href="css/style_about.css" rel="stylesheet">
+<link href="css/layout_about.css" rel="stylesheet">
+
 <?php 
-        require_once('database/events.php'); 
-        $events = getAllEvents();
-        //printArray($events);
-    ?>
+    include('templates/header_public.html'); 
+    require_once('database/events.php'); 
+    $events = getAllEvents();
+?>
 
 <br>
 <h1>EVENTS NOW</h1>

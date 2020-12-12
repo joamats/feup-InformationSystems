@@ -4,5 +4,5 @@
   $dbh->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
   $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-  require_once('helpers/helper_functions.php');
+  require_once('helpers/printArray.php');
 ?>
