@@ -4,6 +4,8 @@
     ?>
         <br>
         <h1>EVENTS NOW</h1>
+
+        <?php require_once('database/events.php'); ?>
         
         <img src="images/CookingWorkshop.jpg" alt="Cooking Workshop">
         <h2>
