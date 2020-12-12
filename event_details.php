@@ -1,9 +1,33 @@
 <!DOCTYPE html>
-<?php
+<?php include('templates/head.html'); ?>
+<link href="css/style_event_details.css" rel="stylesheet">
+<link href="css/layout_event_details.css" rel="stylesheet">
+
+<?php 
     include('templates/header_public.html');
+    include('helpers/printArray.php');
+    require_once('database/events.php'); 
+    require_once('database/packages.php'); 
+    $event = getEventInfoById(1);
+    printArray($event);
+
+    $participantsPackages = getAllParticipantPackagesById(1);
+    printArray($participantsPackages);
+
+    $partnersPackages = getAllPartnerPackagesById(1);
+    printArray($partnersPackages);
+
+    $sponsorsPackages = getAllSponsorPackagesById(1);
+    printArray($sponsorsPackages);
+
 ?>
 
-<img src="images/websummit.jpeg" alt="websummit" width="366">
+
+<br>
+<h1>EVENT DETAILS</h1>
+
+<section id = "eventDetails">
+<img src="images/events/1.jpg" alt="websummit">
 
 <h2>
     Web Summit
@@ -54,6 +78,8 @@
     <a>Gold</a><br>
     <a>Premium</a><br>
 </p>
+
+</section>
 
 <?php
     include('templates/footer.html');

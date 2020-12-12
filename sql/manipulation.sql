@@ -35,13 +35,14 @@ PRAGMA foreign_keys = ON;
 
 
 
--- UPDATE EVENTS
+-- UPDATE EVENTS with maxNum_participants
 
 -- UPDATE event SET maxNum_participants = 10000 WHERE id = 1;
 -- UPDATE event SET maxNum_participants = 20 WHERE id = 2;
 -- UPDATE event SET maxNum_participants = 50 WHERE id = 3;
 -- UPDATE event SET maxNum_participants = 500 WHERE id = 4;
 -- UPDATE event SET maxNum_participants = 200 WHERE id = 5;
+
 
 
 -- UPDATE event SET codeForSpeakers = 'iAmSpeaker1' WHERE id = 1;

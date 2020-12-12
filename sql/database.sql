@@ -27,10 +27,11 @@ CREATE TABLE event ( -- different, derived attributes gone
     name text NOT NULL,
     date DATE NOT NULL,
     local text NOT NULL,
+    -- aboutEvent text NOT NULL,
     theme text NOT NULL,
     price_min integer DEFAULT 0 NOT NULL,   
     price_max integer DEFAULT 0 NOT NULL,    
-    maxNum_participants integer,
+    maxNum_participants integer, -- to disappear eventually: to be derived, compute in PHP
     image text,
     codeForSpeakers UNIQUE, 
     codeForPartners UNIQUE, 

@@ -6,7 +6,7 @@
 <?php 
     include('templates/header_public.html'); 
     require_once('database/events.php'); 
-    $events = getAllEvents();
+    $events = getAllEventsInfo();
 ?>
 
 <br>
