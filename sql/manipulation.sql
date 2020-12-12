@@ -62,5 +62,12 @@ PRAGMA foreign_keys = ON;
 -- UPDATE event SET codeForStaff = 'iAmStaff4' WHERE id = 4;
 -- UPDATE event SET codeForStaff = 'iAmStaff5' WHERE id = 5;
 
+UPDATE event SET image = '1.jpg' WHERE id = 1;
+UPDATE event SET image = '2.jpg' WHERE id = 2;
+UPDATE event SET image = '3.jpg' WHERE id = 3;
+UPDATE event SET image = '4.jpg' WHERE id = 4;
+UPDATE event SET image = '5.jpg' WHERE id = 5;
+
+
 SELECT * FROM organizer JOIN Person USING (id);
 SELECT * FROM event;

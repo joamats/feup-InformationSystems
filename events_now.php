@@ -1,41 +1,28 @@
 <!DOCTYPE html>
-    <?php
-        include('templates/header_public.html');
+<?php include('templates/header_public.html'); ?>
+<?php 
+        require_once('database/events.php'); 
+        $events = getAllEvents();
+        //printArray($events);
     ?>
-        <br>
-        <h1>EVENTS NOW</h1>
 
-        <?php require_once('database/events.php'); ?>
-        
-        <img src="images/CookingWorkshop.jpg" alt="Cooking Workshop">
-        <h2>
-            <a href="event_details.php">Cooking Workshop</a>
-        </h2>
-        <p>
-            23rd December 2020<br>
-            Berlin, Germany<br>
-            10-15€
-        </p>
+<br>
+<h1>EVENTS NOW</h1>
 
-        <img src="images/websummit.jpeg" alt="Web Summit">
-        <h2>
-            <a>Web Summit</a>
-        </h2>
+<?php foreach($events as $event) { ?>
+    <article>
+        <img src="images/events/<?=$event['id']?>.jpg">
+        <h3>
+            <a href="event_details.php"> <?=$event['name']?></a>
+        </h3>
         <p>
-            2-5 December 2020<br>
-            Online<br>
-            5-20.000€
+            <?=$event['date']?> <br>
+            <?=$event['local']?> <br>
+            <?=$event['price_min']?> - <?=$event['price_max']?>€ <br>
         </p>
+    </article>
+<?php } ?>
 
-        <img src="images/TedTalk.webp" alt="Ted Talk">
-        <h2>
-            <a>TED Talk</a>
-        </h2>
-        <p>
-            20th December 2020<br>
-            Porto, Portugal<br>
-            0€
-        </p>
-    <?php
+<?php
         include('templates/footer.html');
     ?>
