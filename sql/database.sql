@@ -22,21 +22,21 @@ CREATE TABLE organizer (
     vat_num INTEGER NOT NULL UNIQUE
 );
  
-CREATE TABLE event ( -- different, derived attributes gone
+CREATE TABLE Event ( -- different, derived attributes gone
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     name text NOT NULL,
-    date DATE NOT NULL,
+    date_start DATE NOT NULL,
+    date_end DATE NOT NULL,
     local text NOT NULL,
-    -- aboutEvent text NOT NULL,
-    theme text NOT NULL,
-    price_min integer DEFAULT 0 NOT NULL,   
-    price_max integer DEFAULT 0 NOT NULL,    
-    maxNum_participants integer, -- to disappear eventually: to be derived, compute in PHP
+    aboutEvent text,
+    theme text NOT NULL,   
     image text,
     codeForSpeakers UNIQUE, 
     codeForPartners UNIQUE, 
     codeForStaff UNIQUE,    
-    organizer integer REFERENCES organizer NOT NULL
+    organizer integer REFERENCES organizer NOT NULL,
+    constraint datesAreCorrect 
+    CHECK(date_start <= date_end)
 );
 
 CREATE TABLE ParticipantPackage (
