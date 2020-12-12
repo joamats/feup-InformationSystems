@@ -15,59 +15,59 @@ PRAGMA foreign_keys = ON;
 -- VALUES(2, 'password', 'Rua', 987654321);
 
 
--- -- CREATE EVENTS
+-- -- CREATE EventS
 
--- INSERT INTO event(name, date_start, date_end, local, theme, organizer)
+-- INSERT INTO Event(name, date_start, date_end, local, theme, organizer)
 -- VALUES("Web Summit 2020", "01/01/2020", "03/01/2020", "Online", "Technology", 1);
 
--- INSERT INTO event(name, date_start, date_end, local, theme, organizer)
+-- INSERT INTO Event(name, date_start, date_end, local, theme, organizer)
 -- VALUES("Cooking Workshop", "02/01/2020", "04/01/2020", "Berlin", "Skills", 1);
 
--- INSERT INTO event(name, date_start, date_end, local, theme, organizer)
+-- INSERT INTO Event(name, date_start, date_end, local, theme, organizer)
 -- VALUES("LEGO Fanatics Meetup", "03/02/2020", "10/02/2020", "California", "Fun", 1);
 
--- INSERT INTO event(name, date_start, date_end, local, theme, organizer)
+-- INSERT INTO Event(name, date_start, date_end, local, theme, organizer)
 -- VALUES("Symbio 2021", "26/03/2021", "28/03/2021", "FEUP", "Bioengineering", 1);
 
--- INSERT INTO event(name, date_start, date_end, local, theme, organizer)
+-- INSERT INTO Event(name, date_start, date_end, local, theme, organizer)
 -- VALUES("TED Talk: Books", "05/11/2020", "05/11/2020", "Porto", "Literature", 1);
 
 
 
 
--- -- UPDATE EVENTS with maxNum_participants
+-- -- UPDATE EventS with maxNum_participants
 
--- -- UPDATE event SET maxNum_participants = 10000 WHERE id = 1;
--- -- UPDATE event SET maxNum_participants = 20 WHERE id = 2;
--- -- UPDATE event SET maxNum_participants = 50 WHERE id = 3;
--- -- UPDATE event SET maxNum_participants = 500 WHERE id = 4;
--- -- UPDATE event SET maxNum_participants = 200 WHERE id = 5;
+-- -- UPDATE Event SET maxNum_participants = 10000 WHERE id = 1;
+-- -- UPDATE Event SET maxNum_participants = 20 WHERE id = 2;
+-- -- UPDATE Event SET maxNum_participants = 50 WHERE id = 3;
+-- -- UPDATE Event SET maxNum_participants = 500 WHERE id = 4;
+-- -- UPDATE Event SET maxNum_participants = 200 WHERE id = 5;
 
 
 
--- UPDATE event SET codeForSpeakers = 'iAmSpeaker1' WHERE id = 1;
--- UPDATE event SET codeForSpeakers = 'iAmSpeaker2' WHERE id = 2;
--- UPDATE event SET codeForSpeakers = 'iAmSpeaker3' WHERE id = 3;
--- UPDATE event SET codeForSpeakers = 'iAmSpeaker4' WHERE id = 4;
--- UPDATE event SET codeForSpeakers = 'iAmSpeaker5' WHERE id = 5;
+-- UPDATE Event SET codeForSpeakers = 'iAmSpeaker1' WHERE id = 1;
+-- UPDATE Event SET codeForSpeakers = 'iAmSpeaker2' WHERE id = 2;
+-- UPDATE Event SET codeForSpeakers = 'iAmSpeaker3' WHERE id = 3;
+-- UPDATE Event SET codeForSpeakers = 'iAmSpeaker4' WHERE id = 4;
+-- UPDATE Event SET codeForSpeakers = 'iAmSpeaker5' WHERE id = 5;
 
--- UPDATE event SET codeForPartners = 'iAmPartner1' WHERE id = 1;
--- UPDATE event SET codeForPartners = 'iAmPartner2' WHERE id = 2;
--- UPDATE event SET codeForPartners = 'iAmPartner3' WHERE id = 3;
--- UPDATE event SET codeForPartners = 'iAmPartner4' WHERE id = 4;
--- UPDATE event SET codeForPartners = 'iAmPartner5' WHERE id = 5;
+-- UPDATE Event SET codeForPartners = 'iAmPartner1' WHERE id = 1;
+-- UPDATE Event SET codeForPartners = 'iAmPartner2' WHERE id = 2;
+-- UPDATE Event SET codeForPartners = 'iAmPartner3' WHERE id = 3;
+-- UPDATE Event SET codeForPartners = 'iAmPartner4' WHERE id = 4;
+-- UPDATE Event SET codeForPartners = 'iAmPartner5' WHERE id = 5;
 
--- UPDATE event SET codeForStaff = 'iAmStaff1' WHERE id = 1;
--- UPDATE event SET codeForStaff = 'iAmStaff2' WHERE id = 2;
--- UPDATE event SET codeForStaff = 'iAmStaff3' WHERE id = 3;
--- UPDATE event SET codeForStaff = 'iAmStaff4' WHERE id = 4;
--- UPDATE event SET codeForStaff = 'iAmStaff5' WHERE id = 5;
+-- UPDATE Event SET codeForStaff = 'iAmStaff1' WHERE id = 1;
+-- UPDATE Event SET codeForStaff = 'iAmStaff2' WHERE id = 2;
+-- UPDATE Event SET codeForStaff = 'iAmStaff3' WHERE id = 3;
+-- UPDATE Event SET codeForStaff = 'iAmStaff4' WHERE id = 4;
+-- UPDATE Event SET codeForStaff = 'iAmStaff5' WHERE id = 5;
 
--- UPDATE event SET image = '1.jpg' WHERE id = 1;
--- UPDATE event SET image = '2.jpg' WHERE id = 2;
--- UPDATE event SET image = '3.jpg' WHERE id = 3;
--- UPDATE event SET image = '4.jpg' WHERE id = 4;
--- UPDATE event SET image = '5.jpg' WHERE id = 5;
+-- UPDATE Event SET image = '1.jpg' WHERE id = 1;
+-- UPDATE Event SET image = '2.jpg' WHERE id = 2;
+-- UPDATE Event SET image = '3.jpg' WHERE id = 3;
+-- UPDATE Event SET image = '4.jpg' WHERE id = 4;
+-- UPDATE Event SET image = '5.jpg' WHERE id = 5;
 
 -- -- Participant Packages for Event #1
 
@@ -116,13 +116,14 @@ PRAGMA foreign_keys = ON;
 
 -- -- -- Sponsor Packages for Event #3
 
--- INSERT INTO SponsorPackage(name, event, financialSupport_range_min, financialSupport_range_max, perks)
+-- INSERT INTO SponsorPackage(name, Event, financialSupport_range_min, financialSupport_range_max, perks)
 -- VALUES ('Main Sponsor', 3, 500, 1000, "Naming sponsor for the Meetup");
 
-
+-- UPDATE Event SET date_start = '31/01/2021' WHERE id = 5;
+-- UPDATE Event SET date_end = '02/02/2021' WHERE id = 5;
 
 SELECT * FROM organizer JOIN Person USING (id);
-SELECT * FROM event;
+SELECT * FROM Event;
 SELECT * FROM ParticipantPackage;
 SELECT * FROM PartnerPackage;
 SELECT * FROM SponsorPackage;

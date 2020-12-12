@@ -5,7 +5,11 @@
 
 <?php 
     include('templates/header_public.html'); 
-    require_once('database/events.php'); 
+    require_once('database/events.php');
+    require_once('database/events_derivedAttributes.php');
+    require_once('helpers/dates.php');
+    require_once('helpers/prices.php');
+
     $events = getAllEventsInfo();
 ?>
 
@@ -13,7 +17,17 @@
 <h1>EVENTS NOW</h1>
 
 <section class = 'listEvents'>
-    <?php foreach($events as $event) { ?>
+    <?php foreach($events as $event) { 
+        $maxNumParticipants = computeMaxNumParticipantsById($event['id']);
+        $priceMin = computePriceMinById($event['id']);
+        $priceMax = computePriceMaxById($event['id']);
+        $dateStart = dateToString($event['date_start']);
+        $dateEnd = dateToString($event['date_end']);
+        
+        $dateRange = simplifyDateRange($dateStart, $dateEnd);
+        $priceRange = simplifyPriceRange($priceMin, $priceMax)
+    
+        ?>
         <article class = "textEvents">
             <img src="images/events/<?=$event['id']?>.jpg">
             <h3>
@@ -23,10 +37,10 @@
                 </a>
             </h3>
             <p class='pEvents'>
-                <i class="far fa-calendar"></i><?=$event['date']?> <br>
+                <i class="far fa-calendar"></i><?=$dateRange?> <br>
                 <i class="fas fa-map-marker-alt"></i><?=$event['local']?> <br>
-                <i class="fas fa-euro-sign"></i><?=$event['price_min']?> - <?=$event['price_max']?>€ <br>
-                <i class="fas fa-user-friends"></i>Up to <?=$event['maxNum_participants']?> participants
+                <i class="fas fa-euro-sign"></i><?= $priceRange?><br>
+                <i class="fas fa-user-friends"></i>Up to <?=$maxNumParticipants?> participants
             
             </p>
         </article>
@@ -35,5 +49,5 @@
 </section>
 
 <?php
-        include('templates/footer.html');
-    ?>
+    include('templates/footer.html');
+?>

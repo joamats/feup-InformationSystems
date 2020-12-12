@@ -10,17 +10,11 @@
     require_once('database/events.php'); 
     require_once('database/packages.php'); 
     require_once('database/events_derivedAttributes.php');
-    $event = getEventInfoById(1);
-    printArray($event);
 
+    $eventInfo = getEventInfoById(1);
     $participantsPackages = getAllParticipantPackagesById(1);
-    printArray($participantsPackages);
-
     $partnersPackages = getAllPartnerPackagesById(1);
-    printArray($partnersPackages);
-
     $sponsorsPackages = getAllSponsorPackagesById(1);
-    printArray($sponsorsPackages);
  
     computeMaxNumParticipantsById(2);
     computePriceMinById(1);

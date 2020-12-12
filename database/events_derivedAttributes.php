@@ -2,6 +2,7 @@
     // for computation of events-related derived attributes
     require_once('config/init.php');
     require_once('database/events.php');
+    require_once('database/packages.php'); 
     require_once('helpers/dates.php');
 
     // computes the max number of participants for an event
@@ -20,25 +21,35 @@
     function computePriceMinById($eventId){
 
         $participantsPackages = getAllParticipantPackagesById($eventId);
-        $prices = [];
-        foreach($participantsPackages as $package) 
-            $prices[] = $package["price"];
+        if (empty($participantsPackages))
+            return 0;
 
-        $priceMin = min($prices);
-        return $priceMin;
+        else {
+            $prices = [];
+            foreach($participantsPackages as $package) 
+                $prices[] = $package["price"];
+
+            $priceMin = min($prices);
+            return $priceMin;
+        }
 
     }
 
     // compute the max price in participants packages, for an event
     function computePriceMaxById($eventId){
-
         $participantsPackages = getAllParticipantPackagesById($eventId);
-        $prices = [];
-        foreach($participantsPackages as $package) 
-            $prices[] = $package["price"];
+        if (empty($participantsPackages))
+            return 0;
 
-        $priceMax = max($prices);
-        return $priceMax;
+        else {
+            $prices = [];
+            foreach($participantsPackages as $package) 
+                $prices[] = $package["price"];
+
+            $priceMax = max($prices);
+            return $priceMax;
+            
+        }
 
     }
 

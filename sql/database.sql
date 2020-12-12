@@ -34,9 +34,7 @@ CREATE TABLE Event ( -- different, derived attributes gone
     codeForSpeakers UNIQUE, 
     codeForPartners UNIQUE, 
     codeForStaff UNIQUE,    
-    organizer integer REFERENCES organizer NOT NULL,
-    constraint datesAreCorrect 
-    CHECK(date_start <= date_end)
+    organizer integer REFERENCES organizer NOT NULL
 );
 
 CREATE TABLE ParticipantPackage (
