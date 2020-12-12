@@ -3,7 +3,6 @@
 <link href="css/style_index.css" rel="stylesheet">
 <?php include('templates/header_public.html'); ?>
 
-
 <div id="titleIndex">
     <img src="images/index.png" alt="logo">
     <p id="topText">A registration platform</p>

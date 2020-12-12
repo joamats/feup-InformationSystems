@@ -15,34 +15,27 @@ DROP TABLE IF EXISTS Partner;
 
 
 CREATE TABLE organizer (
-    id integer PRIMARY KEY AUTOINCREMENT,
-    email text UNIQUE,
-    name text NOT NULL,
+    id integer PRIMARY KEY REFERENCES Person, -- different from UML and relational model
     password text NOT NULL, -- to encrypt later
     logotype text, -- to be a URL or path
     address text NOT NULL,
     vat_num INTEGER NOT NULL UNIQUE
 );
-
-CREATE TABLE event (
+ 
+CREATE TABLE event ( -- different, derived attributes gone
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     name text NOT NULL,
     date DATE NOT NULL,
     local text NOT NULL,
     theme text NOT NULL,
     price_min integer DEFAULT 0 NOT NULL,   
-    price_max integer DEFAULT 0 NOT NULL,   
-    num_participants integer DEFAULT 0,   
+    price_max integer DEFAULT 0 NOT NULL,    
     maxNum_participants integer,
-    daysTill_event integer,
     image text,
     codeForSpeakers UNIQUE, 
     codeForPartners UNIQUE, 
     codeForStaff UNIQUE,    
-    organizer integer REFERENCES organizer NOT NULL,
-    CONSTRAINT availableSeats 
-    CHECK(maxNum_participants IS NULL 
-        OR maxNum_participants < maxNum_participants)
+    organizer integer REFERENCES organizer NOT NULL
 );
 
 CREATE TABLE ParticipantPackage (
