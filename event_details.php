@@ -10,12 +10,14 @@
     require_once('helpers/prices.php');
     require_once('database/events.php'); 
     require_once('database/packages.php'); 
+    require_once('database/speakers.php'); 
     require_once('database/events_derivedAttributes.php');
 
     $eventId = $_GET['id'];
 
     $eventInfo = getEventInfoById($eventId);
-    
+    $eventSpeakers = getEventSpeakersById($eventId);
+
     $participantsPackages = getAllParticipantPackagesById($eventId);
     $partnersPackages = getAllPartnerPackagesById($eventId);
     $sponsorsPackages = getAllSponsorPackagesById($eventId);
@@ -44,19 +46,17 @@
             <p><?=$eventInfo['aboutEvent']?></p>
 
             <h2>The Speakers</h2>
-            <img src="images/profilepic1.jfif" alt="profilepic" width=40>
+            <?php foreach($eventSpeakers as $speaker){
+                $speakerId = $speaker['id']; ?>
+
+            <img class="speakerPic" src="images/persons/<?=$speaker['profile_pic']?>" alt=<?=$speaker['name']?> width = 100>
             <p>
-                Eng. Mariah Mattosis<br>
-                The future of mobility<br>
-                <a>Abstract</a>
+                <?=$speaker['title']?>   <?=$speaker['name']?><br>
+                <?=$speaker['talk_subject']?><br>
+                <a href=''>Abstract</a>
             </p>
 
-            <img src="images/profilepic2.png" alt="profilepic" width=40>
-            <p>
-                Prof. Albert Peralta<br>
-                The role of patents in AI world<br>
-                <a>Abstract</a>
-            </p>
+            <?php } ?>
 
             <h2>The Staff</h2>
         </div>
