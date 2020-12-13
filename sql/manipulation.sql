@@ -122,8 +122,58 @@ PRAGMA foreign_keys = ON;
 -- UPDATE Event SET date_start = '31/01/2021' WHERE id = 5;
 -- UPDATE Event SET date_end = '02/02/2021' WHERE id = 5;
 
+-- -- Participant Packages for Event #4
+
+--  INSERT INTO ParticipantPackage(name, event, price, features, maxNum_participants)
+--  VALUES ('Online', 4, 5, "Access to ClickMeeting", 5000);
+
+-- INSERT INTO ParticipantPackage(name, event, price, features, maxNum_participants)
+--  VALUES ('Physical', 4, 15, "Entry Ticket to FEUP", 100);
+
+--  INSERT INTO ParticipantPackage(name, event, price, features, maxNum_participants)
+--  VALUES ('Premium', 4, 50, "Entry Ticket to FEUP, Lunches, Access to VIP zone", 100);
+
+-- -- Participant Packages for Event #5
+
+--  INSERT INTO ParticipantPackage(name, event, price, features, maxNum_participants)
+--  VALUES ('Basic', 5, 500, "Entry Ticket", 250);
+
+-- INSERT INTO ParticipantPackage(name, event, price, features, maxNum_participants)
+--  VALUES ('Premium', 5, 15, "Entry Ticket, Lunch with Speakers", 20);
+
+-- -- Add About Sections to events
+-- UPDATE Event SET aboutEvent = 'Web Summit is an annual technology conference held in Lisbon, Portugal, considered the largest tech event in the world. Founded in 2009, by Paddy Cosgrave, David Kelly and Daire Hickey, Web Summit was originally held in Dublin, Ireland, until 2016, when it moved permanently to Lisbon, Portugal.31/01/2021' 
+-- WHERE id = 1;
+
+-- UPDATE Event SET aboutEvent = 'Start by visiting the viewpoit of the famous Monument in honor of Cristo Rei where you can enjoy an unparalleled view of the city of Lisbon and the River Tagus, from here you will continue to the charming historical center of the city, integrated in the monumental collection of Évora, a city classified by UNESCO as world heritage. We will find several wineries, here you can not only discover the Alentejo wine tourism, but also have the opportunity to taste the best Alentejo wines, in an amazing and didactic journey through the different castes and terrariums, where we can taste wines of various varieties like Aragonês, Cabernet Sauvignon, Touriga Nacional and more. A good white Alentejo wine is always a good companion; A good red, is a good adviser and a good rosé, nice, all this accompanied by a good gastronomy Alentejo, synonymous with flavor, intensity and passion.' 
+-- WHERE id = 2;
+
+-- UPDATE Event SET aboutEvent = 'Lego System A/S is a Danish toy production company based in Billund. It is best known for the manufacture of Lego-brand toys, consisting mostly of interlocking plastic bricks. The Lego Group has also built several amusement parks around the world, each known as Legoland, and operates numerous retail stores.' 
+-- WHERE id = 3;
+
+-- UPDATE Event SET aboutEvent = 'O Symposium on Bioengineering é uma iniciativa anual organizada exclusivamente pelo Núcleo de Estudantes de Bioengenharia da Universidade do Porto (NEB-FEUP/ICBAS). A 12ª edição realizar-se-á nos dias 26, 27 e 28 de março de 2021 e será em formato híbrido: no Grande Auditório da Faculdade de Engenharia da Universidade do Porto, se as condições de saúde pública assim o permitirem, e em formato online, em simultâneo, de qualquer modo. Este evento centra-se na promoção de partilha e debate de temas dotados de uma importância imprescindível nos dias de hoje, associados às áreas de Engenharia Biomédica, Engenharia Biológica e Biotecnologia Molecular, numa simbiose entre oradores com projeção nacional e internacional e estudantes, investigadores e professores que formam uma plateia motivada e interessada.' 
+-- WHERE id = 4;
+
+-- UPDATE Event SET aboutEvent = 'TED Conferences LLC is an American media organization that posts talks online for free distribution under the slogan "ideas worth spreading". TED was conceived by Richard Saul Wurman, who co-founded it with Harry Marks in February 1984 as a conference; it has been held annually since 1990.' 
+-- WHERE id = 5;
+
+-- Speakers for Event 1
+-- INSERT INTO Person(name, email, phone_num) 
+-- VALUES('Albert Peralta', 'albert@gmail.com', 1234556789);
+
+-- INSERT INTO Speaker(id, event, title, profile_pic, talk_subject, talk_abstract)
+--  VALUES(3, 1, 'Eng.', '3.jpg', 'The future of AI', 'abstract');
+
+--  INSERT INTO Person(name, email, phone_num) 
+-- VALUES('Sara Sampaio', 'sara@gmail.com', 1234556789);
+
+-- INSERT INTO Speaker(id, event, title, profile_pic, talk_subject, talk_abstract)
+--  VALUES(4, 1, 'Ms.', '4.jpg', 'The role of women in Tech', 'abstract');
+
+
 SELECT * FROM organizer JOIN Person USING (id);
 SELECT * FROM Event;
 SELECT * FROM ParticipantPackage;
 SELECT * FROM PartnerPackage;
 SELECT * FROM SponsorPackage;
+SELECT * FROM Speaker JOIN Person USING (id);

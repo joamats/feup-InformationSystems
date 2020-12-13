@@ -84,14 +84,14 @@ CREATE TABLE Participant(
 CREATE TABLE Speaker(
     id integer PRIMARY KEY REFERENCES Person,
     event integer REFERENCES event NOT NULL,
-    title text NOT NULL,
+    title text NOT NULL, --NOT NULL should not be here
     profile_pic text NOT NULL,
     talk_subject text NOT NULL, 
-    talk_abstract text NOT NULL
+    talk_abstract text NOT NULL --NOT NULL should not be here
 );
 
 CREATE TABLE Staff (
-    id INTEGER REFERENCES Person PRIMARY KEY,
+    id INTEGER REFERENCES Person PRIMARY KEY, 
     event integer REFERENCES event NOT NULL,
     profile_pic text, 
     department text NOT NULL,

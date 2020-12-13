@@ -41,10 +41,7 @@
         <img id="eventImage" src="images/events/<?=$eventInfo["image"]?>" alt="<?=$eventInfo["name"]?>">
         <div id="leftText">
             <h2>About this Event</h2>
-            <p>
-                This is a brief description of the event Lorem ipsum dolor sit amet,
-                consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.
-            </p>
+            <p><?=$eventInfo['aboutEvent']?></p>
 
             <h2>The Speakers</h2>
             <img src="images/profilepic1.jfif" alt="profilepic" width=40>
