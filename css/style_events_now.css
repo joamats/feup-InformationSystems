@@ -1,10 +1,12 @@
 @import "css/style_general.css";
 
 
-h1 {
-    text-align: left;
-    padding-left: 2em;
+#eventsNOW{
+    color: var(--gray-dark);
+    margin-left: 4rem;
+    padding-left: 4rem;
 }
+  
 
 .pEvents i{
     padding-left: 1em;

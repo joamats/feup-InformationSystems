@@ -14,13 +14,14 @@
 ?>
 
 <br>
-<h1>EVENTS NOW</h1>
+<h1 id="eventsNOW">EVENTS NOW</h1>
 
 <section class = 'listEvents'>
     <?php foreach($events as $event) { 
-        $maxNumParticipants = computeMaxNumParticipantsById($event['id']);
-        $priceMin = computePriceMinById($event['id']);
-        $priceMax = computePriceMaxById($event['id']);
+        $eventId = $event['id'];
+        $maxNumParticipants = computeMaxNumParticipantsById($eventId);
+        $priceMin = computePriceMinById($eventId);
+        $priceMax = computePriceMaxById($eventId);
         $dateStart = dateToString($event['date_start']);
         $dateEnd = dateToString($event['date_end']);
         
@@ -29,9 +30,9 @@
     
         ?>
         <article class = "textEvents">
-            <img src="images/events/<?=$event['id']?>.jpg">
+            <img src="images/events/<?=$eventId?>.jpg">
             <h3>
-                <a href="event_details.php"> 
+                <a href="event_details.php?id=<?=$eventId?>"> 
                     <?=$event['name']?>
                     <i class="fas fa-arrow-right"></i>
                 </a>

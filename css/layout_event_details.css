@@ -1,0 +1,47 @@
+@import "css/style_general.css";
+
+#eventDetails{
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: auto auto auto;
+}
+
+#leftPanel{
+    grid-column: 1/3;
+}
+
+#rightPanel{
+    grid-column: 4;
+
+}
+
+#leftText{
+    padding-left: 3rem;
+    padding-top: 1rem;
+    padding-right: 3rem;
+}
+
+#eventImage {
+    width: 55rem;
+    height: 20rem;
+    object-fit: cover;
+}
+
+
+.pEvents {
+    text-align: left;
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    grid-template-rows: auto auto auto auto;
+}
+
+.pEvents i {
+  grid-column: 1;
+}
+
+.pEvents a {
+  grid-column: 3;
+  grid-row: 4;
+}
+
+
