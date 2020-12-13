@@ -1,0 +1,51 @@
+/*
+    Login
+*/
+
+h1 {
+    margin-left: 5%;
+    margin-bottom: 1%;
+}
+
+legend{
+    margin-left: 15%;
+    margin-bottom: 1.8em;
+}
+
+label>*{
+    margin-left: 35%;
+    margin-bottom: 2%;
+}
+
+label{
+    margin-left: 35.6%;
+}
+
+fieldset > input{
+    position: relative;
+    margin-left: 46%;
+    padding-top:10px;
+    padding-bottom:10px;
+    padding-left: 45px;
+    padding-right: 45px;
+}
+
+h4{
+    position: relative;
+    margin-left: 43.5%;
+}
+
+div{
+    display: inline;
+    margin-left: 33.5%;
+}
+
+#not_registered1{
+    padding-right: 2em;
+}
+
+
+#footer {
+    position: absolute;
+    bottom:0;
+}
