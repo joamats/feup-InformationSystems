@@ -22,12 +22,12 @@
 <form action="save_registration.php?role=<?=$role?>&id=<?=$eventId?>" method="post">
     <fieldset>
         <legend>
-            Register as <?=$role?>
+            Register as <span class="role"><?=$role?></span>
         </legend>
 
         <label>Name:
             <br>
-            <input type="text" name="name">
+            <input class="write_input" type="text" name="name">
         </label>
 
         <?php if($role == "Organizer" || $role == "Participant" || $role == "Speaker" || $role == "Staff") {
@@ -36,41 +36,41 @@
                 <br>
                 <label>Title:
                     <br>
-                    <input type="text" name="title">
+                    <input class="write_input" type="text" name="title">
                 </label>
             <?php } ?>
             
             <br>
             <label>Email:
                 <br>
-                <input type="email" name="email">
+                <input class="write_input" type="email" name="email">
             </label>
 
             <?php if($role == "Organizer" || $role == "Staff") {?>
                 <br>
                 <label>Password:
                     <br>
-                    <input type="password" name="password">
+                    <input class="write_input" type="password" name="password">
                 </label>
             <?php } ?>
 
             <br>
             <label>Phone Number:
                 <br>
-                <input type="text" name="phone_num">
+                <input class="write_input" type="tel" id="phone" name="phone_num" pattern="[0-9]{9}">
             </label>
 
             <?php if($role == "Participant" || $role == "Organizer" ) {?>
                 <br>
                 <label>Adress:
                     <br>
-                <input type="text" name="adress">
+                <input class="write_input" type="text" name="adress">
                 </label>
 
                 <br>
                 <label>VAT Number:
                     <br>
-                    <input type="number" name="VAT_num">
+                    <input class="write_input" type="number" name="VAT_num">
                 </label>
             <br><br>
 
@@ -78,20 +78,24 @@
                 <br>
                 <label>Talk's Subject:
                     <br>
-                    <input type="text" name="subject_talk">
+                    <input class="write_input" type="text" name="subject_talk">
                 </label>
 
                 <br>
                 <label>Talk's Abstract:
                     <br>
-                    <textarea name="talk_abstract" rows="6" cols="50"></textarea>
+                    <textarea id="talk_abstract" name="talk_abstract" rows="6" cols="50"></textarea>
                 </label>
 
             <?php } elseif($role == "Staff") { ?>
                 <br>
                 <label>Department:
                     <br>
-                <input type="text" name="department">
+                    <select id="department" name="department">
+                        <option value="photography"> Photography</option>
+                        <option value="logistics"> Logistics</option>
+                        <option value="financial"> Financial</option>
+                    </select>
                 </label>
 
             <?php } if($role == "Organizer") { ?>
@@ -115,14 +119,14 @@
             <br>
             <label>Website link:
                 <br>
-                <input type="URL" name="website_link">
+                <input class="write_input" type="URL" name="website_link">
             </label>
 
             <?php if($role == "Sponsor") { ?>
                 <br>
                 <label>Financial Support Amount:
                     <br>
-                    <input type="number" name="financialSupport_amount">
+                    <input class="write_input" type="number" name="financialSupport_amount">
                 </label>
                 
             <?php } elseif($role == "Partner") { ?>
@@ -130,7 +134,7 @@
                 <br>
                 <label>Support Type:
                     <br>
-                    <input type="text" name="supportType">
+                    <input class="write_input" type="text" name="supportType">
                 </label>
             <?php } ?>
 
