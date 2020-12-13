@@ -13,15 +13,13 @@
     } else {
         $title = 'So, you want to become an Organizer?';
     }
-
     include('templates/header_public.php');
-
 ?>
 
 <br>
 <h1><?=$title?></h1>
 
-<form action="action_registration.php" method="get">
+<form action="save_registration.php?role=<?=$role?>&id=<?=$eventId?>" method="post">
     <fieldset>
         <legend>
             Register as <?=$role?>

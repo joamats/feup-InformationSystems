@@ -1,6 +1,6 @@
 PRAGMA foreign_keys = ON;
 
-DROP TABLE IF EXISTS organizer;
+DROP TABLE IF EXISTS Organizer;
 DROP TABLE IF EXISTS event;
 DROP TABLE IF EXISTS ParticipantPackage;
 DROP TABLE IF EXISTS PartnerPackage;
@@ -14,7 +14,7 @@ DROP TABLE IF EXISTS Sponsor;
 DROP TABLE IF EXISTS Partner;
 
 
-CREATE TABLE organizer (
+CREATE TABLE Organizer (
     id integer PRIMARY KEY REFERENCES Person, -- different from UML and relational model
     password text NOT NULL, -- to encrypt later
     logotype text, -- to be a URL or path
