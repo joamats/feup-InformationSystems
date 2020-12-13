@@ -10,7 +10,7 @@
                 </a>
                 <a class="trailing" href="search.php">Search</a>
                 <a class="actions" href="login.php">Login</a>
-                <a class="actions" href="registration_organizer.php">Become an Organizer</a>
+                <a class="actions" href="registration.php?role=Organizer">Become an Organizer</a>
                 <a class="actions" href="events_now.php">Events</a>
                 <a class="actions" href="about.php">About</a> 
             </nav>

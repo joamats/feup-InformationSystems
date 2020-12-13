@@ -4,7 +4,7 @@
 <link href="css/layout_events_now.css" rel="stylesheet">
 
 <?php 
-    include('templates/header_public.html'); 
+    include('templates/header_public.php'); 
     require_once('database/events.php');
     require_once('database/events_derivedAttributes.php');
     require_once('helpers/dates.php');

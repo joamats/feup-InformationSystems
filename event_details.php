@@ -32,7 +32,7 @@
  
     $maxNumParticipants = computeMaxNumParticipantsById($eventId);
     
-    include('templates/header_public.html');
+    include('templates/header_public.php');
 ?>
 
 <br>
@@ -72,7 +72,7 @@
                     <i class="fas fa-euro-sign"></i><?= $priceRange?><br><br>
                     <i class="fas fa-user-friends"></i>Up to <?=$maxNumParticipants?> participants<br><br>
             </p>
-            <a id="startRegister" href="selection_role.php">
+            <a id="startRegister" href="selection_role.php?id=<?=$eventId?>">
                 Register<i class="fas fa-arrow-right"></i>
             </a>
         </section><!-- basicInfo -->

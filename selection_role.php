@@ -4,29 +4,20 @@
 <link href="css/style_selection_role.css" rel="stylesheet">
 
 <?php
-    include('templates/header_public.html');
+    $eventId = $_GET['id'];
+    $roles = array('Participant', 'Speaker', 'Staff', 'Sponsor', 'Partner');    
+    include('templates/header_public.php');
 ?>
 
 
 <h2>Registration for Event:</h2>
 <h3>What's your Role?</h3>
 <ul>
-    <li>
-        <a href="registration_participant.php" >Participant</a>
-    </li>
-    <li>
-        <a href="registration_speaker.php" >Speaker</a>
-    </li>
-    <li>
-        <a href="registration_staff.php" >Staff</a>
-    </li>
-    <li>
-        <a href="registration_sponsor.php" >Sponsor</a>
-    </li>
-    <li>
-        <a href="registration_partner.php" >Partner</a>
-    </li>
-
+    <?php foreach($roles as $role) { ?>
+        <li>
+            <a href="registration.php?role=<?=$role?>&id=<?=$eventId?>"><?=$role?></a>
+        </li>
+    <?php } ?>
 </ul>
 
 <?php

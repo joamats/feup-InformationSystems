@@ -2,7 +2,7 @@
 <?php include('templates/head.html'); ?>
 <link href="css/style_about.css" rel="stylesheet">
 <link href="css/layout_about.css" rel="stylesheet">
-<?php include('templates/header_public.html'); ?>
+<?php include('templates/header_public.php'); ?>
 
 <br>
 

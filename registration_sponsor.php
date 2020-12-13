@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <?php
-    include('templates/header_public.html');
+    include('templates/header_public.php');
 ?>
 
 <br>
