@@ -44,7 +44,6 @@
     if($role == "Participant"){
         header('Location: confirmation_registration.php');
     } else { // we have to pass the role and id to next page, with SESSION
-        session_start();
         $_SESSION['role'] = $role;
         $_SESSION['personId'] = $personId;
         if($role !== "Organizer"){ //organizers are not associated with event

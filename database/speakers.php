@@ -38,4 +38,15 @@
 
     }
 
+    function setSpeakerProfilePic($personId, $profile_pic) {
+        try {
+            global $dbh;
+            $stmt = $dbh -> prepare('UPDATE Speaker SET profile_pic = ? WHERE id = ?;');
+            $stmt -> execute(array($profile_pic, $personId));
+
+        } catch(PDOException $e) {
+            $err = $e -> getMessage(); 
+        }
+    }
+
 ?>

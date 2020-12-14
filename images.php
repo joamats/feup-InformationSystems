@@ -8,7 +8,7 @@
 
     
     $role = $_SESSION['role'];
-    print_r($role);
+    $personId = $_SESSION['personId'];
 
     if($role != 'Organizer'){
         $eventId = $_SESSION['eventId'];
@@ -16,6 +16,8 @@
     } else {
         $title = 'So, you want to become an Organizer?';
     }
+
+
 
     if ($role == "Speaker" || $role == "Staff"){
         $prompt = "Profile Picture";
