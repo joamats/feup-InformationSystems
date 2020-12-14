@@ -19,7 +19,7 @@ CREATE TABLE Organizer (
     password text NOT NULL, -- to encrypt later
     logotype text, -- to be a URL or path
     address text NOT NULL,
-    vat_num INTEGER NOT NULL UNIQUE
+    vat_num INTEGER NOT NULL
 );
  
 CREATE TABLE Event ( -- different, derived attributes gone
@@ -126,10 +126,3 @@ CREATE TABLE Partner(
     event integer NOT NULL,
     FOREIGN KEY(package, event) REFERENCES PartnerPackage
 );
-
-
-
--- CHECK (Sponsor.financialSupport_amount >
--- 	SponsorPackage.financialSupport_range_min
---     AND Sponsor.financialSupport_amount <   
---     SponsorPackage.financialSupport_range_max );

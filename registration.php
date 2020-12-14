@@ -61,9 +61,9 @@
 
             <?php if($role == "Participant" || $role == "Organizer" ) {?>
                 <br>
-                <label>Adress:
+                <label>Address:
                     <br>
-                <input class="write_input" type="text" name="adress">
+                <input class="write_input" type="text" name="address">
                 </label>
 
                 <br>
@@ -93,14 +93,7 @@
                     <input class="write_input" type="text" name="department"></input>
                 </label>
 
-            <?php } if($role == "Organizer") { ?>
-                <br>
-                <label>Logotype:
-                    <br>
-                    <input type="file" name="logotype">
-                </label>
-           
-        <?php }
+            <?php } 
         } ?>
 
         <?php if($role == "Sponsor" || $role == "Partner") {?>

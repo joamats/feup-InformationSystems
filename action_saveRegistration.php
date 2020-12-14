@@ -34,7 +34,8 @@ require_once('config/init.php');
             insertParticipantIntoDatabase(
                 $userId, 
                 $_POST['address'],
-                $_POST['vat_num']
+                $_POST['vat_num'],
+                $eventId
             ); break;
             
         case "Speaker":
@@ -75,7 +76,16 @@ require_once('config/init.php');
                 $eventId
             );
         break;
-            
+        
+        case "Organizer":
+            require_once('database/organizers.php');
+            insertOrganizerIntoDatabase(
+                $userId,
+                $_POST['password'],
+                $_POST['address'],
+                $_POST['vat_num']                
+            );
+        break;
     }
 
 

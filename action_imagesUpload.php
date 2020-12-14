@@ -53,11 +53,15 @@ if ($uploadOk != 0) {
       break;
 
       case "Sponsor":
-      case"Partner":
+      case "Partner":
         require_once('database/entities.php');
         setEntityLogotype($userId, $image_name);
       break;
 
+      case "Organizer":
+        require_once('database/organizers.php');
+        setOrganizerLogotype($userId, $image_name);
+      break;
 
     }
 
