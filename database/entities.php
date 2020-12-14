@@ -38,4 +38,19 @@ require_once('config/init.php');
         }
     }
 
+    // given the id, retrieve the name of entity
+    function getEntityNameById($entityId) {
+        try {
+        global $dbh;
+        $stmt = $dbh -> prepare('SELECT name FROM Entity WHERE id = ?');
+        $stmt -> execute(array($entityId));
+        $entityName = $stmt -> fetch()['name'];
+        
+        return $entityName;
+
+        } catch(PDOException $e) {
+            $err = $e -> getMessage(); 
+        }
+    }
+
 ?>

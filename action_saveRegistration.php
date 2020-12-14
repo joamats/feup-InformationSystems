@@ -89,15 +89,15 @@ require_once('config/init.php');
     }
 
 
+    $_SESSION['role'] = $role;
+    $_SESSION['userId'] = $userId;
+    if($role !== "Organizer"){ //organizers are not associated with event
+        $_SESSION['eventId']  = $eventId;
+    }
+
     if($role == "Participant"){
         header('Location: confirmation_registration.php');
-    } else { // we have to pass the role and id to next page, with SESSION
-        $_SESSION['role'] = $role;
-        $_SESSION['userId'] = $userId;
-
-        if($role !== "Organizer"){ //organizers are not associated with event
-            $_SESSION['eventId']  = $eventId;
-        }
+    } else {         
         header('Location: images.php');
     }
 

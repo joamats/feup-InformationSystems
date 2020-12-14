@@ -26,4 +26,19 @@ require_once('config/init.php');
         }
     }
 
+    // given the id, retrieve the name of Person
+    function getPersonNameById($personId) {
+        try {
+        global $dbh;
+        $stmt = $dbh -> prepare('SELECT name FROM Person WHERE id = ?');
+        $stmt -> execute(array($personId));
+        $personName = $stmt -> fetch()['name'];
+        
+        return $personName;
+
+        } catch(PDOException $e) {
+            $err = $e -> getMessage(); 
+        }
+    }
+
 ?>
