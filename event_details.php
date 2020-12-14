@@ -11,12 +11,20 @@
     require_once('database/events.php'); 
     require_once('database/packages.php'); 
     require_once('database/speakers.php'); 
+    require_once('database/sponsors.php'); 
+    require_once('database/partners.php'); 
+    require_once('database/staff.php'); 
+    require_once('database/organizers.php'); 
     require_once('database/events_derivedAttributes.php');
 
     $eventId = $_GET['id'];
 
     $eventInfo = getEventInfoById($eventId);
     $eventSpeakers = getEventSpeakersById($eventId);
+    $eventSponsors = getEventSponsorsById($eventId);
+    $eventPartners = getEventPartnersById($eventId);
+    $eventStaff = getEventStaffById($eventId);
+    $eventOrganizer = getEventOrganizerById($eventId);
 
     $participantsPackages = getAllParticipantPackagesById($eventId);
     $partnersPackages = getAllPartnerPackagesById($eventId);
@@ -48,7 +56,7 @@
             <?php foreach($eventSpeakers as $speaker){
                 $speakerId = $speaker['id']; ?>
 
-            <img class="speakerPic" src="images/persons/<?=$speaker['profile_pic']?>" alt=<?=$speaker['name']?> width = 100>
+            <img class="profilePic" src="images/persons/<?=$speaker['profile_pic']?>" alt=<?=$speaker['name']?> width = 100>
             <p>
                 <?=$speaker['title']?>   <?=$speaker['name']?><br>
                 <?=$speaker['talk_subject']?><br>
@@ -57,7 +65,52 @@
 
             <?php } ?>
 
+            <h2>The Sponsors</h2>
+            <?php foreach($eventSponsors as $sponsor){
+                $sponsorId = $sponsor['id']; ?>
+
+            <img class="logotype" src="images/persons/<?=$sponsor['logotype']?>" alt=<?=$sponsor['name']?> width = 100>
+            <p>
+                <?=$sponsor['name']?><br>
+                <a href=''>Package</a><br>
+                <a href=<?=$sponsor['website_link']?>target="_blank">Website</a>
+            </p>
+
+            <?php } ?>
+
+            <h2>The Partners</h2>
+            <?php foreach($eventPartners as $partner){
+                $partnerId = $partner['id']; ?>
+
+            <img class="logotype" src="images/persons/<?=$partner['logotype']?>" alt=<?=$partner['name']?> width = 100>
+            <p>
+                <?=$partner['name']?><br>
+                <a href=''>Package</a><br>
+                <a href=<?=$partner['website_link']?>target="_blank">Website</a>
+
+            </p>
+            <?php } ?>
+
             <h2>The Staff</h2>
+            <?php foreach($eventStaff as $staff){
+                $staffId = $staff['id']; ?>
+
+            <img class="profilePic" src="images/persons/<?=$staff['profile_pic']?>" alt=<?=$staff['name']?> width = 100>
+            <p>
+                <?=$staff['name']?><br>
+                Department: <?=$staff['department']?><br>
+            </p>
+            <?php } ?>
+
+            <h2>Event by:</h2>
+            <img class="logotype" src="images/persons/<?=$eventOrganizer['logotype']?>" alt=<?=$eventOrganizer['name']?> width = 100>
+            <p>
+                <?=$eventOrganizer['name']?><br>
+                Email: <?=$eventOrganizer['email']?><br>
+                Phone Number: <?=$eventOrganizer['phone_num']?><br>
+                Address: <?=$eventOrganizer['address']?><br>
+                VAT Number: <?=$eventOrganizer['vat_num']?><br>
+            </p>
         </div>
     </section> <!-- leftPanel -->
 

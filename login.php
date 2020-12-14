@@ -1,5 +1,5 @@
+<?php include('templates/head.php'); ?>
 <!DOCTYPE html>
-<?php include('templates/head.html'); ?>
 <?php
     include('templates/header_public.php');
 ?>

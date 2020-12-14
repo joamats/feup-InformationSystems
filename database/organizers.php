@@ -34,14 +34,14 @@ require_once('config/init.php');
     }
 
     // retrieves an Organizer, for a given id
-    function getOrganizerById($organizerId){
+    function getEventOrganizerById($eventId){
         try {
             global $dbh;
-            $stmt = $dbh -> prepare('SELECT * FROM Person JOIN Organizer USING (id)
-                                    WHERE id = ?;');
-            $stmt -> execute(array($organizerId));
-            $organizerId = $stmt -> fetchAll();
-            return $organizerId;
+            $stmt = $dbh -> prepare('SELECT * FROM Person JOIN Organizer USING(id) 
+                                    WHERE id = (SELECT organizer FROM Event WHERE id = ?);');
+            $stmt -> execute(array($eventId));
+            $organizer = $stmt -> fetchAll()[0];
+            return $organizer;
 
         } catch(PDOException $e) {
             $err = $e -> getMessage(); 
