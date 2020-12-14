@@ -25,6 +25,19 @@
             Register as <span class="role"><?=$role?></span>
         </legend>
 
+        <label>Email:
+            <br>
+            <input class="write_input" type="email" name="email">
+        </label>
+
+        <?php if($role == "Organizer" || $role == "Staff") {?>
+            <br>
+            <label>Password:
+                <br>
+                <input class="write_input" type="password" name="password">
+            </label>
+        <?php } ?>
+
         <label>Name:
             <br>
             <input class="write_input" type="text" name="name">
@@ -40,20 +53,6 @@
                 </label>
             <?php } ?>
             
-            <br>
-            <label>Email:
-                <br>
-                <input class="write_input" type="email" name="email">
-            </label>
-
-            <?php if($role == "Organizer" || $role == "Staff") {?>
-                <br>
-                <label>Password:
-                    <br>
-                    <input class="write_input" type="password" name="password">
-                </label>
-            <?php } ?>
-
             <br>
             <label>Phone Number:
                 <br>
@@ -91,11 +90,7 @@
                 <br>
                 <label>Department:
                     <br>
-                    <select id="department" name="department">
-                        <option value="photography"> Photography</option>
-                        <option value="logistics"> Logistics</option>
-                        <option value="financial"> Financial</option>
-                    </select>
+                    <input class="write_input" type="text" name="department"></input>
                 </label>
 
             <?php } if($role == "Organizer") { ?>
@@ -133,10 +128,6 @@
             <?php } ?>
 
             <br>
-            <label>Logotype:
-                <br>
-                <input type="file" name="logotype" accept="image/*">
-            </label>
 
         <?php } ?>
 

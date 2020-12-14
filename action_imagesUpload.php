@@ -38,13 +38,27 @@ if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg
 if ($uploadOk != 0) {
   if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
     $role = $_SESSION['role'];
-    $personId = $_SESSION['personId'];
-    $profile_pic = $_FILES["fileToUpload"]["name"];
+    $userId = $_SESSION['userId'];
+    $image_name = $_FILES["fileToUpload"]["name"];
+
     switch($role) {
       case "Speaker":
         require_once('database/speakers.php');
-        setSpeakerProfilePic($personId, $profile_pic);
+        setSpeakerProfilePic($userId, $image_name);
       break;
+
+      case "Staff":
+        require_once('database/staff.php');
+        setStaffProfilePic($userId, $image_name);
+      break;
+
+      case "Sponsor":
+      case"Partner":
+        require_once('database/entities.php');
+        setEntityLogotype($userId, $image_name);
+      break;
+
+
     }
 
     header('Location: confirmation_registration.php');

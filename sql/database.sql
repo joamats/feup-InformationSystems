@@ -77,7 +77,7 @@ CREATE TABLE Participant(
     vat_num integer NOT NULL, -- different!!
     paymentValidation_status text DEFAULT 'not paid',
     package text,
-    event integer,
+    event integer, -- should be not null
     FOREIGN KEY(package, event) REFERENCES ParticipantPackage
 );
 
@@ -96,14 +96,15 @@ CREATE TABLE Staff (
     profile_pic text, 
     department text NOT NULL,
     password text NOT NULL,
-    subordinates integer REFERENCES Staff,
-    hierarchical_superior integer REFERENCES Staff
+    subordinates integer REFERENCES Staff, -- kinda useless
+    hierarchical_superior integer REFERENCES Staff -- kinda useless
 );
 
 CREATE TABLE Entity(
     id integer PRIMARY KEY AUTOINCREMENT,
+    email text NOT NULL, -- different
     name text NOT NULL, -- different
-    logotype text, -- different
+    logotype text,
     website_link text -- different
 );
 
@@ -113,7 +114,7 @@ CREATE TABLE Sponsor(
     financialSupport_amount NOT NULL 
     CHECK(financialSupport_amount > 0),
     paymentValidation_status NOT NULL DEFAULT 'not paid',
-    package text NOT NULL,
+    package text,
     event integer NOT NULL,
     FOREIGN KEY(package, event) REFERENCES SponsorPackage
 );
@@ -121,8 +122,8 @@ CREATE TABLE Sponsor(
 CREATE TABLE Partner(
     id integer PRIMARY KEY REFERENCES Entity,
     supportType text NOT NULL,
-    package text NOT NULL,
-    event intger NOT NULL,
+    package text,
+    event integer NOT NULL,
     FOREIGN KEY(package, event) REFERENCES PartnerPackage
 );
 

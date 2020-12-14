@@ -8,7 +8,7 @@
 
     
     $role = $_SESSION['role'];
-    $personId = $_SESSION['personId'];
+    $userId = $_SESSION['userId'];
 
     if($role != 'Organizer'){
         $eventId = $_SESSION['eventId'];
