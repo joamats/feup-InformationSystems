@@ -1,5 +1,5 @@
+<?php include('templates/head.php'); ?>
 <!DOCTYPE html>
-<?php include('templates/head.html'); ?>
 
 <link href="css/style_selection_role.css" rel="stylesheet">
 

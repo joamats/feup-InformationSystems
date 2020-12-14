@@ -1,5 +1,5 @@
+<?php include('templates/head.php'); ?>
 <!DOCTYPE html>
-<?php include('templates/head.html'); ?>
 <link href="css/layout_event_details.css" rel="stylesheet">
 <link href="css/style_event_details.css" rel="stylesheet">
 
@@ -31,7 +31,6 @@
     $priceRange = simplifyPriceRange($priceMin, $priceMax);
  
     $maxNumParticipants = computeMaxNumParticipantsById($eventId);
-    
     include('templates/header_public.php');
 ?>
 
@@ -126,6 +125,7 @@
     </section> <!-- rightPanel -->
 
 </section> <!-- eventDetails -->
+
 
 <?php
     include('templates/footer.html');

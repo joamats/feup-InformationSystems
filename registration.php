@@ -1,5 +1,5 @@
+<?php include('templates/head.php'); ?>
 <!DOCTYPE html>
-<?php include('templates/head.html'); ?>
 <link href="css/layout_registration.css" rel="stylesheet">
 <link href="css/style_registration.css" rel="stylesheet">
 
@@ -19,7 +19,7 @@
 <br>
 <h1><?=$title?></h1>
 
-<form action="save_registration.php?role=<?=$role?>&id=<?=$eventId?>" method="post">
+<form action="action_saveRegistration.php?role=<?=$role?>&id=<?=$eventId?>" method="post">
     <fieldset>
         <legend>
             Register as <?=$role?>
@@ -64,13 +64,13 @@
                 <br>
                 <label>Adress:
                     <br>
-                <input type="text" name="adress">
+                <input type="text" name="address">
                 </label>
 
                 <br>
                 <label>VAT Number:
                     <br>
-                    <input type="number" name="VAT_num">
+                    <input type="number" name="vat_num">
                 </label>
             <br><br>
 
@@ -78,7 +78,7 @@
                 <br>
                 <label>Talk's Subject:
                     <br>
-                    <input type="text" name="subject_talk">
+                    <input type="text" name="talk_subject">
                 </label>
 
                 <br>
@@ -100,14 +100,8 @@
                     <br>
                     <input type="file" name="logotype">
                 </label>
-            <?php } elseif($role == 'Speaker' || $role == 'Staff') { ?>
-
-                <br>
-                <label>Upload Profile Picture:
-                    <br>
-                    <input type="file" name="profile_picture" accept="image/*">
-                </label>
-            <?php }
+           
+        <?php }
         } ?>
 
         <?php if($role == "Sponsor" || $role == "Partner") {?>
@@ -150,3 +144,5 @@
 <?php
     include('templates/footer.html');
 ?>
+
+

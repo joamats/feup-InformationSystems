@@ -1,6 +1,6 @@
 PRAGMA foreign_keys = ON;
 
--- ORGANIZERS 
+-- -- ORGANIZERS 
 
 INSERT INTO Person(name, email, phone_num) 
 VALUES('João Matos', 'joaocarlosm00@gmail.com', 938709463);

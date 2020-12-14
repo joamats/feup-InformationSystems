@@ -1,6 +1,6 @@
 <?php 
+
     // for computation of events-related derived attributes
-    require_once('config/init.php');
     require_once('database/events.php');
     require_once('database/packages.php'); 
     require_once('helpers/dates.php');

@@ -84,10 +84,10 @@ CREATE TABLE Participant(
 CREATE TABLE Speaker(
     id integer PRIMARY KEY REFERENCES Person,
     event integer REFERENCES event NOT NULL,
-    title text NOT NULL, --NOT NULL should not be here
-    profile_pic text NOT NULL,
+    title text,
+    profile_pic text,
     talk_subject text NOT NULL, 
-    talk_abstract text NOT NULL --NOT NULL should not be here
+    talk_abstract text
 );
 
 CREATE TABLE Staff (
@@ -103,7 +103,7 @@ CREATE TABLE Staff (
 CREATE TABLE Entity(
     id integer PRIMARY KEY AUTOINCREMENT,
     name text NOT NULL, -- different
-    logotype text NOT NULL, -- different
+    logotype text, -- different
     website_link text -- different
 );
 

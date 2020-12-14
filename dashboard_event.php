@@ -1,7 +1,5 @@
+<?php include('templates/head.php'); ?>
 <!DOCTYPE html>
-<?php
-    include('templates/header_private.html');
-?>
 
 <h1>Web Summit 2020</h1>
 <h2>Participants</h2>

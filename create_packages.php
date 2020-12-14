@@ -1,7 +1,5 @@
+<?php include('templates/head.php'); ?>
 <!DOCTYPE html>
-<?php
-    include('templates/header_private.html');
-?>
 
 <br>
 <h1>Here you can create as many packages as you wish!</h1>

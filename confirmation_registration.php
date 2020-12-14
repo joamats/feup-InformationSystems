@@ -1,7 +1,7 @@
+<?php include('templates/head.php'); ?>
 <!DOCTYPE html>
-<?php
-    include('templates/header_public.php');
-?>
+
+<?php include('templates/header_public.php'); ?>
 
 <br>
 <h1>

@@ -1,7 +1,5 @@
+<?php include('templates/head.php'); ?>
 <!DOCTYPE html>
-<?php
-    include('templates/header_private.html');
-?>
 
 <br>
 <h1>Tell us more about your event!</h1>

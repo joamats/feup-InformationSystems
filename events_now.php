@@ -1,5 +1,5 @@
+<?php include('templates/head.php'); ?>
 <!DOCTYPE html>
-<?php include('templates/head.html'); ?>
 <link href="css/style_events_now.css" rel="stylesheet">
 <link href="css/layout_events_now.css" rel="stylesheet">
 
@@ -11,6 +11,7 @@
     require_once('helpers/prices.php');
 
     $events = getAllEventsInfo();
+
 ?>
 
 <br>
@@ -26,7 +27,8 @@
         $dateEnd = dateToString($event['date_end']);
         
         $dateRange = simplifyDateRange($dateStart, $dateEnd);
-        $priceRange = simplifyPriceRange($priceMin, $priceMax)
+        $priceRange = simplifyPriceRange($priceMin, $priceMax);
+
     
         ?>
         <article class = "textEvents">

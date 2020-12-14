@@ -1,5 +1,5 @@
 <?php
-    require_once('config/init.php');
+require_once('config/init.php');
 
     // get the info of all events
     function getAllEventsInfo(){

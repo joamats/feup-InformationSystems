@@ -1,5 +1,5 @@
 <?php
-    require_once('config/init.php');
+require_once('config/init.php');
 
     // get all Packages for Participants in a Specific Event
     function getAllParticipantPackagesById($eventId) {
