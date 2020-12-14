@@ -1,23 +1,26 @@
 <!DOCTYPE html>
+<?php include('templates/head.html'); ?>
 <?php
     include('templates/header_public.php');
 ?>
+<link href="css/style_login.css" rel="stylesheet">
+<link href="css/layout_login.css" rel="stylesheet">
 
 <br>
 <h1>Welcome Back!</h1>
 <form action="save.php" method="get">
     <fieldset>
         <legend>
-            Exclusive for Event Organizers or Staff Members
+            Exclusive for Event <span class="role">Organizers</span> or <span class="role">Staff</span> Members
         </legend>
         <label>Email:
             <br>
-            <input type="text" name="email">
+            <input class="write_input" type="text" name="email">
         </label>
         <br>
         <label>Password:
             <br>
-            <input type="password" name="password">
+            <input class="write_input" type="password" name="password">
         </label>
         <br><br>
 
@@ -25,11 +28,11 @@
     </fieldset>
 </form>
 <h4>Not registered yet?</h4>
-<p>You have two alternatives:</p>
-<a href="registration.php?role=Organizer">Become an Organizer </a>
-<br>
-<a href="events_now.php">Join an Event as a Staff Member </a>
+<div>
+    <a id="not_registered1" href="registration.php?role=Organizer">Become an Organizer </a>
 
+    <a href="events_now.php">Join an Event as a Staff Member </a>
+</div>
 
 <?php
     include('templates/footer.html');

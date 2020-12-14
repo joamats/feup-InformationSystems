@@ -1,0 +1,55 @@
+/*
+    Login
+*/
+
+h1 {
+    font-weight: 800;
+    font-size: 3.5rem;
+    color: var(--blue-dark);
+}
+
+fieldset{
+    border: none;
+}
+
+legend{
+    font-weight: 500;
+    font-size: 2.5rem;
+    color: var(--orange-light);
+}
+.role{
+    font-weight: 700;
+    font-size: 3rem;
+    color: var(--blue-dark);
+}
+
+label{
+    font-weight: 200;
+    font-size: 1rem;
+}
+
+.write_input{
+    width: 30%;
+    height:2em;
+    border-radius: 15px;
+    border-style: solid;
+}
+
+fieldset > input{
+    color: white;
+    background-color: var(--blue-dark);
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+h4{
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--blue-dark);
+}
+
+div>a{
+    font-weight: 600;
+    font-size: 1.1em;
+}
