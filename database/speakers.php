@@ -23,14 +23,14 @@
         $eventId,
         $title,
         $talk_subject,
-        $talk_abstract,
-        $profile_pic) {
+        $talk_abstract
+        ) {
         
         try {
             global $dbh;
-            $stmt = $dbh -> prepare('INSERT INTO Speaker(id, event, title, talk_subject, talk_abstract, profile_pic)
-                                    VALUES(?, ?, ?, ?, ?, ?);');
-            $stmt -> execute(array($personId, $eventId, $title, $talk_subject, $talk_abstract, $profile_pic));
+            $stmt = $dbh -> prepare('INSERT INTO Speaker(id, event, title, talk_subject, talk_abstract)
+                                    VALUES(?, ?, ?, ?, ?);');
+            $stmt -> execute(array($personId, $eventId, $title, $talk_subject, $talk_abstract));
 
         } catch(PDOException $e) {
             $err = $e -> getMessage(); 

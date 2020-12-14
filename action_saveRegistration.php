@@ -34,8 +34,7 @@
                 $eventId,
                 $_POST['title'],
                 $_POST['talk_subject'],
-                $_POST['talk_abstract'],
-                $_POST['profile_pic']
+                $_POST['talk_abstract']
             );
         break;
             
