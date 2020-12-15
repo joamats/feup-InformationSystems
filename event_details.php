@@ -40,6 +40,7 @@
  
     $maxNumParticipants = computeMaxNumParticipantsById($eventId);
     include('templates/header_public.php');
+    printArray($participantsPackages);
 ?>
 
 <br>
@@ -73,7 +74,7 @@
             <p>
                 <?=$sponsor['name']?><br>
                 <a href=''>Package</a><br>
-                <a href=<?=$sponsor['website_link']?>target="_blank">Website</a>
+                <a href="<?=$sponsor['website_link']?>" target="_blank">Website</a>
             </p>
 
             <?php } ?>

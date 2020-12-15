@@ -25,72 +25,72 @@
             Register as <span class="role"><?=$role?></span>
         </legend>
 
-        <label>Email:
+        <label>Email *
             <br>
-            <input class="write_input" type="email" name="email">
+            <input class="write_input" type="email" name="email" required>
         </label>
 
         <?php if($role == "Organizer" || $role == "Staff") {?>
             <br>
-            <label>Password:
+            <label>Password *
                 <br>
-                <input class="write_input" type="password" name="password">
+                <input class="write_input" type="password" name="password" required>
             </label>
         <?php } ?>
 
-        <label>Name:
+        <label>Name *
             <br>
-            <input class="write_input" type="text" name="name">
+            <input class="write_input" type="text" name="name" required>
         </label>
 
         <?php if($role == "Organizer" || $role == "Participant" || $role == "Speaker" || $role == "Staff") {
             
             if($role == 'Speaker') {?>
                 <br>
-                <label>Title:
+                <label>Title
                     <br>
                     <input class="write_input" type="text" name="title">
                 </label>
             <?php } ?>
             
             <br>
-            <label>Phone Number:
+            <label>Phone Number *
                 <br>
-                <input class="write_input" type="tel" id="phone" name="phone_num" pattern="[0-9]{9}">
+                <input class="write_input" type="tel" id="phone" name="phone_num" pattern="[0-9]{9}" required>
             </label>
 
             <?php if($role == "Participant" || $role == "Organizer" ) {?>
                 <br>
-                <label>Address:
+                <label>Address *
                     <br>
-                <input class="write_input" type="text" name="address">
+                <input class="write_input" type="text" name="address" required>
                 </label>
 
                 <br>
-                <label>VAT Number:
+                <label>VAT Number *
                     <br>
-                    <input class="write_input" type="number" name="vat_num">
+                    <input class="write_input" type="number" name="vat_num" required>
                 </label>
             <br><br>
 
             <?php } elseif($role == "Speaker") { ?>
                 <br>
-                <label>Talk's Subject:
+                <label>Talk's Subject *
                     <br>
-                    <input class="write_input" type="text" name="talk_subject">
+                    <input class="write_input" type="text" name="talk_subject" required>
                 </label>
 
                 <br>
-                <label>Talk's Abstract:
+                <label>Talk's Abstract
                     <br>
                     <textarea id="talk_abstract" name="talk_abstract" rows="6" cols="50"></textarea>
                 </label>
 
             <?php } elseif($role == "Staff") { ?>
                 <br>
-                <label>Department:
+                <label>Department *
                     <br>
-                    <input class="write_input" type="text" name="department"></input>
+                    <input class="write_input" type="text" name="department" required></input>
                 </label>
 
             <?php } 
@@ -99,24 +99,24 @@
         <?php if($role == "Sponsor" || $role == "Partner") {?>
             
             <br>
-            <label>Website link:
+            <label>Website link *
                 <br>
-                <input class="write_input" type="URL" name="website_link">
+                <input class="write_input" type="URL" name="website_link" required>
             </label>
 
             <?php if($role == "Sponsor") { ?>
                 <br>
-                <label>Financial Support Amount:
+                <label>Financial Support Amount *
                     <br>
-                    <input class="write_input" type="number" name="financialSupport_amount">
+                    <input class="write_input" type="number" name="financialSupport_amount" required>
                 </label>
                 
             <?php } elseif($role == "Partner") { ?>
 
                 <br>
-                <label>Support Type:
+                <label>Support Type *
                     <br>
-                    <input class="write_input" type="text" name="supportType">
+                    <input class="write_input" type="text" name="supportType" required>
                 </label>
             <?php } ?>
 

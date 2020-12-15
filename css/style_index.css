@@ -1,11 +1,10 @@
 @import "css/style_general.css";
 
-
 #titleIndex img {
     width: 70%;
     float: left;
     transform: translate(-3%,15%);
-}
+}x
 
 #topText {
     position: absolute;
@@ -23,7 +22,7 @@
     right: 10%;
     font-weight: 800;
     font-size: 3.5em;
-    color: var(--organge-light);
+    color: var(--orange-light);
 }
 
 #seeEvents {
