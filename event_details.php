@@ -40,7 +40,7 @@
  
     $maxNumParticipants = computeMaxNumParticipantsById($eventId);
     include('templates/header_public.php');
-    printArray($participantsPackages);
+
 ?>
 
 <br>
@@ -53,6 +53,7 @@
             <h2>About this Event</h2>
             <p><?=$eventInfo['aboutEvent']?></p>
 
+            <?php if(!empty($eventSpeakers)) {?>
             <h2>The Speakers</h2>
             <?php foreach($eventSpeakers as $speaker){
                 $speakerId = $speaker['id']; ?>
@@ -64,7 +65,9 @@
                 <a href=''>Abstract</a>
             </p>
 
-            <?php } ?>
+            <?php } }
+            
+            if(!empty($eventSponsors)) {?>
 
             <h2>The Sponsors</h2>
             <?php foreach($eventSponsors as $sponsor){
@@ -77,7 +80,9 @@
                 </a>
             </p>
 
-            <?php } ?>
+            <?php } 
+            }
+            if(!empty($eventPartners)) { ?>
 
             <h2>The Partners</h2>
             <?php foreach($eventPartners as $partner){
@@ -90,7 +95,9 @@
                 </a>
                 </p>
 
-            <?php } ?>
+            <?php } 
+            }
+            if(!empty($eventStaff)) { ?>
 
             <h2>The Staff</h2>
             <?php foreach($eventStaff as $staff){
@@ -101,7 +108,7 @@
                 <?=$staff['name']?><br>
                 Department: <?=$staff['department']?><br>
             </p>
-            <?php } ?>
+            <?php } }?>
 
             <h2>Event by:</h2>
             <img class="logotype" src="images/persons/<?=$eventOrganizer['logotype']?>" alt=<?=$eventOrganizer['name']?> width = 100>
@@ -132,6 +139,7 @@
 
         <section id = "packagesInfo">
             <h2>Packages</h2><br>
+            <?php if(!empty($participantsPackages)) {?>
             <h3>for Participants</h3><br>
                 <ul  class = "packagesUL">
                     <?php foreach($participantsPackages as $package) { ?>
@@ -145,6 +153,9 @@
                     
                         
                 </ul>
+            <?php }
+            if(!empty($sponsorsPackages)) { ?>
+
             <h3>for Sponsors</h3><br>
                 <ul  class = "packagesUL">
                     <?php foreach($sponsorsPackages as $package) { ?>
@@ -154,11 +165,11 @@
                                 <i class="fas fa-arrow-right"></i>
                             </a>
                         </li>
-                    <?php } ?>
-                    
-                        
+                    <?php } ?>                        
                 </ul>
-                
+            <?php }
+
+            if(!empty($partnersPackages)) { ?>
 
             <h3>for Partners</h3><br>
                 <ul  class = "packagesUL">
@@ -173,6 +184,7 @@
                     
                         
                 </ul>
+            <?php } ?>
 
         </section> <!-- packagesInfo -->
 
