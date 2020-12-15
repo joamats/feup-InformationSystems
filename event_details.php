@@ -70,11 +70,11 @@
             <?php foreach($eventSponsors as $sponsor){
                 $sponsorId = $sponsor['id']; ?>
 
-            <img class="logotype" src="images/persons/<?=$sponsor['logotype']?>" alt=<?=$sponsor['name']?> width = 100>
             <p>
                 <?=$sponsor['name']?><br>
-                <a href=''>Package</a><br>
-                <a href="<?=$sponsor['website_link']?>" target="_blank">Website</a>
+                <a href="<?=$sponsor['website_link']?>" target="_blank">
+                    <img class="logotype" src="images/persons/<?=$sponsor['logotype']?>" alt=<?=$sponsor['name']?> width = 100>
+                </a>
             </p>
 
             <?php } ?>
@@ -82,14 +82,14 @@
             <h2>The Partners</h2>
             <?php foreach($eventPartners as $partner){
                 $partnerId = $partner['id']; ?>
-
-            <img class="logotype" src="images/persons/<?=$partner['logotype']?>" alt=<?=$partner['name']?> width = 100>
-            <p>
+                
+                <p>
                 <?=$partner['name']?><br>
-                <a href=''>Package</a><br>
-                <a href=<?=$partner['website_link']?>target="_blank">Website</a>
+                <a href="<?=$partner['website_link']?>" target="_blank">
+                    <img class="logotype" src="images/persons/<?=$partner['logotype']?>" alt=<?=$partner['name']?> width = 100>
+                </a>
+                </p>
 
-            </p>
             <?php } ?>
 
             <h2>The Staff</h2>
