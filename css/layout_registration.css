@@ -29,8 +29,3 @@ fieldset > input{
     padding-left: 45px;
     padding-right: 45px;
 }
-
-#footer {
-    position: absolute;
-    bottom:0;
-}
