@@ -4,7 +4,7 @@
     width: 70%;
     float: left;
     transform: translate(-3%,15%);
-}x
+}
 
 #topText {
     position: absolute;
@@ -13,7 +13,6 @@
     font-weight: 800;
     font-size: 3.5em;
     color: var(--blue-dark);
-
 }
 
 #bottomText {
