@@ -43,6 +43,6 @@ a:focus, a:hover {
 
 #footer {
     position: absolute;
-    padding-top:5rem;
     bottom: end;
+    width: 100%;
 }

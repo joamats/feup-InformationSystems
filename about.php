@@ -60,8 +60,6 @@
 
 </section>
 
-<br>
-
 <section id="Matos">
     <img class= "profilePic" src="images/matos.png" alt="João Matos">
     <p><b>João Matos</b></p>
@@ -74,8 +72,6 @@
         <img src="images/github.png" alt="github logo" width=50>
     </a>
 </section>
-
-<br>
 
 <?php
         include('templates/footer.html');
