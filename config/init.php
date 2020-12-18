@@ -4,7 +4,6 @@
   $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
   require_once('helpers/printArray.php');
-
   
   if (isset($_SESSION['message'])) {
     $_MESSAGE = $_SESSION['message'];

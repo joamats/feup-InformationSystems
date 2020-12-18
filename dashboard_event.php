@@ -1,5 +1,16 @@
-<?php include('templates/head.php'); ?>
+<?php 
+require_once('config/init.php');
+if( $_SESSION['roleUserLoggedIn'] === false || $_SESSION['roleUserLoggedIn'] === null) {
+    $_SESSION['message'] = "Please Login First!";
+    die(header('Location: login.php'));
+}
+else {
+    include('templates/head.php'); 
+    include('templates/header_private.html');
+
+?>
 <!DOCTYPE html>
+
 
 <h1>Web Summit 2020</h1>
 <h2>Participants</h2>
@@ -170,6 +181,6 @@
     </fieldset>
 </form>
 
-<?php
+<?php }
     include('templates/footer.html');
 ?>

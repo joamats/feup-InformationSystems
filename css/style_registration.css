@@ -54,10 +54,4 @@ fieldset > input{
     border-radius: 25px;
 }
 
-.message {
-    text-align: center;
-    background-color: #FCC;
-    padding: 0.5em;
-    color: red;
-    grid-column-end: span 3;
-  }
+

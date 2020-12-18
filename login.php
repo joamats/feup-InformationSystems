@@ -8,11 +8,20 @@
 
 <br>
 <h1>Welcome Back!</h1>
-<form action="save.php" method="get">
+
+<form action="action_login.php" method="post">
     <fieldset>
         <legend>
             Exclusive for Event <span class="role">Organizers</span> or <span class="role">Staff</span> Members
         </legend>
+
+        <?php if (isset($_MESSAGE)) { ?>
+            <div class="errorMessage">
+            <?=$_MESSAGE?>
+            </div>
+        <?php } ?>
+
+        <br><br>
         <label>Email:
             <br>
             <input class="write_input" type="text" name="email">

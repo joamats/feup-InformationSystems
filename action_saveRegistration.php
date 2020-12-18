@@ -1,6 +1,5 @@
 <?php 
-    require_once('database/signup.php');
-
+    require_once('database/internal_access.php');
 
     $role = $_GET['role']; 
 
@@ -13,7 +12,6 @@
     if($role != 'Organizer') {
         $eventId = $_GET['id'];
     }
-    
     
     if($role == 'Participant' || $role == 'Speaker' || $role == 'Staff' || $role == 'Organizer' ) {
         require_once('database/persons.php');
@@ -32,7 +30,6 @@
             $_POST['name'],
             $_POST['website_link']
         );
-
     }
         
     switch($role) {

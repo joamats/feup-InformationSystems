@@ -42,6 +42,38 @@
         return ! in_array($insertedEmail, $allEmails);
     }
 
+    // function to check if login is correct, given username & password
+    // retrieves the role of the user, if successful; false otherwise
+    function doLogin($email, $password) {
+        try {
+            global $dbh;
+
+            //look for Organizers
+            $stmt = $dbh->prepare('SELECT * 
+                                FROM Person JOIN Organizer USING (id) 
+                                WHERE email = ? AND password = ? ;');
+            $stmt->execute(array($email, sha1($password)));
+            if($stmt->fetch() !== false) {
+                return "Organizer"; // return if found
+            }
+            global $dbh;
+
+            //look for Staff
+            $stmt = $dbh->prepare('SELECT * 
+                                FROM Person JOIN Staff USING (id) 
+                                WHERE email = ? AND password = ? ;');
+            $stmt->execute(array($email, sha1($password)));
+            if($stmt->fetch() !== false) {
+                return "Staff"; // return if found
+            }
+            
+            return false; // no users found
+        } 
+        catch(PDOException $e) {
+            $err = $e -> getMessage(); 
+        }
+      }
+
 
 
 

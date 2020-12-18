@@ -10,19 +10,35 @@
     require_once('helpers/dates.php');
     require_once('helpers/prices.php');
 
-    $events = getAllEventsInfo();
+    // search results
+    $name = $_GET['name'];
+    // $min_price = $_GET['min_price'];
+    // $max_price = $_GET['max_price'];
+    $local = $_GET['local'];
 
-    // require_once('database/signup.php');
-    // printArray(emailIsNew("harry@potter.c"));
-
+    // get the events, depending if it is a search or a normal page
+    if (isset($name) && isset($local)) {
+        $events = getEventsBySearch($name, $local);
+    }
+    else {
+        $events = getAllEventsInfo();
+    }
 
 ?>
 
 <br>
 <h1 id="eventsNOW">EVENTS NOW</h1>
 
+<form id = "search" action="events_now.php">
+    <input type="text" name = "name" placeholder="Name of Event">
+    <input type="text" name = "local" placeholder="Location">
+    <input type="submit" value="Search">
+</form>
+
 <section class = 'listEvents'>
-    <?php foreach($events as $event) { 
+    <?php 
+
+    foreach($events as $event) { 
         $eventId = $event['id'];
         $maxNumParticipants = computeMaxNumParticipantsById($eventId);
         $priceMin = computePriceMinById($eventId);
@@ -32,7 +48,6 @@
         
         $dateRange = simplifyDateRange($dateStart, $dateEnd);
         $priceRange = simplifyPriceRange($priceMin, $priceMax);
-
     
         ?>
         <article class = "textEvents">

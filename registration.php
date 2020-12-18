@@ -26,13 +26,13 @@
         </legend>
 
         <?php if (isset($_MESSAGE)) { ?>
-            <div class="message">
+            <div class="errorMessage">
             <?=$_MESSAGE?>
             </div>
         <?php } ?>
 
         <br>
-        
+
         <label>Email *
             <br>
             <input class="write_input" type="email" name="email" required>

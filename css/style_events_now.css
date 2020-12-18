@@ -5,6 +5,7 @@
     color: var(--gray-dark);
     margin-left: 2rem;
     padding-left: 4rem;
+    
 }
   
 
@@ -26,4 +27,18 @@
 
 h3 > a:hover, .fas:hover {
     color: var(--orange-dark);
+}
+
+#search {
+    display: flex;
+    margin-left: 5rem;
+    margin-right: 5rem;
+    border-bottom: 1px solid var(--gray-dark);
+    padding-bottom: 1rem;
+}
+
+#search input{
+    flex-grow: 1;
+    margin: 2em;
+    align-self: center;
 }

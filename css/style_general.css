@@ -41,6 +41,14 @@ a:focus, a:hover {
     color: var(--orange-dark);
 }
 
+.errorMessage {
+    text-align: center;
+    background-color: #FCC;
+    padding: 0.5em;
+    color: red;
+    grid-column-end: span 3;
+  }
+
 #footer {
     position: absolute;
     bottom: end;

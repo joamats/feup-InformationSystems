@@ -1,16 +1,19 @@
 <?php
 
-    require_once('config/init.php');
-    require_once('database/user.php');
+    require_once('database/internal_access.php');
 
-    $username = $_POST['username'];
+    $email = $_POST['email'];
     $password = $_POST['password'];
 
-    if (isLoginCorrect($username, $password))
-    $_SESSION['username'] = $username;
-    else
-    $_SESSION['message'] = 'Login failed!';
+    $roleUserLoggedIn = doLogin($email, $password);
+    $_SESSION['roleUserLoggedIn'] = $roleUserLoggedIn;
 
-    header('Location: ' . $_SERVER['HTTP_REFERER']);
-    
+    if ($roleUserLoggedIn != false) {
+        header('Location: dashboard_event.php');
+
+    } else {
+        $_SESSION['message'] = 'Login failed!';
+        die(header('Location: ' . $_SERVER['HTTP_REFERER']));
+    }
+
 ?>

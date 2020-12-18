@@ -5,8 +5,36 @@ require_once('config/init.php');
     function getAllEventsInfo(){
         try {
             global $dbh;
-            $stmt = $dbh -> prepare('SELECT * FROM event');
+            $stmt = $dbh -> prepare('SELECT * FROM Event');
             $stmt -> execute();
+            $events = $stmt -> fetchAll();
+            return $events;
+        } 
+        catch(PDOException $e) {
+            $err = $e -> getMessage(); 
+        }
+    }
+
+    
+    // retrives all the events for a certain search
+    function getEventsBySearch($name,$local) {
+        try {
+            global $dbh;
+            $query = 'SELECT * FROM Event WHERE id >= 1';
+            $params = [];
+
+            if($name != '') {
+                $query = $query . ' AND name LIKE ?';
+                $params[] = "%$name%";
+            }
+
+            if($local != '') {
+                $query = $query . ' AND local LIKE ?';
+                $params[] = "%$local%";
+            }
+
+            $stmt = $dbh -> prepare($query);
+            $stmt -> execute($params);
             $events = $stmt -> fetchAll();
             return $events;
         } 
@@ -66,6 +94,8 @@ require_once('config/init.php');
         
         return $eventDate;
     }
+
+
     
 
 ?>
