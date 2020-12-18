@@ -12,6 +12,10 @@
 
     $events = getAllEventsInfo();
 
+    // require_once('database/signup.php');
+    // printArray(emailIsNew("harry@potter.c"));
+
+
 ?>
 
 <br>

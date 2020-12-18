@@ -40,7 +40,7 @@
 
 
 
-<?php  
+<?php 
     include('templates/footer.html');
 ?>
 

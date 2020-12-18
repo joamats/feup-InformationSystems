@@ -1,7 +1,14 @@
 <?php 
-require_once('config/init.php');
+    require_once('database/signup.php');
+
 
     $role = $_GET['role']; 
+
+    if(($role == "Organizer" || $role == "Staff") && !emailIsNew($_POST['email'])) {
+        $_SESSION['message'] = "Email already exists!";
+        // if email is not ok, same page
+         die(header('Location: ' . $_SERVER['HTTP_REFERER']));
+    }
 
     if($role != 'Organizer') {
         $eventId = $_GET['id'];
@@ -88,17 +95,17 @@ require_once('config/init.php');
         break;
     }
 
-
-    $_SESSION['role'] = $role;
-    $_SESSION['userId'] = $userId;
-    if($role !== "Organizer"){ //organizers are not associated with event
-        $_SESSION['eventId']  = $eventId;
-    }
-
     if($role == "Participant"){
         header('Location: confirmation_registration.php');
-    } else {         
+    }
+    // for organizers and staff, if email is not new    
+    else {       
+        $_SESSION['role'] = $role;
+        $_SESSION['userId'] = $userId;
+        if($role !== "Organizer"){ //organizers are not associated with event
+            $_SESSION['eventId']  = $eventId;
+        }  
         header('Location: images.php');
     }
-
+        
 ?>

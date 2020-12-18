@@ -48,4 +48,18 @@
         }
     }
 
+    // retrives all the emails for Staff members
+    function getAllStaffEmails() {
+        try {
+            global $dbh;
+            $stmt = $dbh -> prepare('SELECT email FROM Person JOIN Staff USING(id);');
+            $stmt -> execute();
+            $emails = $stmt -> fetchAll();
+            return $emails;
+
+        } catch(PDOException $e) {
+            $err = $e -> getMessage(); 
+        }
+    }
+
 ?>

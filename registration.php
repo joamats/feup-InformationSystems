@@ -25,6 +25,14 @@
             Register as <span class="role"><?=$role?></span>
         </legend>
 
+        <?php if (isset($_MESSAGE)) { ?>
+            <div class="message">
+            <?=$_MESSAGE?>
+            </div>
+        <?php } ?>
+
+        <br>
+        
         <label>Email *
             <br>
             <input class="write_input" type="email" name="email" required>
