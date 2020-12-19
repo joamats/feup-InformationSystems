@@ -29,25 +29,42 @@ h3 > a:hover, .fas:hover {
     color: var(--orange-dark);
 }
 
-#search {
-    display: flex;
+.displayControlBar {
     margin-left: 5rem;
     margin-right: 5rem;
     border-bottom: 1px solid var(--gray-dark);
     padding-bottom: 1rem;
 }
 
-#search input{
+#search {
+    display: flex;
+}
+
+#search input, #setPages input{
     flex-grow: 1;
-    margin: 2em;
+    margin: 1em;
     align-self: center;
 }
+
+
 
 .pagination {
     display: flex;
     justify-content: center;
+    margin: 1rem 0;
 }
+
   
  .pagination a {
     margin: 0 1em;
+}
+
+.hiddenAnchor {
+    visibility: hidden;
+}
+
+i.fas fa-less-than, i.fas fa-greater-than{
+    font-size: smaller;
+    padding: 0 4rem;
+    text-align: center;
 }

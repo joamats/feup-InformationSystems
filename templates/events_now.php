@@ -4,12 +4,21 @@
 
 <br>
 <h1 id="eventsNOW">EVENTS NOW</h1>
+<section class = "displayControlBar">
+    <form id = "search" action="events_now.php">
+        <input type="text" name = "name" placeholder="Name of Event">
+        <input type="text" name = "local" placeholder="Location">
+        <input type="submit" value="Search">
+    </form>
+    <br>
+    <form id="setPages" action="events_now.php">
+        <input type="hidden" name = "page" value=1>
+        <input type="number" name = "eventsPage" placeholder="Events per Page" value=<?=$eventsPage?>>
+        <label for="eventsPage">Events per Page</label>
+        <input type="submit" value="Paginate">
+    </form>
 
-<form id = "search" action="events_now.php">
-    <input type="text" name = "name" placeholder="Name of Event">
-    <input type="text" name = "local" placeholder="Location">
-    <input type="submit" value="Search">
-</form>
+</section>
 
 <section class = 'listEvents'>
 
@@ -49,12 +58,27 @@
 
 <?php if(isset($page)) {?>
     <div class="pagination">
-            <?php if ($page === 1) { ?>
-                <a>&lt;</a>
-            <?php } else { ?>
-                <a href="?page=<?=$page-1?>">&lt;</a>
-            <?php } ?> 
-            <?=$page?> 
-            <a href="?page=<?=$page+1?>">&gt;</a>
+            <?php if ($page == 1 && $numberOfPages > 1) { ?>
+                <a class = "hiddenAnchor"><i class="fas fa-less-than"></i></a>
+                <?=$page?> / <?=$numberOfPages?>
+                <a href="?page=<?=$page+1?>&eventsPage=<?=$eventsPage?>"><i class="fas fa-greater-than"></i></a>
+
+            <?php } elseif ($page > 1 && $page < $numberOfPages) { ?>
+                <a href="?page=<?=$page-1?>&eventsPage=<?=$eventsPage?>"><i class="fas fa-less-than"></i></a>
+                <?=$page?> / <?=$numberOfPages?>
+                <a href="?page=<?=$page+1?>&eventsPage=<?=$eventsPage?>"><i class="fas fa-greater-than"></i></a>
+            
+            <?php } elseif ($page == $numberOfPages && $numberOfPages != 1 ) { ?>
+                <a href="?page=<?=$page-1?>&eventsPage=<?=$eventsPage?>"><i class="fas fa-less-than"></i></a>
+                <?=$page?> / <?=$numberOfPages?>
+                <a class = "hiddenAnchor"><i class="fas fa-greater-than"></i></a>
+            
+            <?php } elseif ($page == $numberOfPages && $numberOfPages == 1 ) { ?>
+                <a class = "hiddenAnchor"><i class="fas fa-less-than"></i></a>
+                <?=$page?> / <?=$numberOfPages?>
+                <a class = "hiddenAnchor"><i class="fas fa-greater-than"></i></a>
+            
+            <?php }?>
+    
     </div>
 <?php } ?>

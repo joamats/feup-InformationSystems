@@ -15,13 +15,30 @@
     //pagination
     $page = $_GET['page'];
 
+    
+
     // get the events, depending if it is a search or a normal page
     if (isset($name) && isset($local)) {
         $events = getEventsBySearch($name, $local);
     }
-    else if(isset($page)) { // paginated events
-        $eventsPerPage = 3;
-        $events = getPaginatedEventsInfo($eventsPerPage, $page);
+    else if(isset($page)) {
+        $totalNumberOfEvents = (int) getNumberOfEvents();
+
+        if(isset($_GET['eventsPage'])) { // paginated events
+            $eventsPage = $_GET['eventsPage']; // value got from GET
+        } else {
+            $eventsPage = 3; // default value
+        }
+        $numberOfPages = ceil($totalNumberOfEvents/$eventsPage);
+
+        if($page < 1) {
+            $page = 1;
+        }
+        else if($page > $numberOfPages) {
+            $page = $numberOfPages;
+        }
+
+        $events = getPaginatedEventsInfo($eventsPage, $page);
     }
     else {
         $events = getAllEventsInfo();

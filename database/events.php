@@ -16,12 +16,12 @@ require_once('config/init.php');
     }
 
     // get the info of all events, by page
-    function getPaginatedEventsInfo($eventsPerPage, $page){
+    function getPaginatedEventsInfo($eventsPage, $page){
         try {
             global $dbh;
-            $offset = ($page - 1)*$eventsPerPage;
+            $offset = ($page - 1)*$eventsPage;
             $stmt = $dbh -> prepare('SELECT * FROM Event LIMIT ? OFFSET ?');
-            $stmt -> execute(array($eventsPerPage, $offset));
+            $stmt -> execute(array($eventsPage, $offset));
             $events = $stmt -> fetchAll();
             return $events;
         } 
@@ -108,6 +108,20 @@ require_once('config/init.php');
         $eventDate = $stmt -> fetch() ['date'];
         
         return $eventDate;
+    }
+
+    // retrieve number of events
+    function getNumberOfEvents() {
+        try {
+            global $dbh;
+            $stmt = $dbh -> prepare('SELECT COUNT(*) FROM Event;');
+            $stmt -> execute();
+            $number = $stmt -> fetch()['COUNT(*)'];
+            return $number;
+        } 
+        catch(PDOException $e) {
+            $err = $e -> getMessage(); 
+        }
     }
 
 
