@@ -1,4 +1,4 @@
-@import "css/style_general.css";
+@import "css/general.css";
 
 #text1 h2 b, #text2 h2 b, #titleUs b, #Peralta b, #Matos b{
     color: var(--blue-dark);

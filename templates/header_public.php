@@ -1,7 +1,6 @@
 <!DOCTYPE html>
-<link href="css/style_header.css" rel="stylesheet">
     </head>
-    
+
     <body>
         <header>
             <nav class="header">
