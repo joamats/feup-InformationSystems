@@ -10,7 +10,7 @@ else {
 
 ?>
 <!DOCTYPE html>
-
+<br><br>
 <h1>Web Summit 2020</h1>
 <h2>Participants</h2>
 <table>

@@ -1,26 +1,54 @@
 /* 
     Header_Public
 */
+@import "css/style_general.css";
 
-#header > a {
+.header {
+    top: 1rem;
+    width: 95%;
+    margin: 0 2rem;
+
+}
+
+.header > a {
 
     text-align: center;
     font-size: 16px;
-    line-height: 60px;    
-    padding:1%;
+    line-height: 1.5rem;    
+    padding: 1% 1.5%;
 }
 
-#header > a.trailing {
+.header > a.trailing {
     float: left;
 }
 
-#header img {
+.header img {
     float: left;
-    width: 50px;
-    padding: 12px;
+    width: 60px;
 }
 
-#header > a.actions {
+.header > a.actions {
     float: right;
+}
+
+#buttonLogin, #buttonLogout {
+    border: 3px solid var(--orange-light);
+    border-radius: 5rem;
+}
+
+#buttonLogin:hover, #buttonLogout:hover {
+    border: 3px solid var(--orange-light);
+    background-color: var(--orange-light);
+    border-radius: 5rem;
+    color: white;
+}
+
+#buttonLogout {
+    border: 2px solid #c22d26;
+    margin-left: 1rem;
+}
+#buttonLogout:hover {
+    border: 2px solid #c22d26;
+    background-color: #c22d26
 }
 
