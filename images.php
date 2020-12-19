@@ -13,8 +13,6 @@
         $title = 'So, you want to become an Organizer?';
     }
 
-
-
     if ($role == "Speaker" || $role == "Staff"){
         $prompt = "Profile Picture";
     }
@@ -25,6 +23,8 @@
     include('templates/head.html'); 
     include('templates/header_public.php');
     include('templates/images.php');
+    var_dump($_SESSION['role']);
+    var_dump($_SESSION['userId']);
     include('templates/footer.html');
 ?>
 

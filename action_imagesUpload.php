@@ -2,10 +2,23 @@
 require_once('config/init.php');
 // adapted from: https://www.w3schools.com/php/php_file_upload.asp
 
-$target_dir = "images/persons/";
-$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+$role = $_SESSION['role'];
+$userId = $_SESSION['userId'];
+
+$imageFileType = end(explode('.', $_FILES['fileToUpload']['name']));
+
+if($role == 'Speaker' || $role == 'Staff' || $role == 'Organizer' ) {
+  $target_dir = "images/persons/";
+
+}
+elseif($role == "Sponsor" || $role == "Partner") {
+  $target_dir = "images/entities/";
+}
+
+$newFileName = $userId .'.'. $imageFileType;
+$target_file = $target_dir . $newFileName ;
+
 $uploadOk = 1;
-$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 
 // Check if image file is a actual image or fake image
 if(isset($_POST["submit"])) {
@@ -34,12 +47,13 @@ if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg
   $uploadOk = 0;
 }
 
+
 // Check if $uploadOk is set to 0 by an error
 if ($uploadOk != 0) {
   if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
     $role = $_SESSION['role'];
     $userId = $_SESSION['userId'];
-    $image_name = $_FILES["fileToUpload"]["name"];
+    $image_name = $newFileName;
 
     switch($role) {
       case "Speaker":
@@ -67,6 +81,7 @@ if ($uploadOk != 0) {
 
     header('Location: confirmation_registration.php');
   }
+  
 }
 
 ?>

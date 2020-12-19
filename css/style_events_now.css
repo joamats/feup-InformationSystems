@@ -5,6 +5,7 @@
     color: var(--gray-dark);
     margin-left: 2rem;
     padding-left: 4rem;
+    margin-top: 4rem;
     
 }
   
@@ -32,21 +33,15 @@ h3 > a:hover, .fas:hover {
 .displayControlBar {
     margin-left: 5rem;
     margin-right: 5rem;
-    border-bottom: 1px solid var(--gray-dark);
+    border-bottom: 1px solid var(--gray-light);
     padding-bottom: 1rem;
 }
 
-#search {
-    display: flex;
-}
 
 #search input, #setPages input{
-    flex-grow: 1;
     margin: 1em;
     align-self: center;
 }
-
-
 
 .pagination {
     display: flex;

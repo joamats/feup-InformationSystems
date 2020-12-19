@@ -1,7 +1,7 @@
 @import "css/general.css";
 
 .listEvents {
-  margin: 2rem 0;
+  margin: 1rem 0;
   align-self: center;
   display: flex;
   flex-wrap: wrap;

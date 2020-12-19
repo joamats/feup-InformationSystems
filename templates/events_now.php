@@ -10,7 +10,6 @@
         <input type="text" name = "local" placeholder="Location">
         <input type="submit" value="Search">
     </form>
-    <br>
     <form id="setPages" action="events_now.php">
         <input type="hidden" name = "page" value=1>
         <input type="number" name = "eventsPage" placeholder="Events per Page" value=<?=$eventsPage?>>

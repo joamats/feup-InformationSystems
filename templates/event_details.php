@@ -3,7 +3,7 @@
 <link href="css/style_event_details.css" rel="stylesheet">
 
 <br>
-<h1>EVENT DETAILS</h1>
+
 
 <section id = "eventDetails">
     <section id = "leftPanel">
@@ -35,7 +35,7 @@
             <p>
                 <?=$sponsor['name']?><br>
                 <a href="<?=$sponsor['website_link']?>" target="_blank">
-                    <img class="logotype" src="images/persons/<?=$sponsor['logotype']?>" alt=<?=$sponsor['name']?> width = 100>
+                    <img class="logotype" src="images/entities/<?=$sponsor['logotype']?>" alt=<?=$sponsor['name']?> width = 100>
                 </a>
             </p>
 
@@ -50,7 +50,7 @@
                 <p>
                 <?=$partner['name']?><br>
                 <a href="<?=$partner['website_link']?>" target="_blank">
-                    <img class="logotype" src="images/persons/<?=$partner['logotype']?>" alt=<?=$partner['name']?> width = 100>
+                    <img class="logotype" src="images/entities/<?=$partner['logotype']?>" alt=<?=$partner['name']?> width = 100>
                 </a>
                 </p>
 
