@@ -9,7 +9,7 @@
     else {
         include('templates/head.html'); 
         include('templates/header_private.html');
-        include('templates/dashboard_event.html');
+        include('templates/dashboard_event.php');
     }
     include('templates/footer.html');
 ?>

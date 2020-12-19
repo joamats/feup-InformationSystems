@@ -36,5 +36,5 @@
 <div>
     <a id="not_registered1" href="registration.php?role=Organizer">Become an Organizer </a>
 
-    <a href="events_now.php">Join an Event as a Staff Member </a>
+    <a href="events_now.php?page=1">Join an Event as a Staff Member </a>
 </div>

@@ -42,3 +42,12 @@ h3 > a:hover, .fas:hover {
     margin: 2em;
     align-self: center;
 }
+
+.pagination {
+    display: flex;
+    justify-content: center;
+}
+  
+ .pagination a {
+    margin: 0 1em;
+}

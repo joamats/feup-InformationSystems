@@ -13,7 +13,7 @@
                 <a class="actions" href="dashboard_event.php">Dashboard</a>
                 <?php } ?>
                 <a class="actions" href="registration.php?role=Organizer">Become an Organizer</a>
-                <a class="actions" href="events_now.php">Events</a>
+                <a class="actions" href="events_now.php?page=1">Events</a>
                 <a class="actions" href="about.php">About</a> 
             </nav>
         </header>

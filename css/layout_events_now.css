@@ -1,10 +1,10 @@
 @import "css/general.css";
 
 .listEvents {
-  margin-left: 5rem;
-  margin-right: 5rem;
+  align-self: center;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .listEvents article {

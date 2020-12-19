@@ -12,8 +12,8 @@
 </form>
 
 <section class = 'listEvents'>
-    <?php 
 
+<?php 
     foreach($events as $event) { 
         $eventId = $event['id'];
         $maxNumParticipants = computeMaxNumParticipantsById($eventId);
@@ -24,24 +24,37 @@
         
         $dateRange = simplifyDateRange($dateStart, $dateEnd);
         $priceRange = simplifyPriceRange($priceMin, $priceMax);
+?>
+
+<article class = "textEvents">
+    <img src="images/events/<?=$eventId?>.jpg">
+    <h3>
+        <a href="event_details.php?id=<?=$eventId?>"> 
+            <?=$event['name']?>
+            <i class="fas fa-arrow-right"></i>
+        </a>
+    </h3>
+    <p class='pEvents'>
+        <i class="far fa-calendar"></i><?=$dateRange?> <br>
+        <i class="fas fa-map-marker-alt"></i><?=$event['local']?> <br>
+        <i class="fas fa-euro-sign"></i><?= $priceRange?><br>
+        <i class="fas fa-user-friends"></i>Up to <?=$maxNumParticipants?> participants
     
-        ?>
-        <article class = "textEvents">
-            <img src="images/events/<?=$eventId?>.jpg">
-            <h3>
-                <a href="event_details.php?id=<?=$eventId?>"> 
-                    <?=$event['name']?>
-                    <i class="fas fa-arrow-right"></i>
-                </a>
-            </h3>
-            <p class='pEvents'>
-                <i class="far fa-calendar"></i><?=$dateRange?> <br>
-                <i class="fas fa-map-marker-alt"></i><?=$event['local']?> <br>
-                <i class="fas fa-euro-sign"></i><?= $priceRange?><br>
-                <i class="fas fa-user-friends"></i>Up to <?=$maxNumParticipants?> participants
-            
-            </p>
-        </article>
+    </p>
+</article>
+
         
     <?php } ?>
 </section>
+
+<?php if(isset($page)) {?>
+    <div class="pagination">
+            <?php if ($page === 1) { ?>
+                <a>&lt;</a>
+            <?php } else { ?>
+                <a href="?page=<?=$page-1?>">&lt;</a>
+            <?php } ?> 
+            <?=$page?> 
+            <a href="?page=<?=$page+1?>">&gt;</a>
+    </div>
+<?php } ?>

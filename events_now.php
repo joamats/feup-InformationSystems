@@ -8,13 +8,20 @@
 
     // search results
     $name = $_GET['name'];
+    $local = $_GET['local'];
     // $min_price = $_GET['min_price'];
     // $max_price = $_GET['max_price'];
-    $local = $_GET['local'];
+
+    //pagination
+    $page = $_GET['page'];
 
     // get the events, depending if it is a search or a normal page
     if (isset($name) && isset($local)) {
         $events = getEventsBySearch($name, $local);
+    }
+    else if(isset($page)) { // paginated events
+        $eventsPerPage = 3;
+        $events = getPaginatedEventsInfo($eventsPerPage, $page);
     }
     else {
         $events = getAllEventsInfo();

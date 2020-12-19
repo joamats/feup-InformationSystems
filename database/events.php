@@ -15,6 +15,21 @@ require_once('config/init.php');
         }
     }
 
+    // get the info of all events, by page
+    function getPaginatedEventsInfo($eventsPerPage, $page){
+        try {
+            global $dbh;
+            $offset = ($page - 1)*$eventsPerPage;
+            $stmt = $dbh -> prepare('SELECT * FROM Event LIMIT ? OFFSET ?');
+            $stmt -> execute(array($eventsPerPage, $offset));
+            $events = $stmt -> fetchAll();
+            return $events;
+        } 
+        catch(PDOException $e) {
+            $err = $e -> getMessage(); 
+        }
+    }
+
     
     // retrives all the events for a certain search
     function getEventsBySearch($name,$local) {
