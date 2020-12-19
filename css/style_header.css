@@ -4,10 +4,12 @@
 @import "css/style_general.css";
 
 .header {
-    top: 1rem;
+    position: fixed;
+    top: 0;
     width: 95%;
     margin: 0 2rem;
-
+    padding: 1rem 0;
+    background-color: white;
 }
 
 .header > a {
