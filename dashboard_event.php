@@ -7,7 +7,7 @@
         die(header('Location: login.php'));
     }
     else {
-        include('templates/head.php'); 
+        include('templates/head.html'); 
         include('templates/header_private.html');
         include('templates/dashboard_event.html');
     }

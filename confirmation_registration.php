@@ -1,5 +1,6 @@
-<?php 
-    include('templates/head.php');
+<?php
+    require_once('config/init.php');
+    include('templates/head.html');
     include('templates/header_public.php');
 
     $userId = $_SESSION['userId'];
@@ -9,7 +10,7 @@
         require_once('database/persons.php');
         $userName = getPersonNameById($userId);
     }
-    
+
     elseif($role == "Sponsor" || $role == "Partner") {
         require_once('database/entities.php');
         $userName = getEntityNameById($userId);

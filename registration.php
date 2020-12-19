@@ -1,5 +1,6 @@
 <?php
-    include('templates/head.php'); 
+    require_once('config/init.php');
+
     require_once('database/events.php'); 
     $role = $_GET['role']; 
 
@@ -10,6 +11,7 @@
         $title = 'So, you want to become an Organizer?';
     }
 
+    include('templates/head.html'); 
     include('templates/header_public.php');
     include('templates/registration.php');
     include('templates/footer.html');

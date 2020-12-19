@@ -1,6 +1,6 @@
 <?php 
-    include('templates/head.php');
-    include('templates/header_public.php'); 
+    require_once('config/init.php');
+
     require_once('database/events.php');
     require_once('database/events_derivedAttributes.php');
     require_once('helpers/dates.php');
@@ -20,6 +20,8 @@
         $events = getAllEventsInfo();
     }
 
+    include('templates/head.html');
+    include('templates/header_public.php'); 
     include('templates/events_now.php');
     include('templates/footer.html');
 ?>

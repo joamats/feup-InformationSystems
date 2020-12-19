@@ -1,11 +1,7 @@
-<?php include('templates/head.php'); ?>
-
-<!DOCTYPE html>
-<link href="css/style_about.css" rel="stylesheet">
-<link href="css/layout_about.css" rel="stylesheet">
-
-<?php 
+<?php
+    require_once('config/init.php');
+    include('templates/head.html'); 
     include('templates/header_public.php'); 
-    include('templates/about.php');
+    include('templates/about.html');
     include('templates/footer.html');
 ?>

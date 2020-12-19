@@ -1,6 +1,7 @@
-<?php include('templates/head.php'); 
-    require_once('database/events.php'); 
+<?php
+    require_once('config/init.php');
 
+    require_once('database/events.php'); 
     
     $role = $_SESSION['role'];
     $userId = $_SESSION['userId'];
@@ -21,6 +22,7 @@
         $prompt = "Logotype";
     }
 
+    include('templates/head.html'); 
     include('templates/header_public.php');
     include('templates/images.php');
     include('templates/footer.html');

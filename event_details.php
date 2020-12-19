@@ -1,5 +1,5 @@
-<?php 
-    include('templates/head.php');
+<?php
+    require_once('config/init.php');
 
     require_once('helpers/printArray.php');
     require_once('helpers/dates.php');
@@ -35,6 +35,8 @@
     $priceRange = simplifyPriceRange($priceMin, $priceMax);
  
     $maxNumParticipants = computeMaxNumParticipantsById($eventId);
+
+    include('templates/head.html');
     include('templates/header_public.php');
     include('templates/event_details.php');
     include('templates/footer.html');
