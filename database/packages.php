@@ -43,6 +43,48 @@ require_once('config/init.php');
         }
     }
 
+    // get all Participant Package's names by ID in a Specific Event
+    function getAllParticipantPackagesNameById($eventId) {
+        try {
+            global $dbh;
+            $stmt = $dbh -> prepare('SELECT name FROM ParticipantPackage WHERE event = ?');
+            $stmt -> execute(array($eventId));
+            $allParticipantPackages = $stmt -> fetchAll();
+            return $allParticipantPackages;
+        } 
+        catch(PDOException $e) {
+            $err = $e -> getMessage(); 
+        }
+    }
+
+     // get all Partner Package's names by ID in a Specific Event
+    function getAllPartnerPackagesNameById($eventId) {
+        try {
+            global $dbh;
+            $stmt = $dbh -> prepare('SELECT name FROM PartnerPackage WHERE event = ?');
+            $stmt -> execute(array($eventId));
+            $allPartnerPackages = $stmt -> fetchAll();
+            return $allPartnerPackages;
+        } 
+        catch(PDOException $e) {
+            $err = $e -> getMessage(); 
+        }
+    }
+
+    // get all Sponsor Package's names by ID in a Specific Event
+    function getAllSponsorPackagesNameById($eventId) {
+        try {
+            global $dbh;
+            $stmt = $dbh -> prepare('SELECT name FROM SponsorPackage WHERE event = ?');
+            $stmt -> execute(array($eventId));
+            $allSponsorPackages = $stmt -> fetchAll();
+            return $allSponsorPackages;
+        } 
+        catch(PDOException $e) {
+            $err = $e -> getMessage(); 
+        }
+    }
+
     // get all the information about a ParticipantPackage, for an event, name
     function getParticipantPackageInfo($packageName, $eventId) {
         try {

@@ -2,6 +2,8 @@
     require_once('config/init.php');
 
     require_once('database/events.php'); 
+    
+    require_once('database/packages.php');
 
     if(isset($_GET['role']) && isset($_GET['id'])) { // coming from Participant or Sponsor
         $role = $_GET['role'];
@@ -15,6 +17,18 @@
         $role = $_SESSION['role'];
         $eventId = $_SESSION['id'];
         $title = getEventNameById($eventId);
+    }
+
+    switch($role){
+        case "Participant":
+            $packages_names=getAllParticipantPackagesNameById($eventId);
+            break;
+        case "Sponsor":
+            $packages_names=getAllSponsorPackagesNameById($eventId);
+            break;
+        case "Partner":
+            $packages_names=getAllPartnerPackagesNameById($eventId);
+            break;
     }
 
     include('templates/head.html'); 

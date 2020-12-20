@@ -39,7 +39,8 @@
                 $userId, 
                 $_POST['address'],
                 $_POST['vat_num'],
-                $eventId
+                $eventId,
+                $_POST['package']
             ); break;
             
         case "Speaker":
@@ -68,7 +69,8 @@
             insertSponsorIntoDatabase(
                 $userId,
                 $_POST['financialSupport_amount'],
-                $eventId
+                $eventId,
+                $_POST['package']
             );
         break;
 
@@ -77,7 +79,8 @@
             insertPartnerIntoDatabase(
                 $userId,
                 $_POST['supportType'],
-                $eventId
+                $eventId,
+                $_POST['package']
             );
         break;
         
