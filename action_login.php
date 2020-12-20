@@ -4,9 +4,11 @@
 
     $email = $_POST['email'];
     $password = $_POST['password'];
+    $userId = getUserId($email);
 
     $roleUserLoggedIn = doLogin($email, $password);
     $_SESSION['roleUserLoggedIn'] = $roleUserLoggedIn;
+    $_SESSION['nameUserLoggedIn'] = getPersonNameById($userId);
 
     if ($roleUserLoggedIn != false) {
         header('Location: dashboard_event.php');

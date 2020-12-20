@@ -73,6 +73,7 @@ a:focus, a:hover {
     font-size: 16px;
     line-height: 1.5rem;    
     padding: 1% 1.5%;
+    vertical-align: center;
 }
 
 .header > a.trailing {
@@ -107,6 +108,11 @@ a:focus, a:hover {
 #buttonLogout:hover {
     border: 2px solid #c22d26;
     background-color: #c22d26
+}
+
+#nameUser, #nameUser:hover {
+    color: var(--blue-dark);
+    margin-left: 2rem;
 }
 
 /* Footer */

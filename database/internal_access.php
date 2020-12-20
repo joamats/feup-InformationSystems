@@ -66,7 +66,7 @@
             if($stmt->fetch() !== false) {
                 return "Staff"; // return if found
             }
-            
+
             return false; // no users found
         } 
         catch(PDOException $e) {
@@ -74,10 +74,30 @@
         }
       }
 
+      // returns the id of a User who is logged in with email
+      function getUserId($email){
+        try {
+            global $dbh;
 
+            $stmt = $dbh -> prepare('SELECT id FROM Person JOIN Organizer USING(id)
+                                    WHERE email = ?;');
+            $stmt -> execute(array($email));
+            $id = $stmt -> fetch()['id'];
 
+            $stmt = $dbh -> prepare('SELECT id FROM Person JOIN Staff USING(id)
+                                    WHERE email = ?;');
+            $stmt -> execute(array($email));    
+            $id = $stmt -> fetch()['id'];
 
-
-
+            if($id == null) {
+                return false;
+            } else {
+                return $id;
+            }
+    
+        } catch(PDOException $e) {
+            $err = $e -> getMessage(); 
+        }
+    }
 
 ?>

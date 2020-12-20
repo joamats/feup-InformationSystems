@@ -11,6 +11,8 @@
                 <?php } else { ?>
                 <a class="actions" id = "buttonLogout" href="action_logout.php">Logout</a>
                 <a class="actions" href="dashboard_event.php">Dashboard</a>
+                <a id = "nameUser" class="trailing">Welcome back, <b><?=$_SESSION['nameUserLoggedIn']?>!</b></a>
+                
                 <?php } ?>
                 <a class="actions" href="registration.php?role=Organizer">Become an Organizer</a>
                 <a class="actions" href="events_now.php?page=1">Events</a>
