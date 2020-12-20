@@ -92,16 +92,15 @@
         break;
     }
 
+    $_SESSION['role'] = $role;
+    $_SESSION['userId'] = $userId;
+
     if($role == "Participant"){
         header('Location: confirmation_registration.php');
     }
     // for organizers and staff, if email is not new    
-    else {       
-        $_SESSION['role'] = $role;
-        $_SESSION['userId'] = $userId;
-        if($role !== "Organizer"){ //organizers are not associated with event
-            $_SESSION['eventId']  = $eventId;
-        }  
+    elseif($role !== "Organizer"){ //organizers are not associated with event
+        $_SESSION['eventId']  = $eventId;
         header('Location: images.php');
     }
         
