@@ -11,13 +11,15 @@
         <div id="leftText">
             <h2>About this Event</h2>
             <p><?=$eventInfo['aboutEvent']?></p>
-
+        
             <?php if(!empty($eventSpeakers)) {?>
             <h2>The Speakers</h2>
             <?php foreach($eventSpeakers as $speaker){
                 $speakerId = $speaker['id']; ?>
 
-            <img class="profilePic" src="images/persons/<?=$speaker['profile_pic']?>" alt=<?=$speaker['name']?> width = 100>
+            <div class = "picFrame">
+                <img class = "profilePic" src="images/persons/<?=$speaker['profile_pic']?>" alt=<?=$speaker['name']?> width=100>
+            </div>
             <p>
                 <?=$speaker['title']?>   <?=$speaker['name']?><br>
                 <?=$speaker['talk_subject']?><br>
