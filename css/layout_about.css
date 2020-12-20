@@ -13,11 +13,13 @@ body > header {
 #titlePhilosophy {
     grid-column: 1/5;
     grid-row: 2;
+    margin-left: 0%;
 }
 
 #text1 {
     grid-column: 1/4;
     grid-row: 3;
+    padding-bottom: 4rem;
 }
 
 #img1 {
@@ -38,7 +40,7 @@ body > header {
 #titleContacts {
     grid-row: 5;
     grid-column: 1/5;
-
+    margin-left: 0%;
 }
 
 #titleUs {
@@ -49,8 +51,7 @@ body > header {
 
 #Peralta {
     grid-column: 2;
-    grid-row: 7
- 
+    grid-row: 7;
 }
 
 a img {
@@ -65,6 +66,25 @@ img{
     grid-column: 3;
     grid-row: 7;
 
+}
+
+h1, #titleUs, #text1, #img2{
+    padding-left: 5rem;
+}
+
+#text2, #img1 {
+    padding-right: 5rem;
+}
+ 
+
+#Peralta, #Matos {
+    padding: 3rem;  
+    text-align: center;
+
+}
+
+#Peralta p, #Matos p {
+    text-align: center;
 }
 
 #footer {
