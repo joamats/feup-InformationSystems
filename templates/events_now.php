@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <link href="css/style_events_now.css" rel="stylesheet">
 <link href="css/layout_events_now.css" rel="stylesheet">
+<link href="css/responsive_events_now.css" rel="stylesheet">
+
 
 <br>
 <h1 id="eventsNOW">EVENTS NOW</h1>

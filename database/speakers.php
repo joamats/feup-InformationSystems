@@ -49,4 +49,19 @@
         }
     }
 
+    // get info from a Speaker, given his id
+    function getSpeakerInfo($personId) {
+        try {
+            global $dbh;
+            $stmt = $dbh -> prepare('SELECT * FROM Speaker WHERE id = ?;');
+            $stmt -> execute(array($personId));
+            $speakerInfo = $stmt -> fetch();
+            return $speakerInfo;
+
+        } catch(PDOException $e) {
+            $err = $e -> getMessage(); 
+        }
+    }
+
+
 ?>

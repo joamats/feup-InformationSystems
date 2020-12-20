@@ -21,7 +21,7 @@
             <p>
                 <?=$speaker['title']?>   <?=$speaker['name']?><br>
                 <?=$speaker['talk_subject']?><br>
-                <a href=''>Abstract</a>
+                <a href="see_more.php?eventId=<?=$eventId?>&item=Speaker&personId=<?=$speakerId?>">Read more</a>
             </p>
 
             <?php } }
@@ -103,14 +103,12 @@
                 <ul  class = "packagesUL">
                     <?php foreach($participantsPackages as $package) { ?>
                         <li>
-                            <a href = ''>
-                                <?=$package['name']?>
-                                <i class="fas fa-arrow-right"></i>
+                            <a href = "see_more.php?eventId=<?=$eventId?>&item=ParticipantPackage&packageName=<?=$package['name']?>">
+                            <?=$package['name']?> <i class="fas fa-arrow-right"></i>
                             </a>
                         </li>
                     <?php } ?>
-                    
-                        
+        
                 </ul>
             <?php }
             if(!empty($sponsorsPackages)) { ?>
@@ -119,7 +117,7 @@
                 <ul  class = "packagesUL">
                     <?php foreach($sponsorsPackages as $package) { ?>
                         <li>
-                            <a href = ''>
+                            <a href = "see_more.php?eventId=<?=$eventId?>&item=SponsorPackage&packageName=<?=$package['name']?>">
                                 <?=$package['name']?>
                                 <i class="fas fa-arrow-right"></i>
                             </a>
@@ -134,7 +132,7 @@
                 <ul  class = "packagesUL">
                     <?php foreach($partnersPackages as $package) { ?>
                         <li>
-                            <a href = ''>
+                            <a href = "see_more.php?eventId=<?=$eventId?>&item=PartnerPackage&packageName=<?=$package['name']?>">
                                 <?=$package['name']?>
                                 <i class="fas fa-arrow-right"></i>
                             </a>

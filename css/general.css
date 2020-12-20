@@ -29,8 +29,12 @@ html {
     height: 100%;
  }
 
+ body{
+     width: 95%;
+ }
 
- a {
+
+a {
     text-decoration: none;
     color: var(--gray-dark);
     font-weight: 500;
@@ -40,6 +44,7 @@ a:focus, a:hover {
     text-decoration: none;
     color: var(--orange-dark);
 }
+
 
 .errorMessage {
     text-align: center;

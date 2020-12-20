@@ -88,13 +88,10 @@ require_once('config/init.php');
 
     // get the name of an event
     function getEventNameById($eventId){
-        // $eventInfo = getEventInfoById($eventId);
-        // $eventName = $eventInfo['name'];
         global $dbh;
-        $stmt = $dbh -> prepare('SELECT * FROM event WHERE id = ?');
+        $stmt = $dbh -> prepare('SELECT name FROM Event WHERE id = ?');
         $stmt -> execute(array($eventId));
         $eventName = $stmt -> fetch() ['name'];
-        
         return $eventName;
     }
 
