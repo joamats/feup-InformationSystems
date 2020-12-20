@@ -5,7 +5,7 @@
         <header>
             <nav class="header">
                 <a href="index.php"><img id="logo" src="images/logo.png" alt="logo"></a>
-                <?php if (!isset($_SESSION['roleUserLoggedIn'])) { ?>
+                <?php if ($_SESSION['roleUserLoggedIn'] == false ) { ?>
                 <a class="actions" id = "buttonLogin" href="login.php">Login</a>
                 
                 <?php } else { ?>
