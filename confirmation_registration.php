@@ -25,7 +25,9 @@
         $title = 'Registration as an Organizer';
     }
 
-    session_destroy();
+    unset($_SESSION['userId']);
+    unset($_SESSION['role']);
+    
     include('templates/confirmation_registration.php');
     include('templates/footer.html');
 ?>

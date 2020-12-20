@@ -25,7 +25,7 @@
     }
 
     // delete from $role 'Partner' if no packages are defined
-    if(empty($partnerPackages)) {
+    if(empty($partnersPackages)) {
         if (($key = array_search('Partner', $roles)) !== false) {
             unset($roles[$key]);
         }

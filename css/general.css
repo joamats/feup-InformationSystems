@@ -73,7 +73,6 @@ a:focus, a:hover {
     font-size: 16px;
     line-height: 1.5rem;    
     padding: 1% 1.5%;
-    vertical-align: center;
 }
 
 .header > a.trailing {
