@@ -63,7 +63,7 @@
                     <br>
                     <input class="write_input" type="number" name="vat_num" required>
                 </label>
-            <br><br>
+            <br>
 
             <?php } elseif($role == "Speaker") { ?>
                 <br>
@@ -110,11 +110,22 @@
                     <br>
                     <input class="write_input" type="text" name="supportType" required>
                 </label>
+                <br>
             <?php } ?>
 
-            <br>
-
         <?php } ?>
+
+        <?php if($role=="Sponsor" || $role=="Participant" || $role=="Partner"){?>
+            <label>Choose a package *
+                <br>
+                <select name="package">
+                    <?php foreach ($packages_names as $package_name){?>
+                        <option value=<?=$package_name['name']?>><?=$package_name['name']?></option>
+                    <?php } ?>
+                </select>
+            </label>
+
+        <?php }?>
 
         <br><br>
         <input type="submit" value="Submit">

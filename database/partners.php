@@ -21,14 +21,15 @@
     function insertPartnerIntoDatabase(
         $entityId,
         $supportType,
-        $eventId
+        $eventId,
+        $package
         ) {
         
         try {
             global $dbh;
-            $stmt = $dbh -> prepare('INSERT INTO Partner(id, supportType, event)
-                                    VALUES(?, ?, ?);');
-            $stmt -> execute(array($entityId, $supportType, $eventId));
+            $stmt = $dbh -> prepare('INSERT INTO Partner(id, supportType, event, package)
+                                    VALUES(?, ?, ?, ?);');
+            $stmt -> execute(array($entityId, $supportType, $eventId, $package));
 
         } catch(PDOException $e) {
             $err = $e -> getMessage(); 
