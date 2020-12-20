@@ -5,14 +5,15 @@ require_once('config/init.php');
         $personId, 
         $address,
         $vat_num,
-        $eventId
+        $eventId,
+        $package
         ) {
 
         try {
             global $dbh;
-            $stmt = $dbh -> prepare('INSERT INTO Participant(id, address, vat_num, event)
-                                    VALUES(?, ?, ?, ?);');
-            $stmt -> execute(array($personId, $address, $vat_num, $eventId));
+            $stmt = $dbh -> prepare('INSERT INTO Participant(id, address, vat_num, event, package)
+                                    VALUES(?, ?, ?, ?, ?);');
+            $stmt -> execute(array($personId, $address, $vat_num, $eventId, $package));
 
         } catch(PDOException $e) {
             $err = $e -> getMessage(); 

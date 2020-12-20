@@ -21,14 +21,16 @@
     function insertSponsorIntoDatabase(
         $entityId,
         $financialSupport_amount,
-        $eventId
+        $eventId,
+        $package
+
         ) {
         
         try {
             global $dbh;
-            $stmt = $dbh -> prepare('INSERT INTO Sponsor(id, financialSupport_amount, event)
-                                    VALUES(?, ?, ?);');
-            $stmt -> execute(array($entityId, $financialSupport_amount, $eventId));
+            $stmt = $dbh -> prepare('INSERT INTO Sponsor(id, financialSupport_amount, event, package)
+                                    VALUES(?, ?, ?, ?);');
+            $stmt -> execute(array($entityId, $financialSupport_amount, $eventId, $package));
 
         } catch(PDOException $e) {
             $err = $e -> getMessage(); 
