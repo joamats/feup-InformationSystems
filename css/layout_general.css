@@ -55,7 +55,33 @@ body{
     margin-left: 2rem;
 }
 
+h1 {
+    margin-left: 5%;
+    margin-bottom: 0;
+}
 
+legend{
+    margin-left: 15%;
+    margin-bottom: 1em;
+}
+
+label>*{
+    margin-left: 35%;
+    margin-bottom: 2%;
+}
+
+label{
+    margin-left: 35.6%;
+}
+
+fieldset > input{
+    position: relative;
+    margin-left: 46%;
+    padding-top:10px;
+    padding-bottom:10px;
+    padding-left: 45px;
+    padding-right: 45px;
+}
 
 /* Footer */
 

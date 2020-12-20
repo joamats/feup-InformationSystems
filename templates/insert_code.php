@@ -1,6 +1,4 @@
 <!DOCTYPE html>
-<link href="css/style_registration.css" rel="stylesheet">
-<link href="css/layout_registration.css" rel="stylesheet">
 
 
 <br>
