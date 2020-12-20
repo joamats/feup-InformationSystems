@@ -4,34 +4,6 @@
     color: var(--blue-dark);
     font-weight: 800;
 }
-
-h1, #titleUs, #text1, #img2{
-    padding-left: 5rem;
-}
-
-#titleContacts, #titlePhilosophy {
-    padding-top: 4rem;
-}
-
-#text1 {
-    padding-bottom: 4rem;
-}
-
-#text2, #img1 {
-    padding-right: 5rem;
-}
- 
-
-#Peralta, #Matos {
-    padding: 3rem;  
-    text-align: center;
-
-}
-
-#Peralta p, #Matos p {
-    text-align: center;
-}
-
 .profilePic {
     object-fit: cover;
     border-radius: 50%;

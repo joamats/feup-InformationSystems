@@ -1,13 +1,4 @@
 @import "css/general.css";
-
-
-#eventsNOW{
-    color: var(--gray-dark);
-    margin-left: 2rem;
-    padding-left: 4rem;
-    margin-top: 4rem;
-    
-}
   
 
 .pEvents i{
