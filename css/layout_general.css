@@ -1,0 +1,66 @@
+/*
+    General Layout
+*/
+
+html {
+    height: 100%;
+}
+
+body{
+    width: 95%;
+}
+
+.errorMessage {
+    text-align: center;
+    padding: 0.5em;
+    grid-column-end: span 3;
+}
+
+/* 
+    Header
+*/
+
+.header {
+    position: fixed;
+    top: 0;
+    width: 95%;
+    margin: 0 2rem;
+    padding: 1rem 0;
+}
+
+.header > a {
+    text-align: center;
+    line-height: 1.5rem;    
+    padding: 1% 1.5%;
+}
+
+.header > a.trailing {
+    float: left;
+}
+
+.header img {
+    float: left;
+    width: 60px;
+}
+
+.header > a.actions {
+    float: right;
+}
+
+#buttonLogout {
+    margin-left: 1rem;
+}
+
+#nameUser, #nameUser:hover {
+    margin-left: 2rem;
+}
+
+
+
+/* Footer */
+
+#footer {
+    position: absolute;
+    bottom: end;
+    width: 90%;
+}
