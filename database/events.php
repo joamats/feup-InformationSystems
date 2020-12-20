@@ -121,7 +121,14 @@ require_once('config/init.php');
         }
     }
 
+    // //orders events by date
+    // function getEventsSortedByDate() {
+    //     try {
+    //         global $dbh;
+    //         $stmt = $dbh -> prepare('SELECT * FROM Event ORDER BY date_start DESC;')
 
+    //     }
+    // }
     
 
 ?>
