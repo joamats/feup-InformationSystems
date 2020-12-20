@@ -7,6 +7,7 @@
     $userId = getUserId($email);
 
     $roleUserLoggedIn = doLogin($email, $password);
+    $_SESSION['idUserLoggedIn'] = $userId;
     $_SESSION['roleUserLoggedIn'] = $roleUserLoggedIn;
     $_SESSION['nameUserLoggedIn'] = getPersonNameById($userId);
 

@@ -81,12 +81,16 @@ a:focus, a:hover {
     color: var(--blue-dark);
 }
 
+/* Headings */
+
 h1 {
     margin-top: 2em;
     font-weight: 800;
     font-size: 3.5rem;
     color: var(--blue-dark);
 }
+
+/* Forms */
 
 fieldset{
     border: none;
@@ -133,3 +137,4 @@ fieldset > input{
     background-color: var(--blue-dark);
     border-radius: 25px;
 }
+

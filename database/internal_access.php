@@ -84,6 +84,10 @@
             $stmt -> execute(array($email));
             $id = $stmt -> fetch()['id'];
 
+            if($id != null){
+                return $id;
+            }
+
             $stmt = $dbh -> prepare('SELECT id FROM Person JOIN Staff USING(id)
                                     WHERE email = ?;');
             $stmt -> execute(array($email));    
