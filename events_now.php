@@ -14,8 +14,11 @@
 
     //pagination
     $page = $_GET['page'];
-    $order=$_GET['order'];
+    $order = $_GET['order'];
 
+    if(!isset($order)){
+        $order = "ascendent_date";
+    }
     
 
     // get the events, depending if it is a search or a normal page
@@ -39,7 +42,7 @@
             $page = $numberOfPages;
         }
 
-        $events = getPaginatedEventsInfo($eventsPage, $page, $order);
+        $events = getPaginatedOrderedEventsInfo($eventsPage, $page, $order);
     }
     else {
         $events = getAllEventsInfo();

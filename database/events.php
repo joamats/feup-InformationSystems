@@ -16,7 +16,7 @@ require_once('config/init.php');
     }
 
     // get the info of all events, by page
-    function getPaginatedEventsInfo($eventsPage, $page, $order){
+    function getPaginatedOrderedEventsInfo($eventsPage, $page, $order){
         try {
             global $dbh;
             $offset = ($page - 1)*$eventsPage;

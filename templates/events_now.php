@@ -21,8 +21,13 @@
     <form id="sortby" action="events_now.php">
         <input type="hidden" name = "page" value=1>
         <select name="order">
-            <option value="ascendent_date"> Date: Ascending</option>
-            <option value="descendent_date"> Date: Descending</option>
+            <?php if($order == "ascendent_date") {?>
+                <option value="ascendent_date"> Date: Ascending</option>
+                <option value="descendent_date"> Date: Descending</option>
+            <?php } else { ?>
+                <option value="descendent_date"> Date: Descending</option>
+                <option value="ascendent_date"> Date: Ascending</option>
+            <?php } ?>
         </select>
         <input type="submit" value="Sort">
     </form>
@@ -70,15 +75,15 @@
             <?php if ($page == 1 && $numberOfPages > 1) { ?>
                 <a class = "hiddenAnchor"><i class="fas fa-less-than"></i></a>
                 <?=$page?> / <?=$numberOfPages?>
-                <a href="?page=<?=$page+1?>&eventsPage=<?=$eventsPage?>"><i class="fas fa-greater-than"></i></a>
+                <a href="?page=<?=$page+1?>&eventsPage=<?=$eventsPage?>&order=<?=$order?>"><i class="fas fa-greater-than"></i></a>
 
             <?php } elseif ($page > 1 && $page < $numberOfPages) { ?>
-                <a href="?page=<?=$page-1?>&eventsPage=<?=$eventsPage?>"><i class="fas fa-less-than"></i></a>
+                <a href="?page=<?=$page-1?>&eventsPage=<?=$eventsPage?>&order=<?=$order?>"><i class="fas fa-less-than"></i></a>
                 <?=$page?> / <?=$numberOfPages?>
-                <a href="?page=<?=$page+1?>&eventsPage=<?=$eventsPage?>"><i class="fas fa-greater-than"></i></a>
+                <a href="?page=<?=$page+1?>&eventsPage=<?=$eventsPage?>&order=<?=$order?>"><i class="fas fa-greater-than"></i></a>
             
             <?php } elseif ($page == $numberOfPages && $numberOfPages != 1 ) { ?>
-                <a href="?page=<?=$page-1?>&eventsPage=<?=$eventsPage?>"><i class="fas fa-less-than"></i></a>
+                <a href="?page=<?=$page-1?>&eventsPage=<?=$eventsPage?>&order=<?=$order?>"><i class="fas fa-less-than"></i></a>
                 <?=$page?> / <?=$numberOfPages?>
                 <a class = "hiddenAnchor"><i class="fas fa-greater-than"></i></a>
             
