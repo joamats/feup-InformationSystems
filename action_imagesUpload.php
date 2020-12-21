@@ -26,25 +26,24 @@ if(isset($_POST["submit"])) {
   if($check !== false) {
     $uploadOk = 1;
   } else {
-    echo "File is not an image.";
+    $_SESSION['message']= "File is not an image.";
     $uploadOk = 0;
   }
 }
 
-// Check if file already exists
-if (file_exists($target_file)) {
-  $uploadOk = 0;
-}
 
 // Check file size, less than 4MB
 if ($_FILES["fileToUpload"]["size"]/1024 > 4096) {
   $uploadOk = 0; 
+  $_SESSION['message']= "File is larger than 4MB.";
+
 }
 
 // Allow certain file formats
 if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
 && $imageFileType != "gif" ) {
   $uploadOk = 0;
+  $_SESSION['message']= "File must have a .jpg; .png; .jpeg or .gif extension.";
 }
 
 
@@ -81,7 +80,9 @@ if ($uploadOk != 0) {
 
     header('Location: confirmation_registration.php');
   }
-  
+}
+else{
+  header('Location: images.php');
 }
 
 ?>
