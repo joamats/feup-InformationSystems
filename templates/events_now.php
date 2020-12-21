@@ -19,6 +19,7 @@
         <input type="submit" value="Paginate">
     </form>
     <form id="sortby" action="events_now.php">
+        <input type="hidden" name = "page" value=1>
         <select name="order">
             <option value="ascendent_date"> Date: Ascending</option>
             <option value="descendent_date"> Date: Descending</option>

@@ -16,11 +16,18 @@ require_once('config/init.php');
     }
 
     // get the info of all events, by page
-    function getPaginatedEventsInfo($eventsPage, $page){
+    function getPaginatedEventsInfo($eventsPage, $page, $order){
         try {
             global $dbh;
             $offset = ($page - 1)*$eventsPage;
-            $stmt = $dbh -> prepare('SELECT * FROM Event LIMIT ? OFFSET ?');
+            if($order=="descendent_date"){
+                $stmt = $dbh -> prepare('SELECT * FROM Event ORDER BY date_start DESC
+                                        LIMIT ? OFFSET ?;');
+            }
+            else{
+                $stmt = $dbh -> prepare('SELECT * FROM Event ORDER BY date_start ASC
+                                        LIMIT ? OFFSET ?;');
+            }
             $stmt -> execute(array($eventsPage, $offset));
             $events = $stmt -> fetchAll();
             return $events;

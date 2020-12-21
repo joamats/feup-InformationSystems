@@ -39,10 +39,7 @@
             $page = $numberOfPages;
         }
 
-        $events = getPaginatedEventsInfo($eventsPage, $page);
-    }
-    else if(isset($order)){
-        $events=getAllEventsInfoSortedByDate($order);
+        $events = getPaginatedEventsInfo($eventsPage, $page, $order);
     }
     else {
         $events = getAllEventsInfo();
