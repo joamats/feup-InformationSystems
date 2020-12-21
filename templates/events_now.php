@@ -9,9 +9,15 @@
 <section class = "displayControlBar">
     <form id = "search" action="events_now.php">
         <input type="hidden" name = "page" value=1>
-        <input type="text" name = "name" placeholder="Name of Event" value=<?=$name?>>
-        <input type="text" name = "local" placeholder="Location"value=<?=$local?> >
-        <input type="number" name = "eventsPage" placeholder="Events per Page" value=<?=$eventsPage?>>
+        <b> Search by: </b>
+        <br>
+        <label for="name">Name of Event:</label>
+        <input type="text" name = "name" value=<?=$name?>>
+        <label for="name"> Location: </label>
+        <input type="text" name = "local" value=<?=$local?> >
+        <label for="name"> Events per Page: </label>
+        <input type="number" name = "eventsPage"  value=<?=$eventsPage?>>
+        <label for="name"> Order by: </label>
         <select name="order">
             <?php if($order == "ascendent_date") {?>
                 <option value="ascendent_date"> Date: Ascending</option>

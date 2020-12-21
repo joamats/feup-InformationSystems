@@ -29,10 +29,10 @@ h3 > a:hover, .fas:hover {
 }
 
 
-#search input, #setPages input{
+/* #search input, #setPages input{
     margin: 1em;
     align-self: center;
-}
+} */
 
 .pagination {
     display: flex;

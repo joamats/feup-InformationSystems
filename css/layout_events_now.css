@@ -43,3 +43,7 @@
   grid-column: 3;
   grid-row: 4;
 }
+
+#search > label{
+  margin-left: 0%;
+}
