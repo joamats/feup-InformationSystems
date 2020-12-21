@@ -15,38 +15,24 @@
     //pagination
     $page = $_GET['page'];
     $order = $_GET['order'];
+    $eventsPage = $_GET['eventsPage'];
+
+    if(!isset($eventsPage) || $eventsPage == 0){
+        $eventsPage = 3;
+    }
+
+    if(!isset($page)){
+        $page = 1;
+    }
 
     if(!isset($order)){
         $order = "ascendent_date";
     }
+
+    $totalNumberOfEvents = (int) getNumberOfEvents($name, $local);
+    $numberOfPages = ceil($totalNumberOfEvents / $eventsPage);
     
-
-    // get the events, depending if it is a search or a normal page
-    if (isset($name) && isset($local)) {
-        $events = getEventsBySearch($name, $local);
-    }
-    else if(isset($page)) {
-        $totalNumberOfEvents = (int) getNumberOfEvents();
-
-        if(isset($_GET['eventsPage'])) { // paginated events
-            $eventsPage = $_GET['eventsPage']; // value got from GET
-        } else {
-            $eventsPage = 3; // default value
-        }
-        $numberOfPages = ceil($totalNumberOfEvents/$eventsPage);
-
-        if($page < 1) {
-            $page = 1;
-        }
-        else if($page > $numberOfPages) {
-            $page = $numberOfPages;
-        }
-
-        $events = getPaginatedOrderedEventsInfo($eventsPage, $page, $order);
-    }
-    else {
-        $events = getAllEventsInfo();
-    }
+    $events = getEventsControlled($name, $local, $eventsPage, $page, $order);
 
     include('templates/head.html');
     include('templates/header_public.php'); 

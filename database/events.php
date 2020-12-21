@@ -39,7 +39,7 @@ require_once('config/init.php');
 
     
     // retrives all the events for a certain search
-    function getEventsBySearch($name,$local) {
+    function getEventsBySearch($name, $local) {
         try {
             global $dbh;
             $query = 'SELECT * FROM Event WHERE id >= 1';
@@ -115,11 +115,24 @@ require_once('config/init.php');
     }
 
     // retrieve number of events
-    function getNumberOfEvents() {
+    function getNumberOfEvents($name, $local) {
         try {
             global $dbh;
-            $stmt = $dbh -> prepare('SELECT COUNT(*) FROM Event;');
-            $stmt -> execute();
+            $query = 'SELECT COUNT(*) FROM Event WHERE id >=1';
+            $params = [];
+
+            if($name != ''){
+                $query = $query . ' AND name LIKE ?';
+                $params[] = "%$name%";
+            }
+
+            if($local != ''){
+                $query = $query . ' AND local LIKE ?';
+                $params[] = "%$local%";
+            }
+
+            $stmt = $dbh -> prepare($query);
+            $stmt -> execute($params);
             $number = $stmt -> fetch()['COUNT(*)'];
             return $number;
         } 
@@ -142,6 +155,46 @@ require_once('config/init.php');
             $events = $stmt -> fetchAll();
             return $events;
         }
+        catch(PDOException $e) {
+            $err = $e -> getMessage(); 
+        }
+    }
+
+
+    // retrives all the events for a certain search, order, page, no. pages
+    function getEventsControlled($name, $local, $eventsPage, $page, $order) {
+        try {
+            global $dbh;
+            $query = 'SELECT * FROM Event WHERE id >= 1';
+            $params = [];
+
+            if($name != '') {
+                $query = $query . ' AND name LIKE ?';
+                $params[] = "%$name%";
+            }
+
+            if($local != '') {
+                $query = $query . ' AND local LIKE ?';
+                $params[] = "%$local%";
+            }
+
+            $offset = ($page - 1) * $eventsPage;
+
+            if($order == "descendent_date"){
+                $query = $query . ' ORDER BY date_start DESC LIMIT ? OFFSET ?;';
+            }
+            else {
+                $query = $query . ' ORDER BY date_start ASC LIMIT ? OFFSET ?;';
+            }
+
+            $params[] = $eventsPage;
+            $params[] = $offset;
+
+            $stmt = $dbh -> prepare($query);
+            $stmt -> execute($params);
+            $events = $stmt -> fetchAll();
+            return $events;
+        } 
         catch(PDOException $e) {
             $err = $e -> getMessage(); 
         }
