@@ -12,7 +12,7 @@
     $_SESSION['nameUserLoggedIn'] = getPersonNameById($userId);
 
     if ($roleUserLoggedIn != false) {
-        header('Location: dashboard_event.php');
+        header('Location: my_events.php');
 
     } else {
         $_SESSION['message'] = 'Login failed!';

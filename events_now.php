@@ -1,6 +1,5 @@
 <?php 
     require_once('config/init.php');
-
     require_once('database/events.php');
     require_once('database/events_derivedAttributes.php');
     require_once('helpers/dates.php');
@@ -9,8 +8,6 @@
     // search results
     $name = $_GET['name'];
     $local = $_GET['local'];
-    // $min_price = $_GET['min_price'];
-    // $max_price = $_GET['max_price'];
 
     //pagination
     $page = $_GET['page'];

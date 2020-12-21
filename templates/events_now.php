@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <link href="css/style_events_now.css" rel="stylesheet">
 <link href="css/layout_events_now.css" rel="stylesheet">
-<link href="css/responsive_events_now.css" rel="stylesheet">
 
 
 <br>
@@ -60,7 +59,6 @@
         <i class="fas fa-map-marker-alt"></i><?=$event['local']?> <br>
         <i class="fas fa-euro-sign"></i><?= $priceRange?><br>
         <i class="fas fa-user-friends"></i>Up to <?=$maxNumParticipants?> participants
-    
     </p>
 </article>
 

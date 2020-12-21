@@ -15,6 +15,21 @@ require_once('config/init.php');
         }
     }
 
+    // get the info of all events, for organizer
+    function getAllEventsInfoByOrganizer($organizer){
+        try {
+            global $dbh;
+            $stmt = $dbh -> prepare('SELECT * FROM Event WHERE organizer = ?');
+            $stmt -> execute(array($organizer));
+            $events = $stmt -> fetchAll();
+            return $events;
+        } 
+        catch(PDOException $e) {
+            $err = $e -> getMessage(); 
+        }
+    }
+
+
     // get the info of all events, by page
     function getPaginatedOrderedEventsInfo($eventsPage, $page, $order){
         try {

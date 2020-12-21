@@ -1,0 +1,24 @@
+@import "css/general.css";
+
+#moreOptions {
+    font-weight: 500;
+    font-size: 15px;
+    padding-bottom: 0.5em;
+    padding-top: 0.5em;
+    border-style: solid;
+    border-radius: 5em;
+    border-color: var(--blue-light);
+    border-width: 2px;
+    color: var(--blue-dark);
+    text-align: center;
+    margin: 1rem 3rem;
+}
+
+#moreOptions:focus, #moreOptions:hover {
+    background-color: var(--blue-light);
+}
+
+#moreOptions i {
+    padding-left: 1em;
+    color: var(--blue-dark);
+}
