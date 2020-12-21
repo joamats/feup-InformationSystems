@@ -18,6 +18,13 @@
         <label for="eventsPage">Events per Page</label>
         <input type="submit" value="Paginate">
     </form>
+    <form id="sortby" action="events_now.php">
+        <select name="order">
+            <option value="ascendent_date"> Date: Ascending</option>
+            <option value="descendent_date"> Date: Descending</option>
+        </select>
+        <input type="submit" value="Sort">
+    </form>
 
 </section>
 

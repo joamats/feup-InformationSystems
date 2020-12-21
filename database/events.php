@@ -121,14 +121,24 @@ require_once('config/init.php');
         }
     }
 
-    // //orders events by date
-    // function getEventsSortedByDate() {
-    //     try {
-    //         global $dbh;
-    //         $stmt = $dbh -> prepare('SELECT * FROM Event ORDER BY date_start DESC;')
-
-    //     }
-    // }
+    //orders events by date
+    function getAllEventsInfoSortedByDate($order){
+        try {
+            global $dbh;
+            if($order=="descendent_date"){
+                $stmt = $dbh -> prepare('SELECT * FROM Event ORDER BY date_start DESC;');
+            }
+            else if($order=="ascendent_date"){
+                $stmt = $dbh -> prepare('SELECT * FROM Event ORDER BY date_start ASC;');
+            }
+            $stmt -> execute();
+            $events = $stmt -> fetchAll();
+            return $events;
+        }
+        catch(PDOException $e) {
+            $err = $e -> getMessage(); 
+        }
+    }
     
 
 ?>

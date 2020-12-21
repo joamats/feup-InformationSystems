@@ -14,6 +14,7 @@
 
     //pagination
     $page = $_GET['page'];
+    $order=$_GET['order'];
 
     
 
@@ -39,6 +40,9 @@
         }
 
         $events = getPaginatedEventsInfo($eventsPage, $page);
+    }
+    else if(isset($order)){
+        $events=getAllEventsInfoSortedByDate($order);
     }
     else {
         $events = getAllEventsInfo();
