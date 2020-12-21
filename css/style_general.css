@@ -96,7 +96,7 @@ fieldset{
     border: none;
 }
 
-legend{
+legend, h2{
     font-weight: 500;
     font-size: 2.5rem;
     color: var(--orange-light);
@@ -138,3 +138,7 @@ fieldset > input{
     border-radius: 25px;
 }
 
+.returnToPages>a{
+    font-weight: 600;
+    font-size: 1.1em;
+}

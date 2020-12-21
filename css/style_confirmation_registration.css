@@ -1,0 +1,13 @@
+/*
+    style confirmation_registration
+*/
+
+#check_email{
+    font-size: 1.4rem;
+}
+
+#username{
+    font-weight: 700;
+    font-size: 3rem;
+    color: var(--blue-dark);
+}

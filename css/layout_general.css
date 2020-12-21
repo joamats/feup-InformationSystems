@@ -60,7 +60,7 @@ h1 {
     margin-bottom: 0;
 }
 
-legend{
+legend, h2{
     margin-left: 15%;
     margin-bottom: 1em;
 }
@@ -81,6 +81,11 @@ fieldset > input{
     padding-bottom:10px;
     padding-left: 45px;
     padding-right: 45px;
+}
+
+.returnToPages{
+    display: inline;
+    margin-left: 33.5%;
 }
 
 /* Footer */

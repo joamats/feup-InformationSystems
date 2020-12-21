@@ -33,7 +33,7 @@
     </fieldset>
 </form>
 <h4>Not registered yet?</h4>
-<div>
+<div class="returnToPages">
     <a id="not_registered1" href="registration.php?role=Organizer">Become an Organizer </a>
 
     <a href="events_now.php?page=1">Join an Event as a Staff Member </a>
