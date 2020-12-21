@@ -44,4 +44,33 @@
   grid-row: 4;
 }
 
+#leftText h2 {
+    margin-bottom: 1rem;
+}
+
+.listItem, .listRegistered {
+    display: flex;
+    align-self: center;
+    flex-wrap: wrap;
+}
+
+.listItem {
+    padding: 1rem 3rem;
+}
+
+.listItem p{
+    margin-left: 2rem;
+}
+
+.listItem p a {
+    color: var(--blue-dark);
+}
+
+.listItem p a:hover {
+    color: var(--orange-dark);
+}
+.listRegistered h2 {
+    width: 100%;
+}
+
 
