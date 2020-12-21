@@ -1,0 +1,20 @@
+/*
+    Layout images
+*/
+
+form>label{
+    padding-top: 2rem;
+}
+
+#fileToUpload{
+    padding: 6px 12px;
+}
+
+#submit_button{
+    position: relative;
+    margin-left: 46%;
+    padding-top:10px;
+    padding-bottom:10px;
+    padding-left: 45px;
+    padding-right: 45px;
+}
