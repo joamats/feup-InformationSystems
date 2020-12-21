@@ -13,7 +13,10 @@
     </div>
 <?php } ?>
 
-<form action="action_imagesUpload.php" method="post" enctype="multipart/form-data">
+<form action="action_imagesUpload.php?role=<?=$role?>" method="post" enctype="multipart/form-data">
+    <legend>
+        Register as <span class="role"><?=$role?></span>
+    </legend>
     <label>Upload <?=$prompt?> *
         <br>
         <input id= "fileToUpload" type="file" name="fileToUpload" id="fileToUpload" required>
