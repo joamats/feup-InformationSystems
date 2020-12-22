@@ -1,6 +1,7 @@
 <?php
 
     require_once('database/internal_access.php');
+    require_once('database/staff.php');
 
     $email = $_POST['email'];
     $password = $_POST['password'];
@@ -15,6 +16,7 @@
         header('Location: my_events.php');
 
     } elseif($roleUserLoggedIn == "Staff") {
+        $_SESSION['eventId'] = getStaffEventId($personId);
         header('Location: manage_event.php');
         
     } else {

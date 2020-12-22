@@ -1,8 +1,25 @@
-<?php
+<?php 
     require_once('config/init.php');
 
-    include('templates/head.html');
-    include('templates/header.php');
-    include('templates/event_details.php');
-    include('templates/footer.html');
+    // only logged in organizer can enter 
+    if( $_SESSION['roleUserLoggedIn'] != "Organizer" && $_SESSION['roleUserLoggedIn'] != "Staff" ) {
+        $_SESSION['message'] = "Please Login First!";
+        die(header('Location: login.php'));
+    }
+    else {
+        require_once('database/events.php');
+        require_once('database/events_derivedAttributes.php');
+        require_once('helpers/dates.php');
+        require_once('helpers/prices.php');
+
+        $userId = $_SESSION['idUserLoggedIn'];
+        $userName = $_SESSION['nameUserLoggedIn'];
+        $eventId = $_GET['eventId'];
+        $events = getAllEventsInfoByOrganizer($userId);
+
+        include('templates/head.html'); 
+        include('templates/header.php');
+        include('templates/my_events.php');
+        include('templates/footer.html');
+    }
 ?>
