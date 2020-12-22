@@ -142,10 +142,4 @@
         }
     }
 
-    function computeDaysTillEvent($eventId){
-        $eventDate = getEventDateById($eventId);
-        $daysTillEvent = daysTillDate($eventDate);
-        return $daysTillEvent;
-    }
-
 ?>

@@ -1,0 +1,42 @@
+div ul{
+    list-style-type: none;
+    text-align: center;
+}
+
+ div li{
+    border: 2px solid var(--blue-light);
+    border-radius: 10rem;
+    margin: 1rem 12rem 0rem 15rem;
+    padding: 0.5rem;
+}
+
+div li:hover{
+    border: 2px solid var(--blue-light);
+    background-color: var(--blue-light);
+}
+
+div li>a:hover{
+    color: var(--blue-dark);
+}
+
+
+div li a{
+    float: center;
+    padding: 0 2.5rem;
+
+}
+
+#buttonDelete{
+    border: 2px solid #c22d26;
+}
+
+
+#buttonDelete:hover, #buttonDelete a:hover {
+    border: 2px solid #c22d26;
+    background-color: #c22d26;
+    color: white;
+}
+
+div ul:hover {
+    color: white;
+}

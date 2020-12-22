@@ -62,4 +62,18 @@
         }
     }
 
+    // retrieve the event id of a staff member
+    function getStaffEventId($personId) {
+        try {
+            global $dbh;
+            $stmt = $dbh -> prepare('SELECT event FROM Staff WHERE id = ?;');
+            $stmt -> execute(array($personId));
+            $eventId = $stmt -> fetch()['event'];
+            return $eventId;
+
+        } catch(PDOException $e) {
+            $err = $e -> getMessage(); 
+        }
+    }
+
 ?>

@@ -40,7 +40,7 @@ if($events != null) { ?>
             <i class="fas fa-money-check-alt"></i><?=$currentNumSponsors?> sponsors<br>
             <i class="fas fa-handshake"></i><?=$currentNumPartners?> partners<br>
         </p>
-        <a class = "fancyButton" href="manage_event.php?id=<?=$eventId?>">
+        <a class = "fancyButton" href="manage_event.php?eventId=<?=$eventId?>">
             Management Options 
             <i class="fas fa-arrow-right"></i>
         </a>

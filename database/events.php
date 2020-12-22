@@ -122,7 +122,7 @@ require_once('config/init.php');
         // $eventInfo = getEventInfoById($eventId);
         // $eventDate = $eventInfo['date'];
         global $dbh;
-        $stmt = $dbh -> prepare('SELECT date FROM event WHERE id = ?');
+        $stmt = $dbh -> prepare('SELECT date_start FROM event WHERE id = ?');
         $stmt -> execute(array($eventId));
         $eventDate = $stmt -> fetch() ['date'];
         
