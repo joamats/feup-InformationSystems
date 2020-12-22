@@ -47,3 +47,21 @@
 #search > label{
   margin-left: 0%;
 }
+
+h1{
+  margin-bottom: 1.2%;
+}
+
+input{
+  margin-top: 0.3%;
+  margin-right: 5%;
+  padding: 6px 12px;
+}
+
+#apply{
+  margin-left: 47.1%;
+  margin-top: 1%;
+  padding-top:4px;
+  padding-bottom:4px;
+  width: 8%;
+}

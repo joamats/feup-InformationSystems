@@ -35,6 +35,20 @@ b{
     color: var(--orange-dark);
 }
 
+select, input{
+    width: 11%;
+}
+
+input{
+    border-radius: 25px;
+    border: 2px solid rgb(118, 118, 118);
+}
+#apply{
+    color: white;
+    background-color: var(--blue-dark);
+    border-radius: 25px;
+}
+
 
 /* #search input, #setPages input{
     margin: 1em;

@@ -10,33 +10,24 @@
         <input type="hidden" name = "page" value=1>
         <b> Search by: </b>
         <br>
-        <div>
-            <div>
-                <label for="name">Name of Event:</label>
-                <input type="text" name = "name" value=<?=$name?>>
-            </div>
-            <div>
-                <label for="name"> Location: </label>
-                <input type="text" name = "local" value=<?=$local?> >
-            </div>
-            <div>
-                <label for="name"> Events per Page: </label>
-                <input type="number" name = "eventsPage"  value=<?=$eventsPage?>>
-            </div>
-            <div>
-                <label for="name"> Order by: </label>
-                <select name="order">
-                    <?php if($order == "ascendent_date") {?>
-                        <option value="ascendent_date"> Date: Ascending</option>
-                        <option value="descendent_date"> Date: Descending</option>
-                    <?php } else { ?>
-                        <option value="descendent_date"> Date: Descending</option>
-                        <option value="ascendent_date"> Date: Ascending</option>
-                    <?php } ?>
-                </select>
-            </div>
-            <input type="submit" value="Apply">
-        </div>
+        <label for="name">Name of Event:</label>
+        <input type="text" name = "name" value=<?=$name?>>
+        <label for="name"> Location: </label>
+        <input type="text" name = "local" value=<?=$local?> >
+        <label for="name"> Events per Page: </label>
+        <input type="number" name = "eventsPage"  value=<?=$eventsPage?>>
+        <label for="name"> Order by: </label>
+        <select name="order">
+            <?php if($order == "ascendent_date") {?>
+                <option value="ascendent_date"> Date: Ascending</option>
+                <option value="descendent_date"> Date: Descending</option>
+            <?php } else { ?>
+                <option value="descendent_date"> Date: Descending</option>
+                <option value="ascendent_date"> Date: Ascending</option>
+            <?php } ?>
+        </select>
+        <br>
+        <input id= "apply" type="submit" value="Apply">
     </form>
 
 </section>
