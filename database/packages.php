@@ -127,5 +127,115 @@ require_once('config/init.php');
         }
     }
 
+    // check if package name is new in database, since it's primary key
+    // returns false if it already exists
+    function packageNameIsNew($insertedName, $role) {
+        try {
+            global $dbh;
+
+            switch($role) {
+
+                case "Participant":
+                    $stmt = $dbh->prepare('SELECT name FROM ParticipantPackage;');
+                    $stmt->execute();
+                    $nameKeys = $stmt->fetchAll();
+                    break;
+
+                case "Sponsor":
+                    $stmt = $dbh->prepare('SELECT name FROM SponsorPackage;');
+                    $stmt->execute();
+                    $nameKeys = $stmt->fetchAll();
+                    break;
+
+                case "Partner":
+                    $stmt = $dbh->prepare('SELECT name FROM PartnerPackage;');
+                    $stmt->execute();
+                    $nameKeys = $stmt->fetchAll();
+                    break;
+        
+            }
+
+            if($nameKeys != null) {
+                foreach($nameKeys as $name) {
+                    if($name['name'] == $insertedName) {
+                        return false;
+                    }
+                }
+            }
+            return true;
+        } 
+        catch(PDOException $e) {
+            $err = $e -> getMessage(); 
+        }
+    }
+
+
+    // inserts participant package into database and returns true
+    function insertParticipantPackageIntoDatabase(
+        $name,
+        $eventId,
+        $price,
+        $features,
+        $maxNum_participants
+        ) {
+
+        try {
+            global $dbh;
+
+            $stmt = $dbh -> prepare('INSERT INTO ParticipantPackage(name, event, price, features, maxNum_participants)
+                                    VALUES(?, ?, ?, ?, ?);');
+            $stmt -> execute(array($name, $eventId, $price, $features, $maxNum_participants));
+    
+            return true;       
+        } 
+        catch(PDOException $e) {
+            $err = $e -> getMessage(); 
+        }
+    }
+
+    // inserts sponsor package into database and returns true
+    function insertSponsorPackageIntoDatabase(
+        $name,
+        $eventId,
+        $financialSupport_range_min,
+        $financialSupport_range_max,
+        $perks
+        ) {
+
+        try {
+            global $dbh;
+
+            $stmt = $dbh -> prepare('INSERT INTO SponsorPackage(name, event, 
+                                    financialSupport_range_min, financialSupport_range_max, perks)
+                                    VALUES(?, ?, ?, ?, ?);');
+            $stmt -> execute(array($name, $eventId, $financialSupport_range_min, $financialSupport_range_max, $perks));
+    
+            return true;       
+        } 
+        catch(PDOException $e) {
+            $err = $e -> getMessage(); 
+        }
+    }
+
+    // inserts partner package into database and returns true
+    function insertPartnerPackageIntoDatabase(
+        $name,
+        $eventId,
+        $perks
+        ) {
+
+        try {
+            global $dbh;
+
+            $stmt = $dbh -> prepare('INSERT INTO PartnerPackage(name, event, perks)
+                                    VALUES(?, ?, ?);');
+            $stmt -> execute(array($name, $eventId, $perks));
+    
+            return true;       
+        } 
+        catch(PDOException $e) {
+            $err = $e -> getMessage(); 
+        }
+    }
 
 ?>

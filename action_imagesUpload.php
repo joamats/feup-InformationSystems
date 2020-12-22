@@ -103,7 +103,7 @@ if ($uploadOk != 0) {
       
       require_once('database/events.php');
       setEventImage($eventId, $image_name);
-      header('Location: my_events.php');
+      header('Location: registration_role.php');
 
     }
   

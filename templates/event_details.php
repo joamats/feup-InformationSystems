@@ -108,7 +108,7 @@
                     <i class="fas fa-euro-sign"></i><?= $priceRange?><br><br>
                     <i class="fas fa-user-friends"></i>Up to <?=$maxNumParticipants?> participants<br><br>
             </p>
-            <a id="startRegister" href="selection_role.php?id=<?=$eventId?>">
+            <a id="startRegister" href="registration_role.php?id=<?=$eventId?>">
                 Register<i class="fas fa-arrow-right"></i>
             </a>
         </section><!-- basicInfo -->

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <link href="css/style_selection_role.css" rel="stylesheet">
 
-<h2>Registration for Event:</h2>
+<h2>Registration for <?=$eventName?></h2>
 <h3>What's your Role?</h3>
 <ul>
     <?php foreach($roles as $role) { 

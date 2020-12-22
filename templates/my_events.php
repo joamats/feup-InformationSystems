@@ -8,8 +8,9 @@
 <br>
 <h1 id="eventsNOW">MY EVENTS</h1>
 
+<?php include('templates/error_message.php');
 
-<?php if($events != null) { ?>
+if($events != null) { ?>
 
 <section class = 'listEvents'>
 
@@ -39,7 +40,7 @@
             <i class="fas fa-money-check-alt"></i><?=$currentNumSponsors?> sponsors<br>
             <i class="fas fa-handshake"></i><?=$currentNumPartners?> partners<br>
         </p>
-        <a class = "fancyButton" href="event_details.php?id=<?=$eventId?>">
+        <a class = "fancyButton" href="createPackages_role.php?id=<?=$eventId?>">
             Management Options 
             <i class="fas fa-arrow-right"></i>
         </a>

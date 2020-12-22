@@ -61,6 +61,46 @@ function checkCodeForPartners($eventId,  $code) {
     }
   }
 
+  // check if code is new in database (it must be unique)
+  function codeIsNew($insertedCode){
+    try {
+        global $dbh;
+
+        $stmt = $dbh->prepare('SELECT codeForSpeakers FROM Event;');
+        $stmt->execute();
+        $speakersCodes = $stmt->fetchAll();
+        foreach($speakersCodes as $code){
+            if($code['codeForSpeakers'] == $insertedCode) {
+                return false;
+            }
+        }
+
+        $stmt = $dbh->prepare('SELECT codeForPartners FROM Event;');
+        $stmt->execute();
+        $partnersCodes = $stmt->fetchAll();
+        foreach($partnersCodes as $code){
+            if($code['codeForPartners'] == $insertedCode) {
+                return false;
+            }
+        }
+
+        $stmt = $dbh->prepare('SELECT codeForStaff FROM Event;');
+        $stmt->execute();
+        $staffCodes = $stmt->fetchAll();
+        foreach($staffCodes as $code){
+            if($code['codeForStaff'] == $insertedCode) {
+                return false;
+            }
+        }
+        
+        return true;
+
+    } 
+    catch(PDOException $e) {
+        $err = $e -> getMessage(); 
+    }
+  }
+
 
 
 ?>

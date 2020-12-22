@@ -20,6 +20,10 @@
         <br>
         <input id= "fileToUpload" type="file" name="fileToUpload" id="fileToUpload" required>
         <br>
-        <input id="submit_button" type="submit" value="Submit" name="submit">
+        <?php if($_SESSION['mode'] == "Registration"){ ?>
+            <input id="submit_button" type="submit" value="Submit" name="submit">
+        <?php } elseif($_SESSION['mode'] == "CreateEvent"){ ?>
+            <input id="submit_button" type="submit" value="Next" name="submit">
+        <?php } ?> 
     </label>
 </form>

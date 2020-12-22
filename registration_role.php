@@ -1,9 +1,12 @@
 <?php 
     require_once('config/init.php');
+    require_once('database/packages.php');
+    require_once('database/events.php');
 
     $eventId = $_GET['id'];
+    $eventName = getEventNameById($eventId);
 
-    require_once('database/packages.php');
+    
     $participantsPackages = getAllParticipantPackagesById($eventId);
     $partnersPackages = getAllPartnerPackagesById($eventId);
     $sponsorsPackages = getAllSponsorPackagesById($eventId);
@@ -30,9 +33,10 @@
             unset($roles[$key]);
         }
     }
+    
 
     include('templates/head.html'); 
     include('templates/header.php');
-    include('templates/selection_role.php');
+    include('templates/registration_role.php');
     include('templates/footer.html');
 ?>
