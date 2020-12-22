@@ -21,11 +21,18 @@ h3 > a:hover, .fas:hover {
     color: var(--orange-dark);
 }
 
+/* Control bar */
 .displayControlBar {
     margin-left: 5rem;
     margin-right: 5rem;
     border-bottom: 1px solid var(--gray-light);
     padding-bottom: 1rem;
+}
+
+b{
+    font-weight: 700;
+    font-size: 1.3rem;
+    color: var(--orange-dark);
 }
 
 
@@ -38,6 +45,9 @@ h3 > a:hover, .fas:hover {
     display: flex;
     justify-content: center;
     margin: 1rem 0;
+    color: var(--orange-dark);
+    font-weight: 700;
+    font-size: 1.1rem;
 }
 
   
