@@ -144,3 +144,11 @@ fieldset > input{
     font-weight: 600;
     font-size: 1.1em;
 }
+
+/*make pics round*/
+.picFrame{
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+    border-radius: 50%;
+}

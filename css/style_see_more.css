@@ -12,10 +12,17 @@ h2{
 
 h3{
     color:var(--orange-dark);
+    font-size: 1.4rem;
+    margin-bottom: 1%;
 }
 
 div{
     border-style: none;
     border-radius: 15px;
     background-color: var(--gray-light);
+}
+
+.picFrame{
+    width:150px;
+    height:150px;
 }

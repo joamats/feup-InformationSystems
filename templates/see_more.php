@@ -12,14 +12,16 @@
     <?php } ?>
     <?=$name?></h3><br>
 
-
     <?php
-
     switch($item) {
         case "Speaker":?>
-        <img class="profilePic" src="images/persons/<?=$speakerProfilePic?>" alt=<?=$name?> width = 200>
-        <h4><?=$speakerTalkSubject?></h4>
-        <p><?=$speakerTalkAbstract?></p>
+        <img class="picFrame" src="images/persons/<?=$speakerProfilePic?>" alt=<?=$name?> width = 200>
+        <h4>Talk's Subject:</h4>
+        <p><?=$speakerTalkSubject?></p>
+        <?php if($speakerTalkAbstract!=''){ ?>
+            <h4>Talk's abstract</h4>
+            <p><?=$speakerTalkAbstract?></p>
+        <?php } ?>
 
         <?php
         break;
@@ -46,5 +48,5 @@
             <p><?=$perks?></p>
         <?php
         break;
-        } ?>
+    } ?>
 </div>
