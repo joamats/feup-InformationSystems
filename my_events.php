@@ -1,8 +1,8 @@
 <?php 
     require_once('config/init.php');
 
-    // only logged in organizer or staff can enter 
-    if( $_SESSION['roleUserLoggedIn'] === false || $_SESSION['roleUserLoggedIn'] === null) {
+    // only logged in organizer can enter 
+    if( $_SESSION['roleUserLoggedIn'] != "Organizer") {
         $_SESSION['message'] = "Please Login First!";
         die(header('Location: login.php'));
     }

@@ -1,4 +1,13 @@
-<?php include('templates/head.html'); ?>
+<?php include('templates/head.html'); 
+
+// only logged in organizer can enter 
+if( $_SESSION['roleUserLoggedIn'] != "Organizer") {
+    $_SESSION['message'] = "Please Login First!";
+    die(header('Location: login.php'));
+}
+// else {}
+
+?>
 <!DOCTYPE html>
 
 <br>

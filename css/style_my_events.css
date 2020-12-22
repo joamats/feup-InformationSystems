@@ -1,6 +1,6 @@
 @import "css/general.css";
 
-#moreOptions {
+.fancyButton {
     font-weight: 500;
     font-size: 15px;
     padding-bottom: 0.5em;
@@ -14,11 +14,17 @@
     margin: 1rem 3rem;
 }
 
-#moreOptions:focus, #moreOptions:hover {
+.fancyButton:focus, .fancyButton:hover {
     background-color: var(--blue-light);
+    color: var(--blue-dark);
 }
 
-#moreOptions i {
+.fancyButton i {
     padding-left: 1em;
     color: var(--blue-dark);
 }
+
+#createEventButton{
+    padding: 1rem;
+}
+
