@@ -32,7 +32,7 @@
     $events = getEventsControlled($name, $local, $eventsPage, $page, $order);
 
     include('templates/head.html');
-    include('templates/header_public.php'); 
+    include('templates/header.php'); 
     include('templates/events_now.php');
     include('templates/footer.html');
 ?>

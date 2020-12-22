@@ -17,7 +17,7 @@
         $events = getAllEventsInfoByOrganizer($userId);
 
         include('templates/head.html'); 
-        include('templates/header_private.php');
+        include('templates/header.php');
         include('templates/my_events.php');
         include('templates/footer.html');
     }

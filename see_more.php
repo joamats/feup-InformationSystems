@@ -51,7 +51,7 @@
     $itemTitle = implode(" ", preg_split('/(?=[A-Z])/',$item)); 
 
     include('templates/head.html'); 
-    include('templates/header_public.php');
+    include('templates/header.php');
     include('templates/see_more.php');
     include('templates/footer.html');
 

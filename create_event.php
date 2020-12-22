@@ -13,7 +13,7 @@
         $userName = $_SESSION['nameUserLoggedIn'];
 
         include('templates/head.html'); 
-        include('templates/header_private.php');
+        include('templates/header.php');
         include('templates/create_event.php');
         include('templates/footer.html');
     }

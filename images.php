@@ -30,10 +30,10 @@
 
     include('templates/head.html'); 
     if($mode == "Registration"){
-        include('templates/header_public.php');
+        include('templates/header.php');
     }
     else if($mode == "CreateEvent"){
-        include('templates/header_private.php');
+        include('templates/header.php');
     }
     include('templates/images.php');
     include('templates/footer.html');

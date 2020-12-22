@@ -32,7 +32,7 @@
     }
 
     include('templates/head.html'); 
-    include('templates/header_public.php');
+    include('templates/header.php');
     include('templates/registration.php');
     include('templates/footer.html');
 ?>

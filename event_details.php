@@ -37,7 +37,7 @@
     $maxNumParticipants = computeMaxNumParticipantsById($eventId);
 
     include('templates/head.html');
-    include('templates/header_public.php');
+    include('templates/header.php');
     include('templates/event_details.php');
     include('templates/footer.html');
 ?>

@@ -32,7 +32,7 @@
     }
 
     include('templates/head.html'); 
-    include('templates/header_public.php');
+    include('templates/header.php');
     include('templates/selection_role.php');
     include('templates/footer.html');
 ?>
