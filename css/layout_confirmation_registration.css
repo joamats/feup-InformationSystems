@@ -2,6 +2,11 @@
     layout confirmation_registration
 */
 
+h2{
+    margin-left: 15%;
+    margin-bottom: 1em;
+}
+
 #check_email{
     text-align: center;
     padding-bottom: 3%;

@@ -2,6 +2,12 @@
     style confirmation_registration
 */
 
+h2{
+    font-weight: 500;
+    font-size: 2.5rem;
+    color: var(--orange-light);
+}
+
 #check_email{
     font-size: 1.4rem;
 }
