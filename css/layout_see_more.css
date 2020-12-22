@@ -1,0 +1,22 @@
+/*
+    Layout see_more
+*/
+
+h1 {
+    margin-left: 2.8rem;
+}
+
+h2{
+    margin-left: 18%;
+    margin-bottom: 1em;
+}
+
+div{
+    width: 28%;
+    padding: 1rem;
+    margin-left: 36%;
+}
+
+li, p{
+    padding-left: 6%;
+}

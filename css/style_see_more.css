@@ -1,3 +1,21 @@
-h1 {
-    margin-top: 10rem;
+/*
+    Style see_more
+*/
+
+
+
+h2{
+    font-weight: 600;
+    font-size: 3rem;
+    color: var(--orange-light);
+}
+
+h3{
+    color:var(--orange-dark);
+}
+
+div{
+    border-style: none;
+    border-radius: 15px;
+    background-color: var(--gray-light);
 }
