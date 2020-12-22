@@ -63,6 +63,8 @@
     $currentNumSponsors= computeNumSponsorsById($eventId);
     $currentNumPartners = computeNumPartnersById($eventId);
 
+    $_SESSION['eventId']=$eventId;
+    $_SESSION['mode'] = "EditEvent";
 
     include('templates/head.html'); 
     include('templates/header.php');
