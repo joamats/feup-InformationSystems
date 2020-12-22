@@ -3,7 +3,7 @@
 <link href="css/layout_see_more.css" rel="stylesheet">
 
 <a href="event_details.php?id=<?=$eventId?>"> 
-    <h1> <i class="fas fa-arrow-left"></i> <?=$eventName?></h1>
+    <h1 id="eventName"> <i class="fas fa-arrow-left"></i> <?=$eventName?></h1>
 </a>
 <h2><?=$itemTitle?></h2><br>
 <div>
@@ -27,11 +27,11 @@
         break;
         case "ParticipantPackage":?>
             <h4>The Features of this Package:</h4>
-            <li><?=$features?></li>
+            <p><?=$features?></p>
             <h4>Price:</h4>
-            <li><?=$price?> €</li>
+            <p><?=$price?> €</p>
             <h4>Maximum Number of Participants:</h4>
-            <li><?=$maxNum_participants?></li>
+            <p><?=$maxNum_participants?></p>
         <?php
         break;
 
