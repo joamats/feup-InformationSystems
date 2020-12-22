@@ -12,7 +12,7 @@
             <ul>
                 <li><a href = "event_details.php?id=<?=$eventId?>">Visualization Mode</a></li>
                 <li><a href = "createPackages_role.php">Edit Event Details</a></li>
-                <li><a href = "createPackages_role.php">Edit Event Image</a></li>
+                <li><a href = "images.php">Edit Event Image</a></li>
 
                 <li><a href = "createPackages_role.php">View Access Codes</a></li>
                 <li><a href = "createPackages_role.php">Edit Access Codes</a></li>

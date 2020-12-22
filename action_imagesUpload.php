@@ -22,7 +22,7 @@ if($mode == "Registration") {
   $newFileName = $userId .'.'. $imageFileType;
 
 }
-else if($mode == "CreateEvent") {
+else if($mode == "CreateEvent" || $mode == "EditEvent") {
   
   $eventId = $_SESSION['eventId'];
   $target_dir = "images/events/";
@@ -98,12 +98,17 @@ if ($uploadOk != 0) {
       header('Location: images.php');
     }
   }
-  elseif($mode == "CreateEvent") {
+  elseif($mode == "CreateEvent" || $mode == "EditEvent") {
     if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
       
       require_once('database/events.php');
       setEventImage($eventId, $image_name);
-      header('Location: registration_role.php');
+      if($mode=="CreateEvent"){
+        header('Location: registration_role.php');
+      }
+      else if($mode=="EditEvent"){
+        header('Location: my_events.php');
+      }
 
     }
   

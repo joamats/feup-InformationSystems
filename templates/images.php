@@ -14,6 +14,8 @@
             Register as <span class="role"><?=$role?></span>
         <?php } elseif($_SESSION['mode'] == "CreateEvent"){ ?>
             Creating an Event
+        <?php } elseif($_SESSION['mode'] == "EditEvent"){ ?>
+            Edit Event Image
         <?php } ?> 
     </legend>
     <label>Upload <?=$prompt?> *
@@ -22,7 +24,7 @@
         <br>
         <?php if($_SESSION['mode'] == "Registration"){ ?>
             <input id="submit_button" type="submit" value="Submit" name="submit">
-        <?php } elseif($_SESSION['mode'] == "CreateEvent"){ ?>
+        <?php } elseif($_SESSION['mode'] == "CreateEvent" || $_SESSION['mode'] == "EditEvent"){ ?>
             <input id="submit_button" type="submit" value="Next" name="submit">
         <?php } ?> 
     </label>

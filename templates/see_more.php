@@ -6,7 +6,7 @@
     <h1 id="eventName"> <i class="fas fa-arrow-left"></i> <?=$eventName?></h1>
 </a>
 <h2><?=$itemTitle?></h2><br>
-<div>
+<div id="infoWrap">
     <?php if($item == "Speaker") { ?>
         <h3><?=$speakerTitle?> 
     <?php } ?>
