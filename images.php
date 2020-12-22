@@ -22,19 +22,14 @@
             $prompt = "Logotype";
         }
     }
-    elseif($mode == "CreateEvent") {
+    elseif($mode == "CreateEvent" || $mode == "EditEvent") {
         $eventId = $_SESSION['eventId'];
         $title = getEventNameById($eventId);
         $prompt = "Event Picture";
     }
 
     include('templates/head.html'); 
-    if($mode == "Registration"){
-        include('templates/header.php');
-    }
-    else if($mode == "CreateEvent"){
-        include('templates/header.php');
-    }
+    include('templates/header.php');
     include('templates/images.php');
     include('templates/footer.html');
 ?>
