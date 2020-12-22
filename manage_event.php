@@ -23,6 +23,7 @@
     $userId = $_SESSION['idUserLoggedIn'];
     $userName = $_SESSION['nameUserLoggedIn'];
 
+
     require_once('helpers/printArray.php');
     require_once('helpers/dates.php');
     require_once('helpers/prices.php');
@@ -61,6 +62,7 @@
     $currentNumStaff = computeNumStaffById($eventId);
     $currentNumSponsors= computeNumSponsorsById($eventId);
     $currentNumPartners = computeNumPartnersById($eventId);
+
 
     include('templates/head.html'); 
     include('templates/header.php');
