@@ -9,11 +9,7 @@
             Register as <span class="role"><?=$role?></span>
         </legend>
 
-        <?php if (isset($_MESSAGE)) { ?>
-            <div class="errorMessage">
-            <?=$_MESSAGE?>
-            </div>
-        <?php } ?>
+        <?php include('templates/error_message.php'); ?>
 
         <br>
 
@@ -75,7 +71,7 @@
                 <br>
                 <label>Talk's Abstract
                     <br>
-                    <textarea id="talk_abstract" name="talk_abstract" rows="6" cols="50"></textarea>
+                    <textarea class="field_input" name="talk_abstract" rows="6" cols="50"></textarea>
                 </label>
 
             <?php } elseif($role == "Staff") { ?>

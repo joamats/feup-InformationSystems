@@ -11,11 +11,7 @@
             Exclusive for Event <span class="role">Organizers</span> or <span class="role">Staff</span> Members
         </legend>
 
-        <?php if (isset($_MESSAGE)) { ?>
-            <div class="errorMessage">
-            <?=$_MESSAGE?>
-            </div>
-        <?php } ?>
+        <?php include('templates/error_message.php'); ?>
 
         <br><br>
         <label>Email:

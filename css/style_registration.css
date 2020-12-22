@@ -36,7 +36,7 @@ label{
     border-style: solid;
 }
 
-#talk_abstract{
+.field_input{
     width: 30%;
     height:9em;
     border-radius: 15px;

@@ -12,11 +12,7 @@
         Please insert here your code as a <span class="role"><?=$role?></span>
         </legend>
 
-        <?php if (isset($_MESSAGE)) { ?>
-            <div class="errorMessage">
-            <?=$_MESSAGE?>
-            </div>
-        <?php } ?>
+        <?php include('templates/error_message.php'); ?>
 
         <br><br>
         <input type = "hidden" name = "eventId" value = <?=$eventId?>>

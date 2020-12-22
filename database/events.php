@@ -214,6 +214,64 @@ require_once('config/init.php');
             $err = $e -> getMessage(); 
         }
     }
+
+    // inserts an event into database and retrieves id created
+    function insertEventIntoDatabase(
+        $name,
+        $date_start,
+        $date_end,
+        $local,
+        $aboutEvent, 
+        $theme,
+        $codeForSpeakers,
+        $codeForPartners,
+        $codeForStaff,
+        $organizer
+        ) {
+
+        try {
+            global $dbh;
+
+            $stmt = $dbh -> prepare('INSERT INTO Event(name, date_start, date_end, local, 
+                                    aboutEvent, theme, codeForSpeakers, codeForStaff, organizer)
+                                    VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?);');
+            $stmt -> execute(array($name, $date_start, $date_end, $local, $aboutEvent, $theme, 
+                                    $codeForSpeakers, $codeForStaff,$organizer));
+
+            // get the id of the event we just created
+            $stmt = $dbh -> prepare('SELECT max(id) from Event;');
+            $stmt -> execute();
+            $eventId = $stmt -> fetch()['max(id)'];
+
+            // insert the codes, if they exist
+       
+
+            if($codeForPartners != null) {
+                $stmt = $dbh -> prepare('UPDATE Event SET codeForPartners = ? WHERE id = ?');
+                $stmt -> execute(array($codeForPartners, $eventId));
+            }
+
+        
+
+            return $eventId;
+                        
+        } 
+        catch(PDOException $e) {
+            $err = $e -> getMessage(); 
+        }
+    }
+
+    // updates the name of the uploaded image, for an event
+    function setEventImage($eventId, $image) {
+        try {
+            global $dbh;
+            $stmt = $dbh -> prepare('UPDATE Event SET image = ? WHERE id = ?;');
+            $stmt -> execute(array($image, $eventId));
+
+        } catch(PDOException $e) {
+            $err = $e -> getMessage(); 
+        }
+    }
     
 
 ?>

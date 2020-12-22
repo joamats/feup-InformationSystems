@@ -1,66 +1,20 @@
-<?php include('templates/head.html'); 
+<?php 
+    require_once('config/init.php');
 
-// only logged in organizer can enter 
-if( $_SESSION['roleUserLoggedIn'] != "Organizer") {
-    $_SESSION['message'] = "Please Login First!";
-    die(header('Location: login.php'));
-}
-// else {}
+    // only logged in organizer can enter 
+    if( $_SESSION['roleUserLoggedIn'] != "Organizer") {
+        $_SESSION['message'] = "Please Login First!";
+        die(header('Location: login.php'));
+    }
+    else {
+        require_once('database/events.php');
 
-?>
-<!DOCTYPE html>
+        $userId = $_SESSION['idUserLoggedIn'];
+        $userName = $_SESSION['nameUserLoggedIn'];
 
-<br>
-<h1>Tell us more about your event!</h1>
-<form action="action_createEvent.php" method="get">
-    <fieldset>
-
-        <label>Name:
-            <br>
-            <input type="text" name="name">
-        </label>
-
-        <br>
-        <label>Date:
-            <br>
-            <input type="text" name="date">
-        </label>
-
-        <br>
-        <label>Location:
-            <br>
-            <input type="text" name="location">
-        </label>
-
-        <br>
-        <label>Theme:
-            <br>
-            <input type="text" name="theme">
-        </label>
-
-        <br>
-        <label>Code for Speaker:
-            <br>
-            <input type="number" name="codeForSpeaker">
-        </label>
-
-        <br>
-        <label>Code for Staff:
-            <br>
-            <input type="number" name="codeForStaff">
-        </label>
-
-        <br>
-        <label>Code for Partners:
-            <br>
-            <input type="number" name="codeForPartner">
-        </label>
-
-        <br><br>
-        <input type="submit" value="Next">
-    </fieldset>
-</form>
-
-<?php
-    include('templates/footer.html');
+        include('templates/head.html'); 
+        include('templates/header_private.php');
+        include('templates/create_event.php');
+        include('templates/footer.html');
+    }
 ?>

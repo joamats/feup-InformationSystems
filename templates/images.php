@@ -6,16 +6,15 @@
 <br>
 <h1><?=$title?></h1>
 
-
-<?php if (isset($_MESSAGE)) { ?>
-    <div class="errorMessage">
-        <?=$_MESSAGE?>
-    </div>
-<?php } ?>
+<?php include('templates/error_message.php'); ?>
 
 <form action="action_imagesUpload.php?role=<?=$role?>" method="post" enctype="multipart/form-data">
     <legend>
-        Register as <span class="role"><?=$role?></span>
+        <?php if($_SESSION['mode'] == "Registration"){ ?>
+            Register as <span class="role"><?=$role?></span>
+        <?php } elseif($_SESSION['mode'] == "CreateEvent"){ ?>
+            Creating an Event
+        <?php } ?> 
     </legend>
     <label>Upload <?=$prompt?> *
         <br>

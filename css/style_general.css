@@ -77,8 +77,10 @@ a:focus, a:hover {
     background-color: #c22d26
 }
 
-#nameUser, #nameUser:hover {
+#nameUser, #nameUser:hover, #nameUser b {
+    font-size: 16px;
     color: var(--blue-dark);
+
 }
 
 /* Headings */
@@ -119,7 +121,7 @@ label{
     border-style: solid;
 }
 
-#talk_abstract{
+.field_input{
     width: 30%;
     height:9em;
     border-radius: 15px;
