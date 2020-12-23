@@ -28,7 +28,7 @@
 
                 <?php if($_SESSION['roleUserLoggedIn'] == "Organizer") { ?>
                     <li id = "buttonDelete"><a href = "action_delete_event.php">Delete Event</a></li>
-                    <li>Be Careful! It really deletes it all :) </li>
+                    <li id = "deleteWarning">Be Careful! It really deletes it all :) </li>
                 <?php } ?>
 
             </ul>
@@ -59,9 +59,11 @@
                     <ul  class = "packagesUL">
                         <?php foreach($participantsPackages as $package) { ?>
                             <li>
-                                <a href = "action_delete_package.php?role=Participant&packageName=<?=$package['name']?>">
-                                    <i class="fas fa-times"></i>
-                                </a>
+                                <?php if($_SESSION['roleUserLoggedIn'] == "Organizer") { ?>
+                                    <a href = "action_delete_package.php?role=Participant&packageName=<?=$package['name']?>">
+                                        <i class="fas fa-times"></i>
+                                    </a>
+                                <?php } ?>
                                 <a href = "see_more.php?eventId=<?=$eventId?>&item=ParticipantPackage&packageName=<?=$package['name']?>">
                                     <?=$package['name']?> <i class="fas fa-arrow-right"></i>
                                 </a>
@@ -76,9 +78,11 @@
                     <ul  class = "packagesUL">
                         <?php foreach($sponsorsPackages as $package) { ?>
                             <li>
-                                <a href = "action_delete_package.php?role=Sponsor&packageName=<?=$package['name']?>">
-                                    <i class="fas fa-times"></i>
-                                </a>
+                                <?php if($_SESSION['roleUserLoggedIn'] == "Organizer") { ?>
+                                    <a href = "action_delete_package.php?role=Sponsor&packageName=<?=$package['name']?>">
+                                        <i class="fas fa-times"></i>
+                                    </a>
+                                <?php } ?>
                                 <a href = "see_more.php?eventId=<?=$eventId?>&item=SponsorPackage&packageName=<?=$package['name']?>">
                                     <?=$package['name']?>
                                     <i class="fas fa-arrow-right"></i>
@@ -94,9 +98,11 @@
                     <ul  class = "packagesUL">
                         <?php foreach($partnersPackages as $package) { ?>
                             <li>
-                                <a href = "action_delete_package.php?role=Partnerr&packageName=<?=$package['name']?>">
-                                    <i class="fas fa-times"></i>
-                                </a>
+                                <?php if($_SESSION['roleUserLoggedIn'] == "Organizer") { ?>
+                                    <a href = "action_delete_package.php?role=Partnerr&packageName=<?=$package['name']?>">
+                                        <i class="fas fa-times"></i>
+                                    </a>
+                                <?php } ?>
                                 <a href = "see_more.php?eventId=<?=$eventId?>&item=PartnerPackage&packageName=<?=$package['name']?>">
                                     <?=$package['name']?>
                                     <i class="fas fa-arrow-right"></i>

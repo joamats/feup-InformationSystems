@@ -8,9 +8,10 @@
 <h2><?=$itemTitle?></h2><br>
 <div id="infoWrap">
     <?php if($item == "Speaker") { ?>
-        <h3><?=$speakerTitle?> 
+        <h3><?=$speakerTitle?>  <?=$name?></h3><br>
+    <?php } else { ?>
+        <h3><?=$name?></h3><br>
     <?php } ?>
-    <?=$name?></h3><br>
 
     <?php
     switch($item) {
