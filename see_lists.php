@@ -14,6 +14,7 @@
     switch($role) {
         case "Participant":
             $participantsInfo = getInfoFromAllParticipantsInEvent($eventId);
+            $paymentValidation=$participantsInfo['paymentValidation_status'];
             break;
         case "Speaker":
             $speakersInfo = getInfoFromAllSpeakersInEvent($eventId);
@@ -24,13 +25,17 @@
             break;
         case "Sponsor":
             $sponsorsInfo = getInfoFromAllSponsorsInEvent($eventId);
+            $paymentValidation=$sponsorsInfo['paymentValidation_status'];
             break;
 
         case "Partner":
             $partnersInfo = getInfoFromAllPartnersInEvent($eventId);
             break;
-
     }
+
+    $changedPaymentValidation=$_GET['paymentValidation'];
+
+    
 
     include('templates/head.html');
     include('templates/header.php'); 

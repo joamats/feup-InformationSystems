@@ -33,7 +33,6 @@ require_once('config/init.php');
         } catch(PDOException $e) {
             $err = $e -> getMessage(); 
         }
-
     }
 
     // retrieves all the info from all the participants in the event
@@ -43,6 +42,20 @@ require_once('config/init.php');
             $stmt = $dbh -> prepare('SELECT * FROM Participant JOIN Person USING (id)
                                     WHERE event = ?;');
             $stmt -> execute(array($eventId));
+            $participantsInfo = $stmt -> fetchAll();
+            return $participantsInfo;
+
+        } catch(PDOException $e) {
+            $err = $e -> getMessage(); 
+        }
+    }
+
+    function insertParticipantPaymentStatusIntoDatabase($paymentValidation){
+        try {
+            global $dbh;
+            $stmt = $dbh -> prepare('INSERT INTO Participant(paymentValidation_status)
+                                    VALUES(?);');
+            $stmt -> execute(array($paymentValidation));
             $participantsInfo = $stmt -> fetchAll();
             return $participantsInfo;
 
