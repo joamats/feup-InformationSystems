@@ -301,12 +301,6 @@ require_once('config/init.php');
             $stmt -> execute(array($name, $date_start, $date_end, $local, $theme, 
                                     $codeForSpeakers, $codeForStaff, $eventId));
 
-            // if not null upload codeForPartners too
-            if($codeForPartners != null) {
-                $stmt = $dbh -> prepare('UPDATE Event SET codeForPartners = ? WHERE id = ?;');
-                $stmt -> execute(array($codeForPartners, $eventId));
-            }
-
             // if not null upload aboutEvent too
             if($aboutEvent != null) {
                 $stmt = $dbh -> prepare('UPDATE Event SET aboutEvent = ? WHERE id = ?;');
