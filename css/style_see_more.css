@@ -25,6 +25,15 @@ h3{
 }
 
 .picFrame{
-    width:150px;
-    height:150px;
+    width:100px;
+    height:100px;
+}
+
+.image_cover{
+    width:60px; 
+    height:60px; 
+    border-radius:50%; 
+    overflow:hidden;
+    float: left;    
+    margin: 7px 0 0 5px;
 }

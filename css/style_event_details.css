@@ -101,7 +101,13 @@ h1 {
     margin: 7px 0 0 5px;
 }
 
+li a .fa-arrow-right{
+    padding-left: 0.5rem;
+}
 
+li a .fa-arrow-right:hover{
+    color: var(--orange-dark);
+}
 
 
 

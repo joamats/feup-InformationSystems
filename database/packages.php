@@ -238,4 +238,39 @@ require_once('config/init.php');
         }
     }
 
+
+        // given a role, an event id, package name, delete package
+        function deletePackage($eventId, $packageName, $role){
+
+            try {
+                global $dbh;
+    
+                switch($role) {
+                    case "Participant":
+                        $stmt = $dbh -> prepare('DELETE FROM ParticipantPackage 
+                                                WHERE name = ? AND event = ?;');
+                        $stmt -> execute(array($packageName, $eventId));
+                        break;
+
+                    case "Sponsor":
+                        $stmt = $dbh -> prepare('DELETE FROM SponsorPackage 
+                                                WHERE name = ? AND event = ?;');
+                        $stmt -> execute(array($packageName, $eventId));
+                        break;
+
+                    case "Partner":
+                        $stmt = $dbh -> prepare('DELETE FROM PartnerPackage 
+                                                WHERE name = ? AND event = ?;');
+                        $stmt -> execute(array($packageName, $eventId));
+                        break;
+                }
+                
+                return true;
+                            
+            } 
+            catch(PDOException $e) {
+                $err = $e -> getMessage(); 
+            }
+        }
+
 ?>

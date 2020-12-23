@@ -15,7 +15,9 @@
     <?php
     switch($item) {
         case "Speaker":?>
-        <img class="picFrame" src="images/persons/<?=$speakerProfilePic?>" alt=<?=$name?> width = 200>
+        <div class = "picFrame">
+            <img class="profilePic" src="images/persons/<?=$speakerProfilePic?>" alt=<?=$name?> width = 100>
+        </div>
         <h4>Talk's Subject:</h4>
         <p><?=$speakerTalkSubject?></p>
         <?php if($speakerTalkAbstract!=''){ ?>

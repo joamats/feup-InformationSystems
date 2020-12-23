@@ -59,8 +59,11 @@
                     <ul  class = "packagesUL">
                         <?php foreach($participantsPackages as $package) { ?>
                             <li>
+                                <a href = "action_delete_package.php?role=Participant&packageName=<?=$package['name']?>">
+                                    <i class="fas fa-times"></i>
+                                </a>
                                 <a href = "see_more.php?eventId=<?=$eventId?>&item=ParticipantPackage&packageName=<?=$package['name']?>">
-                                <?=$package['name']?> <i class="fas fa-arrow-right"></i>
+                                    <?=$package['name']?> <i class="fas fa-arrow-right"></i>
                                 </a>
                             </li>
                         <?php } ?>
@@ -73,6 +76,9 @@
                     <ul  class = "packagesUL">
                         <?php foreach($sponsorsPackages as $package) { ?>
                             <li>
+                                <a href = "action_delete_package.php?role=Sponsor&packageName=<?=$package['name']?>">
+                                    <i class="fas fa-times"></i>
+                                </a>
                                 <a href = "see_more.php?eventId=<?=$eventId?>&item=SponsorPackage&packageName=<?=$package['name']?>">
                                     <?=$package['name']?>
                                     <i class="fas fa-arrow-right"></i>
@@ -88,6 +94,9 @@
                     <ul  class = "packagesUL">
                         <?php foreach($partnersPackages as $package) { ?>
                             <li>
+                                <a href = "action_delete_package.php?role=Partnerr&packageName=<?=$package['name']?>">
+                                    <i class="fas fa-times"></i>
+                                </a>
                                 <a href = "see_more.php?eventId=<?=$eventId?>&item=PartnerPackage&packageName=<?=$package['name']?>">
                                     <?=$package['name']?>
                                     <i class="fas fa-arrow-right"></i>

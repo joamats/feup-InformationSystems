@@ -42,7 +42,7 @@ div ul:hover {
     color: white;
 }
 
-ul>:last-child, ul>:last-child:hover{
+#leftPanel ul>:last-child, #leftPanel ul>:last-child:hover{
     border: none;
     color: #c22d26;
     background-color: white;
@@ -59,3 +59,14 @@ ul>:last-child, ul>:last-child:hover{
 #codesInfo b{
     color: var(--blue-dark);
 }
+
+li a .fa-times{
+    color: #c22d26;
+    padding-right: 1rem;
+}
+
+li a .fa-times:hover{
+    color: #531511;
+    padding-right: 1rem;
+}
+
