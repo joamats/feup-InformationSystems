@@ -1,9 +1,9 @@
 <?php 
     require_once('config/init.php');
     require_once('database/organizers.php');
-    
+
     // only logged in and authorized ones can enter 
-    if( $_SESSION['roleUserLoggedIn'] != "Organizer" && $_SESSION['roleUserLoggedIn'] != "Staff" ) {
+    if($_SESSION['roleUserLoggedIn'] != "Organizer" && $_SESSION['roleUserLoggedIn'] != "Staff") {
         $_SESSION['message'] = "Please Login First!";
         die(header('Location: login.php'));
     }
@@ -12,13 +12,14 @@
     }
     elseif($_SESSION['roleUserLoggedIn'] == "Organizer") {
         $eventId = $_GET['eventId'];
+        // check the organizer is in an event he created
+        if(getEventOrganizerById($eventId)['id'] !=  $_SESSION['idUserLoggedIn']){
+            $_SESSION['message'] = "You can only manage your events.";
+            die(header('Location: my_events.php'));
+        }
     }
 
-    // check the organizer is in an event he created
-    if(getEventOrganizerById($eventId)['id'] !=  $_SESSION['idUserLoggedIn']){
-        $_SESSION['message'] = "You can only manage your events.";
-        die(header('Location: my_events.php'));
-    }
+
 
     $userId = $_SESSION['idUserLoggedIn'];
     $userName = $_SESSION['nameUserLoggedIn'];
@@ -69,6 +70,9 @@
     include('templates/head.html'); 
     include('templates/header.php');
     include('templates/manage_event.php');
+    var_dump($eventId);
+    require_once('database/staff.php');
+
     include('templates/footer.html');
     
 ?>
