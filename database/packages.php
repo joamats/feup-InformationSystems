@@ -247,21 +247,36 @@ require_once('config/init.php');
     
                 switch($role) {
                     case "Participant":
+                        // delete all the participants linked to it
+                        $stmt = $dbh -> prepare('DELETE FROM Participant
+                                                WHERE package = ? AND event = ?;');
+                        $stmt -> execute(array("$packageName", $eventId));
+                        // delete the package itself
                         $stmt = $dbh -> prepare('DELETE FROM ParticipantPackage 
                                                 WHERE name = ? AND event = ?;');
-                        $stmt -> execute(array($packageName, $eventId));
+                        $stmt -> execute(array("$packageName", $eventId));
                         break;
 
                     case "Sponsor":
+                         // delete all the sponsors linked to it
+                         $stmt = $dbh -> prepare('DELETE FROM Sponsor
+                                                 WHERE package = ? AND event = ?;');
+                        $stmt -> execute(array("$packageName", $eventId));
+                        // delete the package itself
                         $stmt = $dbh -> prepare('DELETE FROM SponsorPackage 
                                                 WHERE name = ? AND event = ?;');
-                        $stmt -> execute(array($packageName, $eventId));
+                        $stmt -> execute(array("$packageName", $eventId));
                         break;
 
                     case "Partner":
+                         // delete all the partners linked to it
+                         $stmt = $dbh -> prepare('DELETE FROM Partner
+                                                WHERE package = ? AND event = ?;');
+                        $stmt -> execute(array("$packageName", $eventId));
+                        // delete the package itself
                         $stmt = $dbh -> prepare('DELETE FROM PartnerPackage 
                                                 WHERE name = ? AND event = ?;');
-                        $stmt -> execute(array($packageName, $eventId));
+                        $stmt -> execute(array("$packageName", $eventId));
                         break;
                 }
                 

@@ -99,7 +99,7 @@
                         <?php foreach($partnersPackages as $package) { ?>
                             <li>
                                 <?php if($_SESSION['roleUserLoggedIn'] == "Organizer") { ?>
-                                    <a href = "action_delete_package.php?role=Partnerr&packageName=<?=$package['name']?>">
+                                    <a href = "action_delete_package.php?role=Partner&packageName=<?=$package['name']?>">
                                         <i class="fas fa-times"></i>
                                     </a>
                                 <?php } ?>
