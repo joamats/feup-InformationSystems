@@ -76,4 +76,19 @@
         }
     }
 
+    // retrieves all the info from all the staff in the event
+    function getInfoFromAllStaffInEvent($eventId){
+        try {
+            global $dbh;
+            $stmt = $dbh -> prepare('SELECT * FROM Staff JOIN Person USING (id)
+                                    WHERE event = ?;');
+            $stmt -> execute(array($eventId));
+            $staffInfo = $stmt -> fetchAll();
+            return $staffInfo;
+
+        } catch(PDOException $e) {
+            $err = $e -> getMessage(); 
+        }
+    }
+
 ?>
