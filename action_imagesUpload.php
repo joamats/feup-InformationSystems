@@ -106,8 +106,9 @@ if ($uploadOk != 0) {
       if($mode=="CreateEvent"){
         header('Location: registration_role.php');
       }
-      else if($mode=="EditEvent"){
-        header('Location: my_events.php');
+      else if($mode == "EditEvent"){
+        $_SESSION['eventId'] = $eventId;
+        header('Location: manage_event.php');
       }
 
     }

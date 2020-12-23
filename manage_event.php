@@ -13,9 +13,14 @@
     elseif($_SESSION['roleUserLoggedIn'] == "Organizer") {
         $eventId = $_GET['eventId'];
         // check the organizer is in an event he created
-        if(getEventOrganizerById($eventId)['id'] !=  $_SESSION['idUserLoggedIn']){
-            $_SESSION['message'] = "You can only manage your events.";
-            die(header('Location: my_events.php'));
+        if(isset($eventId)) {
+            if(getEventOrganizerById($eventId)['id'] !=  $_SESSION['idUserLoggedIn']){
+                $_SESSION['message'] = "You can only manage your events.";
+                die(header('Location: my_events.php'));
+            }
+        }
+        else { // if no GET method is stablished, use $_SESSION
+            $eventId = $_SESSION['eventId'];
         }
     }
 
@@ -70,9 +75,6 @@
     include('templates/head.html'); 
     include('templates/header.php');
     include('templates/manage_event.php');
-    var_dump($eventId);
-    require_once('database/staff.php');
-
     include('templates/footer.html');
     
 ?>

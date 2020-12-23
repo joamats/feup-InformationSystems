@@ -19,8 +19,6 @@
         include('templates/head.html'); 
         include('templates/header.php');
         include('templates/my_events.php');
-    var_dump(($_SESSION['roleUserLoggedIn'] != "Organizer" && $_SESSION['roleUserLoggedIn'] != "Staff"));
-
         include('templates/footer.html');
     }
 ?>
