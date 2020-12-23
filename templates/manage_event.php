@@ -20,11 +20,11 @@
                 <li><a href = "createPackages_role.php?eventId=<?=$eventId?>">Create Package</a></li>
                 <li><a href = "createPackages_role.php">Edit Packages</a></li>
 
-                <li><a href = "createPackages_role.php">List of Participants</a></li>
-                <li><a href = "createPackages_role.php">List of Speakers</a></li>
-                <li><a href = "createPackages_role.php">List of Staff</a></li>
-                <li><a href = "createPackages_role.php">List of Sponsors </a></li>
-                <li><a href = "createPackages_role.php">List of Partners</a></li>
+                <li><a href = "see_lists.php?role=Participant">List of Participants</a></li>
+                <li><a href = "see_lists.php?role=Speaker">List of Speakers</a></li>
+                <li><a href = "see_lists.php?role=Staff">List of Staff</a></li>
+                <li><a href = "see_lists.php?role=Sponsor">List of Sponsors </a></li>
+                <li><a href = "see_lists.php?role=Partner">List of Partners</a></li>
 
                 <li id = "buttonDelete"><a href = "createPackages_role.php">Delete Event</a></li>
             </ul>
