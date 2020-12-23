@@ -63,5 +63,20 @@
         }
     }
 
+    // retrieves all the info from all the speakers in the event
+    function getInfoFromAllSpeakersInEvent($eventId){
+        try {
+            global $dbh;
+            $stmt = $dbh -> prepare('SELECT * FROM Participant JOIN Person USING (id)
+                                    WHERE event = ?;');
+            $stmt -> execute(array($eventId));
+            $participantInfo = $stmt -> fetchAll();
+            return $participantInfo;
+
+        } catch(PDOException $e) {
+            $err = $e -> getMessage(); 
+        }
+    }
+
 
 ?>

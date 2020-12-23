@@ -35,4 +35,20 @@ require_once('config/init.php');
         }
 
     }
+
+    // retrieves all the info from all the participants in the event
+    function getInfoFromAllParticipantsInEvent($eventId){
+        try {
+            global $dbh;
+            $stmt = $dbh -> prepare('SELECT * FROM Participant JOIN Person USING (id)
+                                    WHERE event = ?;');
+            $stmt -> execute(array($eventId));
+            $participantInfo = $stmt -> fetchAll();
+            return $participantInfo;
+
+        } catch(PDOException $e) {
+            $err = $e -> getMessage(); 
+        }
+
+    }
 ?>
