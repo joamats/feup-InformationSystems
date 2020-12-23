@@ -11,11 +11,16 @@
 
         $userId = $_SESSION['idUserLoggedIn'];
         $userName = $_SESSION['nameUserLoggedIn'];
-        $_SESSION['mode'] = "CreateEvent";
+        $eventId = $_SESSION['eventId'];
+        $_SESSION['mode'] = "EditEvent";
+
+
+        $eventInfo = getEventInfoById($eventId);
 
         include('templates/head.html'); 
         include('templates/header.php');
-        include('templates/create_event.php');
+        include('templates/edit_event.php');
+        var_dump($eventInfo['name']);
         include('templates/footer.html');
     }
 ?>

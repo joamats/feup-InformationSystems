@@ -13,14 +13,14 @@
                 <li><a href = "event_details.php?id=<?=$eventId?>">Visualization Mode</a></li>
 
                 <?php if($_SESSION['roleUserLoggedIn'] == "Organizer") { ?>
-                    <li><a href = "createPackages_role.php">Edit Event Details</a></li>
+                    <li><a href = "edit_event.php">Edit Event Details</a></li>
                     <li><a href = "images.php">Edit Event Image</a></li>
                 <?php } ?>
 
                 <li><a href = "createPackages_role.php">View Access Codes</a></li>
 
                 <?php if($_SESSION['roleUserLoggedIn'] == "Organizer") { ?>
-                    <li><a href = "createPackages_role.php">Edit Access Codes</a></li>
+                    <li><a href = "edit_event_codes.php">Edit Access Codes</a></li>
                     <li><a href = "createPackages_role.php?eventId=<?=$eventId?>">Create Package</a></li>
                     <li><a href = "createPackages_role.php">Edit Packages</a></li>
                 <?php } ?>
