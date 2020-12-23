@@ -67,11 +67,11 @@
     function getInfoFromAllSpeakersInEvent($eventId){
         try {
             global $dbh;
-            $stmt = $dbh -> prepare('SELECT * FROM Participant JOIN Person USING (id)
+            $stmt = $dbh -> prepare('SELECT * FROM Speaker JOIN Person USING (id)
                                     WHERE event = ?;');
             $stmt -> execute(array($eventId));
-            $participantInfo = $stmt -> fetchAll();
-            return $participantInfo;
+            $speakersInfo = $stmt -> fetchAll();
+            return $speakersInfo;
 
         } catch(PDOException $e) {
             $err = $e -> getMessage(); 

@@ -37,4 +37,20 @@
         }
 
     }
+
+    // retrieves all the info from all the sponsors in the event
+    function getInfoFromAllSponsorsInEvent($eventId){
+        try {
+            global $dbh;
+            $stmt = $dbh -> prepare('SELECT * FROM Sponsor JOIN Entity USING (id)
+                                    WHERE event = ?;');
+            $stmt -> execute(array($eventId));
+            $sponsorsInfo = $stmt -> fetchAll();
+            return $sponsorsInfo;
+
+        } catch(PDOException $e) {
+            $err = $e -> getMessage(); 
+        }
+    }
+    
 ?>

@@ -2,6 +2,10 @@
     require_once('config/init.php');
     require_once('database/participants.php');
     require_once('database/events.php');
+    require_once('database/speakers.php');
+    require_once('database/staff.php');
+    require_once('database/sponsors.php');
+    require_once('database/partners.php');
 
     $eventId = $_SESSION['eventId'];
     $role=$_GET['role'];
@@ -9,21 +13,21 @@
 
     switch($role) {
         case "Participant":
-            $participantInfo = getInfoFromAllParticipantsInEvent($eventId);
+            $participantsInfo = getInfoFromAllParticipantsInEvent($eventId);
             break;
         case "Speaker":
-            $participantInfo = getInfoFromAllSpeakersInEvent($eventId);
+            $speakersInfo = getInfoFromAllSpeakersInEvent($eventId);
             break;
 
         case "Staff":
-            $participantInfo = getInfoFromAllStaffInEvent($eventId);
+            $staffInfo = getInfoFromAllStaffInEvent($eventId);
             break;
         case "Sponsor":
-            $participantInfo = getInfoFromAllSponsorsInEvent($eventId);
+            $sponsorsInfo = getInfoFromAllSponsorsInEvent($eventId);
             break;
 
         case "Partner":
-            $participantInfo = getInfoFromAllPartnersInEvent($eventId);
+            $partnersInfo = getInfoFromAllPartnersInEvent($eventId);
             break;
 
     }

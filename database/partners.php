@@ -35,4 +35,19 @@
             $err = $e -> getMessage(); 
         }
     }
+
+    // retrieves all the info from all the partners in the event
+    function getInfoFromAllPartnersInEvent($eventId){
+        try {
+            global $dbh;
+            $stmt = $dbh -> prepare('SELECT * FROM Partner JOIN Entity USING (id)
+                                    WHERE event = ?;');
+            $stmt -> execute(array($eventId));
+            $partnersInfo = $stmt -> fetchAll();
+            return $partnersInfo;
+
+        } catch(PDOException $e) {
+            $err = $e -> getMessage(); 
+        }
+    }
 ?>
