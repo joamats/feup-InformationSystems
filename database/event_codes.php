@@ -101,6 +101,43 @@ function checkCodeForPartners($eventId,  $code) {
     }
   }
 
+  // updates Event Details
+  function updateEventCodes(
+            $codeForSpeakers,
+            $codeForStaff,
+            $codeForPartners,
+            $eventId
+        ) {
+
+    try {
+        global $dbh;
+
+        // if not null upload codeForSpeakers too
+        if($codeForSpeakers != null) {
+            $stmt = $dbh -> prepare('UPDATE Event SET codeForSpeakers = ? WHERE id = ?;');
+            $stmt -> execute(array($codeForSpeakers, $eventId));
+        }
+
+        // if not null upload codeForStaff too
+        if($codeForStaff != null) {
+            $stmt = $dbh -> prepare('UPDATE Event SET codeForStaff = ? WHERE id = ?;');
+            $stmt -> execute(array($codeForStaff, $eventId));
+        }
+
+        // if not null upload codeForPartners too
+        if($codeForPartners != null) {
+            $stmt = $dbh -> prepare('UPDATE Event SET codeForPartners = ? WHERE id = ?;');
+            $stmt -> execute(array($codeForPartners, $eventId));
+        }
+
+        return true;
+                    
+    } 
+    catch(PDOException $e) {
+        $err = $e -> getMessage(); 
+    }
+}
+
 
 
 ?>

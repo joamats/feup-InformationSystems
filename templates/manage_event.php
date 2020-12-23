@@ -22,7 +22,6 @@
                 <?php if($_SESSION['roleUserLoggedIn'] == "Organizer") { ?>
                     <li><a href = "edit_event_codes.php">Edit Access Codes</a></li>
                     <li><a href = "createPackages_role.php?eventId=<?=$eventId?>">Create Package</a></li>
-                    <li><a href = "createPackages_role.php">Edit Packages</a></li>
                 <?php } ?>
 
                 <li><a href = "createPackages_role.php">List of Participants</a></li>

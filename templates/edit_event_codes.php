@@ -3,37 +3,32 @@
 <link href="css/layout_registration.css" rel="stylesheet">
 
 <br>
-<h1>Edit your event details</h1>
+<h1>Create new access codes for your event</h1>
 
 <br><?php include('templates/error_message.php'); ?><br>
 
 
 <form action="action_edit_event_codes.php" method="post">
     <fieldset>
-
-        <label>Event Name *
-            <br>
-            <input class="write_input" type="text" value ="<?=$eventInfo['name']?>"  name="name" required>
-        </label>
         
-        <label>Code for Speakers *
+        <label>New Code for Speakers
             <br>
-            <input class="write_input" type="text" value = "<?=$eventInfo['codeForSpeakers']?>" name="codeForSpeakers" required>
+            <input class="write_input" type="text" name="codeForSpeakers">
         </label>
 
         <br>
-        <label>Code for Staff *
+        <label>New Code for Staff
             <br>
-            <input class="write_input" type="text" value = "<?=$eventInfo['codeForStaff']?>" name="codeForStaff" required>
+            <input class="write_input" type="text" name="codeForStaff">
         </label>
 
         <br>
-        <label>Code for Partners
+        <label>New Code for Partners
             <br>
-            <input class="write_input" type="text" value = <?=$eventInfo['codeForPartners']?> name="codeForPartners">
+            <input class="write_input" type="text" name="codeForPartners">
         </label>
 
-        <br><br>
-        <input type="submit" value="Next">
+        <br><br><br>
+        <input type="submit" value="Submit">
     </fieldset>
 </form>
