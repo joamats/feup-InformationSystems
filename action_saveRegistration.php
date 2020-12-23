@@ -99,6 +99,7 @@
     $_SESSION['userId'] = $userId;
 
     if($role == "Participant"){
+        $_SESSION['eventId']  = $eventId;
         header('Location: confirmation_registration.php');
     }
     // for organizers and staff, if email is not new    
