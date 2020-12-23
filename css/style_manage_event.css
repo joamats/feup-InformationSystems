@@ -1,3 +1,4 @@
+
 div ul{
     list-style-type: none;
     text-align: center;
@@ -39,4 +40,22 @@ div li a{
 
 div ul:hover {
     color: white;
+}
+
+ul>:last-child, ul>:last-child:hover{
+    border: none;
+    color: #c22d26;
+    background-color: white;
+    margin-top: 0;
+    margin-bottom: 2rem;
+    font-size: smaller;
+
+}
+
+#codesInfo {
+    margin-left: 1rem;
+}
+
+#codesInfo b{
+    color: var(--blue-dark);
 }
