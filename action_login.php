@@ -16,7 +16,7 @@
         header('Location: my_events.php');
 
     } elseif($roleUserLoggedIn == "Staff") {
-        $_SESSION['eventId'] = getStaffEventId($personId);
+        $_SESSION['eventId'] = getStaffEventId($userId);
         header('Location: manage_event.php');
         
     } else {

@@ -8,7 +8,7 @@
 <br><?php include('templates/error_message.php'); ?><br>
 
 
-<form action="action_createEvent.php" method="post">
+<form action="action_saveEvent.php" method="post">
     <fieldset>
 
         <label>Event Name *

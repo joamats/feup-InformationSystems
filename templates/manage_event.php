@@ -11,22 +11,38 @@
             <h2>Management Settings</h2>
             <ul>
                 <li><a href = "event_details.php?id=<?=$eventId?>">Visualization Mode</a></li>
-                <li><a href = "createPackages_role.php">Edit Event Details</a></li>
-                <li><a href = "images.php">Edit Event Image</a></li>
+
+                <?php if($_SESSION['roleUserLoggedIn'] == "Organizer") { ?>
+                    <li><a href = "edit_event.php">Edit Event Details</a></li>
+                    <li><a href = "images.php">Edit Event Image</a></li>
+                <?php } ?>
 
                 <li><a href = "createPackages_role.php">View Access Codes</a></li>
-                <li><a href = "createPackages_role.php">Edit Access Codes</a></li>
 
-                <li><a href = "createPackages_role.php?eventId=<?=$eventId?>">Create Package</a></li>
-                <li><a href = "createPackages_role.php">Edit Packages</a></li>
+                <?php if($_SESSION['roleUserLoggedIn'] == "Organizer") { ?>
+                    <li><a href = "edit_event_codes.php">Edit Access Codes</a></li>
+                    <li><a href = "createPackages_role.php?eventId=<?=$eventId?>">Create Package</a></li>
+                    <li><a href = "createPackages_role.php">Edit Packages</a></li>
+                <?php } ?>
 
+<<<<<<< HEAD
                 <li><a href = "see_lists.php?role=Participant">List of Participants</a></li>
                 <li><a href = "see_lists.php?role=Speaker">List of Speakers</a></li>
                 <li><a href = "see_lists.php?role=Staff">List of Staff</a></li>
                 <li><a href = "see_lists.php?role=Sponsor">List of Sponsors </a></li>
                 <li><a href = "see_lists.php?role=Partner">List of Partners</a></li>
+=======
+                <li><a href = "createPackages_role.php">List of Participants</a></li>
+                <li><a href = "createPackages_role.php">List of Speakers</a></li>
+                <li><a href = "createPackages_role.php">List of Staff</a></li>
+                <li><a href = "createPackages_role.php">List of Sponsors </a></li>
+                <li><a href = "createPackages_role.php">List of Partners</a></li>
+                
+                <?php if($_SESSION['roleUserLoggedIn'] == "Organizer") { ?>
+                    <li id = "buttonDelete"><a href = "createPackages_role.php">Delete Event</a></li>
+                <?php } ?>
+>>>>>>> 4b676b47cd1b98688fc068ae773bdd5ef26f0d60
 
-                <li id = "buttonDelete"><a href = "createPackages_role.php">Delete Event</a></li>
             </ul>
         </div>
     </section> <!-- leftPanel -->

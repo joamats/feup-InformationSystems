@@ -1,9 +1,9 @@
 <?php 
     require_once('config/init.php');
     require_once('database/organizers.php');
-    
+
     // only logged in and authorized ones can enter 
-    if( $_SESSION['roleUserLoggedIn'] != "Organizer" && $_SESSION['roleUserLoggedIn'] != "Staff" ) {
+    if($_SESSION['roleUserLoggedIn'] != "Organizer" && $_SESSION['roleUserLoggedIn'] != "Staff") {
         $_SESSION['message'] = "Please Login First!";
         die(header('Location: login.php'));
     }
@@ -12,16 +12,23 @@
     }
     elseif($_SESSION['roleUserLoggedIn'] == "Organizer") {
         $eventId = $_GET['eventId'];
+        // check the organizer is in an event he created
+        if(isset($eventId)) {
+            if(getEventOrganizerById($eventId)['id'] !=  $_SESSION['idUserLoggedIn']){
+                $_SESSION['message'] = "You can only manage your events.";
+                die(header('Location: my_events.php'));
+            }
+        }
+        else { // if no GET method is stablished, use $_SESSION
+            $eventId = $_SESSION['eventId'];
+        }
     }
 
-    // check the organizer is in an event he created
-    if(getEventOrganizerById($eventId)['id'] !=  $_SESSION['idUserLoggedIn']){
-        $_SESSION['message'] = "You can only manage your events.";
-        die(header('Location: my_events.php'));
-    }
+
 
     $userId = $_SESSION['idUserLoggedIn'];
     $userName = $_SESSION['nameUserLoggedIn'];
+
 
     require_once('helpers/printArray.php');
     require_once('helpers/dates.php');
@@ -62,7 +69,7 @@
     $currentNumSponsors= computeNumSponsorsById($eventId);
     $currentNumPartners = computeNumPartnersById($eventId);
 
-    $_SESSION['eventId']=$eventId;
+    $_SESSION['eventId'] = $eventId;
     $_SESSION['mode'] = "EditEvent";
 
     include('templates/head.html'); 
