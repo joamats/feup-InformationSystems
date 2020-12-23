@@ -103,8 +103,8 @@ if ($uploadOk != 0) {
       
       require_once('database/events.php');
       setEventImage($eventId, $image_name);
-      if($mode=="CreateEvent"){
-        header('Location: registration_role.php');
+      if($mode == "CreateEvent"){
+        header('Location: my_events.php');
       }
       else if($mode == "EditEvent"){
         $_SESSION['eventId'] = $eventId;

@@ -315,5 +315,55 @@ require_once('config/init.php');
         }
     }
     
+    // given an event id, everything linked to an event is deleted
+    function deleteEventById($eventId){
+
+        try {
+            global $dbh;
+
+            // delete participants
+            $stmt = $dbh -> prepare('DELETE FROM Participant WHERE event = ?;');
+            $stmt -> execute(array($eventId));
+
+            // delete speakers
+            $stmt = $dbh -> prepare('DELETE FROM Speaker WHERE event = ?;');
+            $stmt -> execute(array($eventId));
+
+            // delete staff
+            $stmt = $dbh -> prepare('DELETE FROM Staff WHERE event = ?;');
+            $stmt -> execute(array($eventId));
+
+            // delete sponsors
+            $stmt = $dbh -> prepare('DELETE FROM Sponsor WHERE event = ?;');
+            $stmt -> execute(array($eventId));
+
+            // delete partners
+            $stmt = $dbh -> prepare('DELETE FROM Partner WHERE event = ?;');
+            $stmt -> execute(array($eventId));
+
+            // delete participant packages
+            $stmt = $dbh -> prepare('DELETE FROM ParticipantPackage WHERE event = ?;');
+            $stmt -> execute(array($eventId));
+
+            // delete sponsor packages
+            $stmt = $dbh -> prepare('DELETE FROM SponsorPackage WHERE event = ?;');
+            $stmt -> execute(array($eventId));
+
+            // delete partner packages
+            $stmt = $dbh -> prepare('DELETE FROM PartnerPackage WHERE event = ?;');
+            $stmt -> execute(array($eventId));
+
+            // delete the event itself
+            $stmt = $dbh -> prepare('DELETE FROM Event WHERE id = ?;');
+            $stmt -> execute(array($eventId));
+
+            return true;
+                        
+        } 
+        catch(PDOException $e) {
+            $err = $e -> getMessage(); 
+        }
+    }
+
 
 ?>

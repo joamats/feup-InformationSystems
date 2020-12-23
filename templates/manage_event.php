@@ -27,7 +27,7 @@
                 <li><a href = "event_details.php?id=<?=$eventId?>">Visualization Mode</a></li>
 
                 <?php if($_SESSION['roleUserLoggedIn'] == "Organizer") { ?>
-                    <li id = "buttonDelete"><a href = "createPackages_role.php">Delete Event</a></li>
+                    <li id = "buttonDelete"><a href = "action_delete_event.php">Delete Event</a></li>
                     <li>Be Careful! It really deletes it all :) </li>
                 <?php } ?>
 
