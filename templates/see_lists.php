@@ -10,6 +10,7 @@
 <?php if($role=="Participant"){?>
     <table>
         <tr>
+            <th></th> <!-- prevents delete button from associating to <th>ID</th> -->
             <th>ID</th>
             <th>Name</th>
             <th>Email</th>
@@ -21,6 +22,11 @@
         </tr>
         <?php foreach($participantsInfo as $participant){?>
             <tr>
+                <td>
+                    <a class="delete_button" href = "action_delete_roles.php?role=Participant&personId=<?=$participant['id']?>">
+                        <i class="fas fa-times"></i>
+                    </a>
+                </td>
                 <td><?=$participant['id']?></td>
                 <td><?=$participant['name']?></td>
                 <td><?=$participant['email']?></td>
@@ -45,6 +51,7 @@
 else if($role=="Speaker"){?>
     <table>
         <tr>
+            <th></th>
             <th>ID</th>
             <th>Title</th>
             <th>Name</th>
@@ -54,6 +61,11 @@ else if($role=="Speaker"){?>
         </tr>
         <?php foreach($speakersInfo as $speaker){?>
             <tr>
+                <td>
+                    <a class="delete_button" href = "action_delete_roles.php?role=Speaker&personId=<?=$speaker['id']?>">
+                        <i class="fas fa-times"></i>
+                    </a>
+                </td>
                 <td><?=$speaker['id']?></td>
                 <td><?=$speaker['title']?></td>
                 <td><?=$speaker['name']?></td>
@@ -69,6 +81,7 @@ else if($role=="Speaker"){?>
 else if($role=="Staff"){?>
     <table>
         <tr>
+            <th></th>
             <th>ID</th>
             <th>Name</th>
             <th>Email</th>
@@ -77,6 +90,11 @@ else if($role=="Staff"){?>
         </tr>
         <?php foreach($staffInfo as $staff){?>
             <tr>
+                <td>
+                    <a class="delete_button" href = "action_delete_roles.php?role=Staff&personId=<?=$staff['id']?>">
+                        <i class="fas fa-times"></i>
+                    </a>
+                </td>
                 <td><?=$staff['id']?></td>
                 <td><?=$staff['name']?></td>
                 <td><?=$staff['email']?></td>
@@ -90,6 +108,7 @@ else if($role=="Staff"){?>
 else if($role=="Sponsor"){?>
     <table>
         <tr>
+            <th></th>
             <th>ID</th>
             <th>Name</th>
             <th>Email</th>
@@ -101,6 +120,11 @@ else if($role=="Sponsor"){?>
         </tr>
         <?php foreach($sponsorsInfo as $sponsor){?>
             <tr>
+                	<td>
+                    <a class="delete_button" href = "action_delete_roles.php?role=Sponsor&entityId=<?=$sponsor['id']?>">
+                        <i class="fas fa-times"></i>
+                    </a>
+                </td>
                 <td><?=$sponsor['id']?></td>
                 <td><?=$sponsor['name']?></td>
                 <td><?=$sponsor['email']?></td>
@@ -125,6 +149,7 @@ else if($role=="Sponsor"){?>
 else if($role=="Partner"){?>
     <table>
         <tr>
+            <th></th>
             <th>ID</th>
             <th>Name</th>
             <th>Email</th>
@@ -135,6 +160,11 @@ else if($role=="Partner"){?>
         </tr>
         <?php foreach($partnersInfo as $partner){?>
             <tr>
+                <td>
+                    <a class="delete_button" href = "action_delete_roles.php?role=Partner&entityId=<?=$partner['id']?>">
+                        <i class="fas fa-times"></i>
+                    </a>
+                </td>
                 <td><?=$partner['id']?></td>
                 <td><?=$partner['name']?></td>
                 <td><?=$partner['email']?></td>

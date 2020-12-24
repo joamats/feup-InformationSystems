@@ -78,5 +78,23 @@
         }
     }
 
+    // given a person id, delete speaker
+    function deleteSpeaker($personId){
+
+        try {
+            global $dbh;
+            
+            // delete the speaker
+            $stmt = $dbh -> prepare('DELETE FROM Speaker WHERE id = ?');
+            $stmt -> execute(array($personId));
+            // delete the speaker's info in person
+            $stmt = $dbh -> prepare('DELETE FROM Person WHERE id = ?');
+            $stmt -> execute(array($personId));  
+            return true;        
+        } 
+        catch(PDOException $e) {
+            $err = $e -> getMessage(); 
+        }
+    }
 
 ?>

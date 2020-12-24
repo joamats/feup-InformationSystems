@@ -91,4 +91,23 @@
         }
     }
 
+    // given a person id, delete staff
+    function deleteStaff($personId){
+
+        try {
+            global $dbh;
+            
+            // delete the staff
+            $stmt = $dbh -> prepare('DELETE FROM Staff WHERE id = ?');
+            $stmt -> execute(array($personId));
+            // delete the staff's info in person
+            $stmt = $dbh -> prepare('DELETE FROM Person WHERE id = ?');
+            $stmt -> execute(array($personId));  
+            return true;        
+        } 
+        catch(PDOException $e) {
+            $err = $e -> getMessage(); 
+        }
+    }
+
 ?>

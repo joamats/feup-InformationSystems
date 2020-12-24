@@ -62,4 +62,26 @@ require_once('config/init.php');
             $err = $e -> getMessage(); 
         }
     }
+
+    // given a person id, delete participant
+    function deleteParticipant($personId){
+
+        try {
+            global $dbh;
+            
+            // delete the participants
+            $stmt = $dbh -> prepare('DELETE FROM Participant
+                                    WHERE id = ?');
+            $stmt -> execute(array($personId));
+            // delete the participant's info in person
+            $stmt = $dbh -> prepare('DELETE FROM Person
+                                    WHERE id = ?');
+            $stmt -> execute(array($personId));  
+            return true;
+                        
+        } 
+        catch(PDOException $e) {
+            $err = $e -> getMessage(); 
+        }
+    }
 ?>

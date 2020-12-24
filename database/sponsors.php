@@ -65,4 +65,24 @@
             $err = $e -> getMessage(); 
         }
     }
+
+    // given an entity id, delete sponsor
+    function deleteSponsor($entityId){
+
+        try {
+            global $dbh;
+            
+            // delete the sponsor
+            $stmt = $dbh -> prepare('DELETE FROM Sponsor WHERE id = ?');
+            $stmt -> execute(array($entityId));
+            // delete the sponsor's info in person
+            $stmt = $dbh -> prepare('DELETE FROM Entity WHERE id = ?');
+            $stmt -> execute(array($entityId));  
+            return true;        
+        } 
+        catch(PDOException $e) {
+            $err = $e -> getMessage(); 
+        }
+    }
+
 ?>

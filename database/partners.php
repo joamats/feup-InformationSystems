@@ -50,4 +50,23 @@
             $err = $e -> getMessage(); 
         }
     }
+
+    // given an entity id, delete partner
+    function deletePartner($entityId){
+
+        try {
+            global $dbh;
+            
+            // delete the partner
+            $stmt = $dbh -> prepare('DELETE FROM Partner WHERE id = ?');
+            $stmt -> execute(array($entityId));
+            // delete the partner's info in person
+            $stmt = $dbh -> prepare('DELETE FROM Entity WHERE id = ?');
+            $stmt -> execute(array($entityId));  
+            return true;        
+        } 
+        catch(PDOException $e) {
+            $err = $e -> getMessage(); 
+        }
+    }
 ?>
