@@ -3,19 +3,21 @@
 <link href="css/layout_see_lists.css" rel="stylesheet">
 
 <br><br>
-<h1><?=$title?></h1>
+<a href="manage_event.php?eventId=<?=$eventId?>">
+    <h1><i class="fas fa-arrow-left"></i> <?=$title?></h1>
+</a>
 <h2><?=$role?>&#39s Info</h2>
 <?php if($role=="Participant"){?>
     <table>
         <tr>
-            <td>ID</td>
-            <td>Name</td>
-            <td>Email</td>
-            <td>Phone Number</td>
-            <td>Address</td>
-            <td>VAT Number</td>
-            <td>Package</td>
-            <td>Payment</td>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone Number</th>
+            <th>Address</th>
+            <th>VAT Number</th>
+            <th>Package</th>
+            <th>Payment</th>
         </tr>
         <?php foreach($participantsInfo as $participant){?>
             <tr>
@@ -27,32 +29,28 @@
                 <td><?=$participant['vat_num']?></td>
                 <td><?=$participant['package']?></td>
                 <td>
-                    <select name="paymentValidation">
-                        <?php if($paymentValidation == "paid") {?>
-                            <option value="paid"> Paid</option>
-                            <option value="not_paid"> Not Paid</option>
-                        <?php } else { ?>
-                            <option value="not_paid"> Not Paid</option>
-                            <option value="paid"> Paid</option>
-                        <?php } ?>
-                    </select>
+                    <?php if($participant['paymentValidation_status']=="paid"){?>
+                        <a class="paid" href = "action_addPaymentStatus.php?role=Participant&personId=<?=$participant['id']?>&paymentValidation=<?=$participant['paymentValidation_status']?>"><?= $participant['paymentValidation_status']?></a>
+                    <?php } else{?>
+                        <a class="not_paid" href = "action_addPaymentStatus.php?role=Participant&personId=<?=$participant['id']?>&paymentValidation=<?=$participant['paymentValidation_status']?>"><?= $participant['paymentValidation_status']?></a>
+                    <?php }?>
                 </td>
-                <td><a href = "action_addPaymentStatus.php?role=Participant&paymentValidation=<?=$changedPaymentValidation?>">Submit Payment</a></td>
             </tr>
         <?php }?>
     </table>
+    <img class="message-box" src="images/message-box.png" alt="logo">
+    <p class="message">Click to change the<br> payment status.</p>
 <?php }
 
 else if($role=="Speaker"){?>
     <table>
         <tr>
-            <td>ID</td>
-            <td>Title</td>
-            <td>Name</td>
-            <td>Email</td>
-            <td>Phone Number</td>            
-            <td>Talk Subject</td>
-            <td>Talk Abstract</td>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Name</th>
+            <th>Phone Number</th>            
+            <th>Talk Subject</th>
+            <th>Talk Abstract</th>
         </tr>
         <?php foreach($speakersInfo as $speaker){?>
             <tr>
@@ -71,11 +69,11 @@ else if($role=="Speaker"){?>
 else if($role=="Staff"){?>
     <table>
         <tr>
-            <td>ID</td>
-            <td>Name</td>
-            <td>Email</td>
-            <td>Phone Number</td>
-            <td>Department</td>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone Number</th>
+            <th>Department</th>
         </tr>
         <?php foreach($staffInfo as $staff){?>
             <tr>
@@ -92,14 +90,14 @@ else if($role=="Staff"){?>
 else if($role=="Sponsor"){?>
     <table>
         <tr>
-            <td>ID</td>
-            <td>Name</td>
-            <td>Email</td>
-            <td>Logotype</td>
-            <td>Website Link</td>
-            <td>Financial Support Amount</td>
-            <td>Package</td>
-            <td>Payment</td>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Logotype</th>
+            <th>Website Link</th>
+            <th>Financial Support Amount</th>
+            <th>Package</th>
+            <th>Payment</th>
         </tr>
         <?php foreach($sponsorsInfo as $sponsor){?>
             <tr>
@@ -111,32 +109,29 @@ else if($role=="Sponsor"){?>
                 <td><?=$sponsor['financialSupport_amount']?></td>
                 <td><?=$sponsor['package']?></td>
                 <td>
-                    <select name="paymentValidation">
-                        <?php if($paymentValidation == "paid") {?>
-                            <option value="paid"> Paid</option>
-                            <option value="not_paid"> Not Paid</option>
-                        <?php } else { ?>
-                            <option value="not_paid"> Not Paid</option>
-                            <option value="paid"> Paid</option>
-                        <?php } ?>
-                    </select>
+                    <?php if($sponsor['paymentValidation_status']=="paid"){?>
+                        <a class="paid" href = "action_addPaymentStatus.php?role=Sponsor&entityId=<?=$sponsor['id']?>&paymentValidation=<?=$sponsor['paymentValidation_status']?>"><?= $sponsor['paymentValidation_status']?></a>
+                    <?php } else{?>
+                        <a class="not_paid" href = "action_addPaymentStatus.php?role=Sponsor&entityId=<?=$sponsor['id']?>&paymentValidation=<?=$sponsor['paymentValidation_status']?>"><?= $sponsor['paymentValidation_status']?></a>
+                    <?php }?>
                 </td>
-                <td><a href = "action_addPaymentStatus.php?role=Sponsor&paymentValidation=<?=$package['name']?>">Submit Payment</a></td>
             </tr>
         <?php }?>
     </table>
+    <img class="message-box" src="images/message-box.png" alt="logo">
+    <p class="message">Click to change the<br> payment status.</p>
 <?php }
 
 else if($role=="Partner"){?>
     <table>
         <tr>
-            <td>ID</td>
-            <td>Name</td>
-            <td>Email</td>
-            <td>Logotype</td>
-            <td>Website Link</td>
-            <td>Support Type</td>
-            <td>Package</td>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Logotype</th>
+            <th>Website Link</th>
+            <th>Support Type</th>
+            <th>Package</th>
         </tr>
         <?php foreach($partnersInfo as $partner){?>
             <tr>

@@ -50,18 +50,16 @@ require_once('config/init.php');
         }
     }
 
-    function insertParticipantPaymentStatusIntoDatabase($paymentValidation){
+    function insertParticipantPaymentStatusIntoDatabase($paymentValidation, $personId){
         try {
             global $dbh;
-            $stmt = $dbh -> prepare('INSERT INTO Participant(paymentValidation_status)
-                                    VALUES(?);');
-            $stmt -> execute(array($paymentValidation));
-            $participantsInfo = $stmt -> fetchAll();
-            return $participantsInfo;
+            $stmt = $dbh -> prepare('UPDATE Participant SET paymentValidation_status=?
+                                    WHERE id=?;');
+            $stmt -> execute(array($paymentValidation, $personId));
+            return true;
 
         } catch(PDOException $e) {
             $err = $e -> getMessage(); 
         }
-
     }
 ?>

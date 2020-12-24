@@ -53,4 +53,16 @@
         }
     }
     
+    function insertSponsorPaymentStatusIntoDatabase($paymentValidation, $entityId){
+        try {
+            global $dbh;
+            $stmt = $dbh -> prepare('UPDATE Sponsor SET paymentValidation_status=?
+                                    WHERE id=?;');
+            $stmt -> execute(array($paymentValidation, $entityId));
+            return true;
+
+        } catch(PDOException $e) {
+            $err = $e -> getMessage(); 
+        }
+    }
 ?>

@@ -1,0 +1,27 @@
+/*
+    Style See_lists
+*/
+
+h2{
+    margin-left: 23%;
+    margin-top: 1%;
+}
+
+td{
+    text-align: center;
+}
+
+tr{
+    padding-right: 2%;
+}
+
+.message-box{
+    padding-left: 91.6%;
+}
+
+.message{
+    position: relative;
+    text-align: center;
+    top:-115px;
+    padding-left: 93.2%;
+}
