@@ -55,6 +55,7 @@ else if($role=="Speaker"){?>
             <th>ID</th>
             <th>Title</th>
             <th>Name</th>
+            <th>Email</th>
             <th>Phone Number</th>            
             <th>Talk Subject</th>
             <th>Talk Abstract</th>
