@@ -1,28 +1,14 @@
 PRAGMA foreign_keys = ON;
 
-DROP TABLE IF EXISTS Organizer;
-DROP TABLE IF EXISTS event;
-DROP TABLE IF EXISTS ParticipantPackage;
-DROP TABLE IF EXISTS PartnerPackage;
-DROP TABLE IF EXISTS SponsorPackage;
-DROP TABLE IF EXISTS Person;
-DROP TABLE IF EXISTS Participant;
-DROP TABLE IF EXISTS Speaker;
-DROP TABLE IF EXISTS Staff;
-DROP TABLE IF EXISTS Entity;
-DROP TABLE IF EXISTS Sponsor;
-DROP TABLE IF EXISTS Partner;
-
-
 CREATE TABLE Organizer (
-    id integer PRIMARY KEY REFERENCES Person, -- different from UML and relational model
-    password text NOT NULL, -- to encrypt later
-    logotype text, -- to be a URL or path
+    id integer PRIMARY KEY REFERENCES Person, 
+    password text NOT NULL, 
+    logotype text, 
     address text NOT NULL,
     vat_num INTEGER NOT NULL
 );
  
-CREATE TABLE Event ( -- different, derived attributes gone
+CREATE TABLE Event (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     name text NOT NULL,
     date_start DATE NOT NULL,
@@ -74,10 +60,10 @@ CREATE TABLE Person (
 CREATE TABLE Participant(
     id integer PRIMARY KEY REFERENCES Person,
     address text NOT NULL,
-    vat_num integer NOT NULL, -- different!!
+    vat_num integer NOT NULL,
     paymentValidation_status text DEFAULT 'not paid',
-    package text,
-    event integer, -- should be not null
+    package text NOT NULL,
+    event integer NOT NULL,
     FOREIGN KEY(package, event) REFERENCES ParticipantPackage
 );
 
@@ -112,7 +98,7 @@ CREATE TABLE Sponsor(
     financialSupport_amount NOT NULL 
     CHECK(financialSupport_amount > 0),
     paymentValidation_status NOT NULL DEFAULT 'not paid',
-    package text,
+    package text NOT NULL,
     event integer NOT NULL,
     FOREIGN KEY(package, event) REFERENCES SponsorPackage
 );
@@ -120,7 +106,7 @@ CREATE TABLE Sponsor(
 CREATE TABLE Partner(
     id integer PRIMARY KEY REFERENCES Entity,
     supportType text NOT NULL,
-    package text,
+    package text NOT NULL,
     event integer NOT NULL,
     FOREIGN KEY(package, event) REFERENCES PartnerPackage
 );
