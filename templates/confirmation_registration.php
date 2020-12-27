@@ -16,3 +16,5 @@
     <a id="returnHome" href="index.php">Return Home</a>
     <a href="event_details.php?id=<?=$eventId?>">Return to <?=$eventName?></a>
 <div>
+</body>
+</html>

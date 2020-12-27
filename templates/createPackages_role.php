@@ -11,3 +11,5 @@
         </li>
     <?php } ?>
 </ul>
+</body>
+</html>

@@ -34,7 +34,6 @@
     include('templates/head.html'); 
     include('templates/header.php');
     include('templates/registration.php');
-    include('templates/footer.html');
 ?>
 
 

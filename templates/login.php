@@ -34,3 +34,6 @@
 
     <a href="events_now.php?page=1">Join an Event as a Staff Member </a>
 </div>
+
+</body>
+</html>

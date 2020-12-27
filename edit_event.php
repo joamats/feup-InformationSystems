@@ -20,7 +20,5 @@
         include('templates/head.html'); 
         include('templates/header.php');
         include('templates/edit_event.php');
-        var_dump($eventInfo['name']);
-        include('templates/footer.html');
     }
 ?>

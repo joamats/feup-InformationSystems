@@ -38,5 +38,4 @@
     include('templates/head.html'); 
     include('templates/header.php');
     include('templates/registration_role.php');
-    include('templates/footer.html');
 ?>

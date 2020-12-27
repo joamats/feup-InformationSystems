@@ -20,36 +20,38 @@
             <img class="profilePic" src="images/persons/<?=$speakerProfilePic?>" alt=<?=$name?> width = 100>
         </div>
         <h4>Talk's Subject:</h4>
-        <p><?=$speakerTalkSubject?></p>
+        <p class="details"><?=$speakerTalkSubject?></p>
         <?php if($speakerTalkAbstract!=''){ ?>
             <h4>Talk's abstract</h4>
-            <p><?=$speakerTalkAbstract?></p>
+            <p class="details"><?=$speakerTalkAbstract?></p>
         <?php } ?>
 
         <?php
         break;
         case "ParticipantPackage":?>
             <h4>The Features of this Package:</h4>
-            <p><?=$features?></p>
+            <p class="details"><?=$features?></p>
             <h4>Price:</h4>
-            <p><?=$price?> €</p>
+            <p class="details"><?=$price?> €</p>
             <h4>Maximum Number of Participants:</h4>
-            <p><?=$maxNum_participants?></p>
+            <p class="details"><?=$maxNum_participants?></p>
         <?php
         break;
 
         case "SponsorPackage":?>
             <h4>The Perks of this Package:</h4>
-            <p><?=$perks?></p>
+            <p class="details"><?=$perks?></p>
             <h4>Financial Support Range:</h4>
-            <p><?=$financialSupport_range_min?> - <?=$financialSupport_range_max?> €</p>
+            <p class="details"><?=$financialSupport_range_min?> - <?=$financialSupport_range_max?> €</p>
         <?php
         break;
         
         case "PartnerPackage":?>
             <h4>The Perks of this Package:</h4>
-            <p><?=$perks?></p>
+            <p class="details"><?=$perks?></p>
         <?php
         break;
     } ?>
 </div>
+</body>
+</html>

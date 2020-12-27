@@ -22,6 +22,5 @@
         include('templates/head.html'); 
         include('templates/header.php');
         include('templates/create_package.php');
-        include('templates/footer.html');
     }
 ?>

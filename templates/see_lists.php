@@ -201,3 +201,5 @@ else if($role=="Partner"){
         <p class="empty"> There are no partners enrolled.<br>Have you already created a package for partners?<p>
     <?php }
 }?>
+</body>
+</html>

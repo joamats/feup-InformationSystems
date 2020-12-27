@@ -1,6 +1,4 @@
 <!DOCTYPE html>
-<link href="css/style_registration.css" rel="stylesheet">
-<link href="css/layout_registration.css" rel="stylesheet">
 
 <br>
 <h1>Create new access codes for your event</h1>
@@ -32,3 +30,6 @@
         <input type="submit" value="Submit">
     </fieldset>
 </form>
+
+</body>
+</html>

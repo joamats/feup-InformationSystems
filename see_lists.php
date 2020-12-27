@@ -37,5 +37,4 @@
     include('templates/head.html');
     include('templates/header.php');
     include('templates/see_lists.php');
-    include('templates/footer.html');
 ?>

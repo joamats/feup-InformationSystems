@@ -16,6 +16,5 @@
         include('templates/head.html'); 
         include('templates/header.php');
         include('templates/edit_event_codes.php');
-        include('templates/footer.html');
     }
 ?>

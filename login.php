@@ -8,5 +8,4 @@
     include('templates/head.html');
     include('templates/header.php');
     include('templates/login.php');
-    include('templates/footer.html');
 ?>

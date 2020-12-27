@@ -11,7 +11,6 @@
     include('templates/head.html'); 
     include('templates/header.php');
     include('templates/insert_code.php');
-    include('templates/footer.html');
 
 
 ?>

@@ -53,6 +53,5 @@
     include('templates/head.html'); 
     include('templates/header.php');
     include('templates/see_more.php');
-    include('templates/footer.html');
 
 ?>

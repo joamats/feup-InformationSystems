@@ -24,6 +24,5 @@
         include('templates/head.html'); 
         include('templates/header.php');
         include('templates/createPackages_role.php');
-        include('templates/footer.html');
     }
 ?>

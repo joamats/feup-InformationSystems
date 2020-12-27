@@ -29,5 +29,4 @@
     unset($_SESSION['role']);
     
     include('templates/confirmation_registration.php');
-    include('templates/footer.html');
 ?>

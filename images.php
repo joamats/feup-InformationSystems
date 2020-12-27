@@ -31,6 +31,5 @@
     include('templates/head.html'); 
     include('templates/header.php');
     include('templates/images.php');
-    include('templates/footer.html');
 ?>
 

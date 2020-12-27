@@ -32,9 +32,3 @@ ul a{
     font-weight: 500;
     font-size: 2em;
 }
-
-#footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-}
