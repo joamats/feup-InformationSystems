@@ -12,6 +12,20 @@
     if($role != 'Organizer') {
         $eventId = $_GET['id'];
     }
+
+    // input check if sponsor's value is ok
+    if($role == "Sponsor"){
+        require_once('database/packages.php');
+        $packageInfo = getSponsorPackageInfo($_POST['package'], $eventId);
+        $range_min = $packageInfo['financialSupport_range_min'];
+        $range_max = $packageInfo['financialSupport_range_max'];
+        $value = $_POST['financialSupport_amount'];
+        if (!($value >= $range_min && $value <= $range_max)) {
+            $_SESSION['message'] = "Please insert a financial support ammount within the package's range.";
+            die(header('Location: ' . $_SERVER['HTTP_REFERER']));
+        }
+        
+    }
     
     if($role == 'Participant' || $role == 'Speaker' || $role == 'Staff' || $role == 'Organizer' ) {
         require_once('database/persons.php');

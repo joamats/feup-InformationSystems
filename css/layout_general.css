@@ -92,6 +92,8 @@ fieldset > input{
 
 #footer {
     position: absolute;
-    bottom: end;
+    bottom: auto;
+    margin-top: 1rem;
     width: 90%;
+    height: 40px;
 }

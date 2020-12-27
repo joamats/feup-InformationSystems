@@ -3,13 +3,13 @@
 #titleIndex img {
     width: 70%;
     float: left;
-    transform: translate(5%,20%);
+    transform: translate(5%,25%);
 }
 
 #topText {
     position: absolute;
     top: 2em;
-    right: 10%;
+    right: 7%;
     font-weight: 800;
     font-size: 3.5em;
     color: var(--blue-dark);
@@ -18,7 +18,7 @@
 #bottomText {
     position: absolute;
     top: 3.5em;
-    right: 10%;
+    right: 7%;
     font-weight: 800;
     font-size: 3.5em;
     color: var(--orange-light);
