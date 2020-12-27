@@ -67,8 +67,8 @@ CREATE TABLE SponsorPackage (
 CREATE TABLE Person (
     id integer PRIMARY KEY AUTOINCREMENT,
     name text NOT NULL,
-    email text NOT NULL, -- different from current UML and stuff
-    phone_num integer NOT NULL -- different """"""
+    email text NOT NULL,
+    phone_num integer NOT NULL
 );
 
 CREATE TABLE Participant(
@@ -95,17 +95,15 @@ CREATE TABLE Staff (
     event integer REFERENCES event NOT NULL,
     profile_pic text, 
     department text NOT NULL,
-    password text NOT NULL,
-    subordinates integer REFERENCES Staff, -- kinda useless
-    hierarchical_superior integer REFERENCES Staff -- kinda useless
+    password text NOT NULL
 );
 
 CREATE TABLE Entity(
     id integer PRIMARY KEY AUTOINCREMENT,
     email text NOT NULL, -- different
-    name text NOT NULL, -- different
+    name text NOT NULL,
     logotype text,
-    website_link text -- different
+    website_link text
 );
 
 
