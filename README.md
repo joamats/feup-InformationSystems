@@ -1,4 +1,6 @@
-# **cBooking 2020**
+
+
+# <img src="images/logo.png" width=45> **cBooking** 
 
 This project consists of the development of a small dynamic website, using the technologies studied during Systems Engineering Software.
 
@@ -13,5 +15,9 @@ This project consists of the development of a small dynamic website, using the t
 
 ## Development Report 
 A small development report has been developed and can be found [here](docs/Report.md). In this document, updated Topic Description, UML Classes Diagram, and Database Relational Model are present.
+
+---
+
+### December 2020
 
 
