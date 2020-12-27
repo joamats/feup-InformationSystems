@@ -49,11 +49,12 @@
     <p class="message">Click to change the<br> payment status.</p>
     <?php }
     else{?>
-        <p> There are no participants enrolled.<br> Have you already created a package for participants?<p>
+        <p class="empty"> There are no participants enrolled.<br>Have you already created a package for participants?<p>
     <?php }
  }
 
-else if($role=="Speaker"){?>
+else if($role=="Speaker"){
+    if($speakersInfo!=null){?>
     <table>
         <tr>
             <th></th>
@@ -82,9 +83,14 @@ else if($role=="Speaker"){?>
             </tr>
         <?php }?>
     </table>
-<?php }
+    <?php }
+    else{?>
+        <p class="empty"> There are no speakers enrolled.<br>Have you already created a package for speakers?<p>
+    <?php }
+}
 
-else if($role=="Staff"){?>
+else if($role=="Staff"){
+    if($staffInfo!=null){?>
     <table>
         <tr>
             <th></th>
@@ -109,9 +115,14 @@ else if($role=="Staff"){?>
             </tr>
         <?php }?>
     </table>
-<?php }
+    <?php }
+    else{?>
+        <p class="empty"> There is no staff enrolled.<p>
+    <?php }
+}
 
-else if($role=="Sponsor"){?>
+else if($role=="Sponsor"){
+    if($sponsorsInfo!=null){?>
     <table>
         <tr>
             <th></th>
@@ -150,9 +161,14 @@ else if($role=="Sponsor"){?>
     </table>
     <img class="message-box" src="images/message-box.png" alt="logo">
     <p class="message">Click to change the<br> payment status.</p>
-<?php }
+    <?php }else{?>
+        <p class="empty"> There are no sponsors enrolled. <br>Have you already created a package for sponsors?<p>
+    <?php }
+}
 
-else if($role=="Partner"){?>
+
+else if($role=="Partner"){
+    if($partnersInfo!=null){?>
     <table>
         <tr>
             <th></th>
@@ -181,4 +197,7 @@ else if($role=="Partner"){?>
             </tr>
         <?php }?>
     </table>
-<?php }?>
+    <?php }else{?>
+        <p class="empty"> There are no partners enrolled.<br>Have you already created a package for partners?<p>
+    <?php }
+}?>
