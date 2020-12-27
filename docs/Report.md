@@ -17,11 +17,11 @@ You can find here detailed documentation about **cBooking**:
 The most recent versions of Topic Description, UML Classes Diagram, and Relational Model of the Database are updated here.
 
 
-  ## Product Vision
-  Most event organizers are faced with the need to work with loads of different technologies for the management of people and entities who participate in their events. **cBooking** gathers it all in a single plataform, providing the organizer with tools to register, track and manage whoever is going to participante in their event.
+## Product Vision
+Most event organizers are faced with the need to work with loads of different technologies for the management of people and entities who participate in their events. **cBooking** gathers it all in a single plataform, providing the organizer with tools to register, track and manage whoever is going to participante in their event.
 
-  ## Description of the Topic
-  A tech company wants to create a platform to automate the management of conferences. The platform is expected to announce events and support the logistics of conferences, by allowing the registration of participants, speakers, partners, sponsors and staff. Taking these features in consideration, the company elaborated the following list of requirements:
+## Description of the Topic
+A tech company wants to create a platform to automate the management of conferences. The platform is expected to announce events and support the logistics of conferences, by allowing the registration of participants, speakers, partners, sponsors and staff. Taking these features in consideration, the company elaborated the following list of requirements:
 
 * The website must have a public interface, for announcement of events and registration, and a private one, exclusive for the event organizer and staff members, for management of the conference.
     
@@ -72,91 +72,143 @@ The most recent versions of Topic Description, UML Classes Diagram, and Relation
 
 The editable diagram can be found [here](https://app.diagrams.net/?fbclid=IwAR1a7G6Dzc8LV772jwXzXuobzEi9GBw6hw7QulK5O39BuPO0flrY2Vo14QI#Hjoamats%2FProjetoESIN%2Fmain%2Fdocs%2Fdrawio%2FUML%20Classes).
 
-![UML-Classes-Diagram](docs/UML-Classes.png)
+![UML-Classes-Diagram](UML-Classes.png)
 
 # Relational Model of the Database
 
-**Organizer**(ID_num, name, email, password, logotype, address, VAT_num )
+**Organizer**(<ins>ID_num</ins> -> Person, password, logotype, address, VAT_num)
 
-NOT NULL(name, email, password, address, VAT_number)
+NOT NULL (password)
 
-UNIQUE(email, VAT_number)
+NOT NULL (address)
 
-**Event**(ID_num, name, date, local, theme, price_range_min, price_range_max, num_participants, maxNum_participants, daysTill_event, image, codeForSpeakers, codeForStaff, codeForPartners, organizer -> Organizer)
+NOT NULL (VAT_num)
 
-NOT NULL( name, date, local, theme, price_range_min, organizer)
+---
 
-UNIQUE ( codeForSpeakers, codeForStaff, codeForPartners )
+**Event**(<ins>ID_num</ins>, name, date_start, date_end, local, aboutEvent, theme, image, codeForSpeakers, codeForStaff, codeForPartners, organizer -> Organizer)
 
-DEFAULT( num_participants = 0 )
+NOT NULL (name)
 
-DEFAULT( price_range_min = 0 )
+NOT NULL (date_start)
 
-CHECK( price_range_min >= 0 )
+NOT NULL (date_end)
 
-CHECK( price_range_max = null OR price_range_max > price_range_min)
+NOT NULL (local)
 
-CHECK( maxNum_participants = null 
-OR num_participants < maxNum_participants )
+NOT NULL (theme)
 
-**ParticipantPackage**(name, event -> Event, price, features, maxNum_participants)
+NOT NULL (organizer)
 
-NOT NULL(price, features)
+UNIQUE (codeForSpeakers)
 
-**PartnerPackage**(name, event -> Event, perks)
+UNIQUE (codeForStaff)
 
-NOT NULL(perks)
+UNIQUE (codeForPartners)
 
-**SponsorPackage**(name, event -> Event, financialSupport_range_min, financialSupport_range_max , perks)
+---
 
-NOT NULL(financialSupport_range_min,  financialSupport_range_max, perks)
+**ParticipantPackage**(<ins>name</ins>, <ins>event</ins> -> Event, price, features, maxNum_participants)
 
-CHECK ( financialSupport_range_min > financialSupport_range_max)
+NOT NULL (price)
 
-**Person**(ID_num, name, email, phone_num)
+NOT NULL (features)
 
-NOT NULL(name, email, phone_num)
+---
 
-UNIQUE(email, phone_num)
+**PartnerPackage**(<ins>name</ins>, <ins>event</ins> -> Event, perks)
 
-**Participant**(ID_num -> Person, address, VAT_num, paymentValidation_status, package-> ParticipantPackage, event -> ParticipantPackage)
+NOT NULL (perks)
 
-NOT NULL ( address, VAT_num, package, event )
+---
 
-UNIQUE (VAT_number)
+**SponsorPackage**(<ins>name</ins>, <ins>event</ins> -> Event, financialSupport_range_min, financialSupport_range_max, perks)
 
-DEFAULT ( paymentValidation_status = ‘not paid’)
+NOT NULL (financialSupport_range_min)
 
-**Speaker**(ID_num -> Person,  event -> Event, title, profile_pic, talk_subject, talk_abstract)
+NOT NULL (financialSupport_range_max) 
 
-NOT NULL(event, title, profile_pic,  talk_subject, talk abstract)
+NOT NULL (perks)
 
-**Staff**(ID_num -> Person, event -> Event, profile_pic, department, password, subordinates -> Staff, hierarchical_superior -> Staff )
+CHECK (financialSupport_range_min < financialSupport_range_max)
 
-NOT NULL (event, department, password)
+---
 
-**Entity**(ID_num, name, logotype, website_link)
+**Person**(<ins>ID_num</ins>, name, email, phone_num)
 
-NOT NULL (name, logotype)
+NOT NULL (name) 
 
-UNIQUE (name, logotype, website_link)
+NOT NULL (email)
 
-**Sponsor**(ID_num -> Entity, financialSupport_amount, paymentValidation_status, package -> SponsorPackage, event -> SponsorPackage)
+NOT NULL (phone_num)
 
-NOT NULL (financialSupport_amount, paymentValidation_status, package, event)
+---
+
+**Participant**(<ins>ID_num</ins> -> Person, address, VAT_num, paymentValidation_status, package -> ParticipantPackage, event -> ParticipantPackage)
+
+NOT NULL (address)
+
+NOT NULL (VAT_num) 
+
+NOT NULL (package)
+
+NOT NULL (event)
+
+DEFAULT (paymentValidation_status = ‘not paid’)
+
+---
+
+**Speaker** (<ins>ID_num</ins> -> Person,  event -> Event, title, profile_pic, talk_subject, talk_abstract)
+
+NOT NULL (event)
+
+NOT NULL (talk_subject)
+
+---
+
+**Staff** (<ins>ID_num</ins> -> Person, event -> Event, profile_pic, department, password)
+
+NOT NULL (event)
+
+NOT NULL (department)
+
+NOT NULL (password)
+
+---
+
+**Entity** (<ins>ID_num</ins>, email, name, logotype, website_link)
+
+NOT NULL (name)
+
+NOT NULL (email)
+
+---
+
+**Sponsor** (<ins>ID_num</ins> -> Entity, financialSupport_amount, paymentValidation_status, package -> SponsorPackage, event -> SponsorPackage)
+
+NOT NULL (financialSupport_amount)
+
+NOT NULL (paymentValidation_status),
+
+NOT NULL (package)
+
+NOT NULL (event)
 
 CHECK(financialSupport_amount > 0)
 
 DEFAULT ( paymentValidation_status = ‘not paid’)
 
-CHECK ( Sponsor.financialSupport_amount >
-	SponsorPackage.financialSupport_range_min
-AND Sponsor.financialSupport_amount <   
-SponsorPackage.financialSupport_range_max )
+---
 
-**Partner**(ID_num -> Entity, supportType, package -> PartnerPackage, event -> PartnerPackage)
+**Partner**(<ins>ID_num</ins> -> Entity, supportType, package -> PartnerPackage, event -> PartnerPackage)
 
-NOT NULL ( supportType, package, event)
+NOT NULL (supportType)
+
+NOT NULL (package)
+
+NOT NULL (event)
+
+---
 
 
 ## User Stories
