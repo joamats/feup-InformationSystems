@@ -44,7 +44,7 @@ body{
     width: 60px;
 }
 
-.header > a.actions {
+.header > a.actions, .right {
     float: right;
 }
 
@@ -94,7 +94,12 @@ fieldset > input{
 #footer {
     position: absolute;
     bottom: auto;
-    margin-top: 1rem;
+    margin: 1rem 4.5%;
     width: 90%;
     height: 40px;
+}
+
+#footer a{
+    font-size: 1.5rem;
+    padding: 0.5%;
 }
