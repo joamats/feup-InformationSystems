@@ -25,7 +25,6 @@
             die(header('Location: ' . $_SERVER['HTTP_REFERER']));
         }
         
-        
     }
     
     if($role == 'Participant' || $role == 'Speaker' || $role == 'Staff' || $role == 'Organizer' ) {
