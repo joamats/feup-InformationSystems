@@ -21,17 +21,15 @@ The most recent versions of Topic Description, UML Classes Diagram, and Relation
 Most event organizers are faced with the need to work with loads of different technologies for the management of people and entities who participate in their events. **cBooking** gathers it all in a single plataform, providing the organizer with tools to register, track and manage whoever is going to participante in their event.
 
 ## Description of the Topic
-A tech company wants to create a platform to automate the management of conferences. The platform is expected to announce events and support the logistics of conferences, by allowing the registration of participants, speakers, partners, sponsors and staff. Taking these features in consideration, the company elaborated the following list of requirements:
+A tech company wants to create a platform to automate the management of conferences. The platform is expected to announce events and support the logistics of conferences, by allowing the registration of organizers, participants, speakers, partners, sponsors and staff. Taking these features in consideration, the company elaborated the following list of requirements:
 
 * The website must have a public interface, for announcement of events and registration, and a private one, exclusive for the event organizer and staff members, for management of the conference.
     
-* The private interface must display relevant data, such as payments tracking, and lists of participants, speakers, staff, sponsors, partners. 
-
-* The **organizer** must have a name, email, password, address, and VAT number. A logotype is optional. A unique identifying number should be generated to each one of them.
+* The private interface, for organizers and staff, which must display relevant data, such as payments tracking, and lists of participants, speakers, staff, sponsors, partners, as well as event management settings.
 
 * Each organizer can create as many events as wished. 
 
-* Each **event** must have an organizer, name, date, location, theme, price range, (current) number of participants. A maximum number of participants can also exist, as well as an image for description. A unique identifying number should be given to each event
+* Each **event** must have an organizer, name, dates, location, theme. An image and text for description can also exist. A unique identifying number should be given to each event, as well as a unique code for registration of Speakers, Partners, and Staff.
 
 * If existent, the maximum number of participants must be higher than the (current) number of participants.
 
@@ -43,18 +41,19 @@ A tech company wants to create a platform to automate the management of conferen
 
 * Each **partner package** must be associated with an existing event, and have a unique name and associated perks.
 
-
-* When it comes to registration, there are 3 different roles for **persons**: participant, speaker, and staff. Each person must have a unique identifying number, name, email, and phone number.
+* When it comes to registration, there are 4 different roles for **persons**: organizer, participant, speaker, and staff. Each person must have a unique identifying number, name, email, and phone number.
 
 * For the registration of supportive entities, there are 2 types of **entity**: sponsor and partner. Each entity must have a unique identifying number, name, logotype. A website link may be inserted.
 
 * Additionally, each:
 
+    * **organizer** must have a name, email, password, address, and VAT number. A logotype is optional. A unique identifying number should be generated to each one of them.
+
     * **participant** must be associated with an existing event and have an address, a VAT number, and a chosen package. If the event is paid, a payment validation status attribute is created, set not paid as default.
 
     * **speaker** must be associated with an existing event and have a title, profile picture, subject of talk, and abstract.
 
-    * **staff** member must be associated with an existing event and have a department and a password. A profile picture, existence of subordinates, and hierarchical superior are optional. 
+    * **staff** member must be associated with an existing event and have a department and a password. A profile picture is optional. 
 
     * **sponsor**  must be associated with an existing event, have a chosen package, a financial amount of support, and a payment validation status (initialized as not paid). The financial amount of support must be according to the chosen package.
 
@@ -64,9 +63,9 @@ A tech company wants to create a platform to automate the management of conferen
 
 * If an event is deleted, all the associated classes must be deleted too, except the organizer.
 
-* The public announcement of the event should include a list of speakers, staff, validated sponsors and partners, as well as the date, location and available registration packages.
+* The public announcement of the event should include a list of speakers, staff, validated sponsors and partners, as well as the date, location, available registration packages, and responsible organizer.
 
-* As an extra, it would be nice to have a public interface with a search feature implemented, with the possibility of looking for all existing events, sorted by theme, organizer, speaker, dates, localization and price range.
+* As an extra, it would be nice to have a public interface with a search feature implemented, with the possibility of looking for all existing events, sorted by name and location, ordered by price range.
 
 ## UML Classes Diagram
 
