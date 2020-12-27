@@ -17,6 +17,22 @@
         }
     }
 
+    // get validated sponsors for a specific event
+    function getValidatedEventSponsorsById($eventId){
+        try {
+            global $dbh;
+            $stmt = $dbh -> prepare('SELECT * FROM Entity JOIN Sponsor USING(id)
+                                    WHERE event = ? AND paymentValidation_status = "paid" ');
+            $stmt -> execute(array($eventId));
+            $eventSponsors = $stmt -> fetchAll();
+            return $eventSponsors;
+        } 
+        catch(PDOException $e) {
+            $err = $e -> getMessage(); 
+        }
+    }
+
+
     // inserts a Sponsor into Database, given its Entity id
     function insertSponsorIntoDatabase(
         $entityId,

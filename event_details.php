@@ -17,7 +17,7 @@
 
     $eventInfo = getEventInfoById($eventId);
     $eventSpeakers = getEventSpeakersById($eventId);
-    $eventSponsors = getEventSponsorsById($eventId);
+    $eventSponsors = getValidatedEventSponsorsById($eventId);
     $eventPartners = getEventPartnersById($eventId);
     $eventStaff = getEventStaffById($eventId);
     $eventOrganizer = getEventOrganizerById($eventId);
