@@ -18,7 +18,7 @@
                 <?php } ?>
 
                 <a class="actions" href="create_event.php">Create an Event</a>
-                <a class="trailing" id = "nameUser">Welcome back, <b><?=$_SESSION['nameUserLoggedIn']?>!</b></a>
+                <a class="trailing" id = "nameUser">Welcome back as <?=$_SESSION['roleUserLoggedIn']?>, <b><?=$_SESSION['nameUserLoggedIn']?>!</b></a>
                 
                 <?php } ?>
                 <a class="actions" href="events_now.php?page=1">Events Now</a>
