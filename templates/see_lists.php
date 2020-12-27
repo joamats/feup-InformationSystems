@@ -7,7 +7,8 @@
     <h1><i class="fas fa-arrow-left"></i> <?=$title?></h1>
 </a>
 <h2><?=$role?>&#39s Info</h2>
-<?php if($role=="Participant"){?>
+<?php if($role=="Participant"){
+    if($participantsInfo!=null){?>
     <table>
         <tr>
             <th></th> <!-- prevents delete button from associating to <th>ID</th> -->
@@ -46,7 +47,11 @@
     </table>
     <img class="message-box" src="images/message-box.png" alt="logo">
     <p class="message">Click to change the<br> payment status.</p>
-<?php }
+    <?php }
+    else{?>
+        <p> There are no participants enrolled.<br> Have you already created a package for participants?<p>
+    <?php }
+ }
 
 else if($role=="Speaker"){?>
     <table>
