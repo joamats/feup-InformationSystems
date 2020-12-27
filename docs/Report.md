@@ -1,4 +1,4 @@
-# **cBooking** Development Report 
+# <img src="../images/logo.png" width=45> **cBooking** Development Report 
 
 Welcome to the documentation pages of **cBooking**.
 
@@ -12,6 +12,7 @@ You can find here detailed documentation about **cBooking**:
   * [Relational Model of the Database](#Relational-Model-of-the-Database)
   * [User Stories](#User-Stories)
   * [UI Mockups](#UI-Mockups)
+  * [Features and Demonstration](#Features-and-Demonstration) 
   * [Project Management](#Project-Management)
 
 The most recent versions of Topic Description, UML Classes Diagram, and Relational Model of the Database are updated here.
@@ -227,29 +228,25 @@ NOT NULL (event)
 
 User Interface Mockups were developed to plan the website's design, using Adobe XD.
 
-![](docs/uiMockups/índex-cbooking.png)
-![](docs/uiMockups/about-philosophy.png)
-![](docs/uiMockups/about-contacts.png)
-![](docs/uiMockups/events.png)
-![](docs/uiMockups/events-details.png)
-![](docs/uiMockups/events-roleSelection.png)
-![](docs/uiMockups/events-Person-EntityCreation.png)
-![](docs/uiMockups/events-FinalRegistrationCreation.png)
-![](docs/uiMockups/events-Confirmation.png)
-![](docs/uiMockups/createEvent.png)
-![](docs/uiMockups/createEvent-corporateDetails.png)
-![](docs/uiMockups/createEvent-Confirmation.png)
-![](docs/uiMockups/signIn.png)
-![](docs/uiMockups/signIn-ConferenceDashboard.png)
+![](uiMockups/índex-cbooking.png)
+![](uiMockups/about-philosophy.png)
+![](uiMockups/about-contacts.png)
+![](uiMockups/events.png)
+![](uiMockups/events-details.png)
+![](uiMockups/events-roleSelection.png)
+![](uiMockups/events-Person-EntityCreation.png)
+![](uiMockups/events-FinalRegistrationCreation.png)
+![](uiMockups/events-Confirmation.png)
+![](uiMockups/createEvent.png)
+![](uiMockups/createEvent-corporateDetails.png)
+![](uiMockups/createEvent-Confirmation.png)
+![](uiMockups/signIn.png)
+![](uiMockups/signIn-ConferenceDashboard.png)
+
+## Features and Demonstration
+
+to insert here the main features and route steps
 
 ## Project Management
 
 The flow of work of this project is being done with the tool GitHub Projects. The board with tasks can be found [here](https://github.com/joamats/ProjetoESIN/projects/1).
-
-The logic behing the flow followed was suggested by Prof. João Silva, synthetised in the following diagram.
-
-<br> </br>
-
-![](docs/project_management_ProfJoaoSilva.png)
-
-
