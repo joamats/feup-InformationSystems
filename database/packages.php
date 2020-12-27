@@ -127,28 +127,32 @@ require_once('config/init.php');
         }
     }
 
-    // check if package name is new in database, since it's primary key
+    // check if package name is new in database for that event
     // returns false if it already exists
-    function packageNameIsNew($insertedName, $role) {
+    function packageNameIsNew($insertedName, $role, $eventId) {
         try {
             global $dbh;
 
             switch($role) {
 
                 case "Participant":
-                    $stmt = $dbh->prepare('SELECT name FROM ParticipantPackage;');
-                    $stmt->execute();
+                    $stmt = $dbh->prepare('SELECT name FROM ParticipantPackage 
+                                            WHERE event = ?;');
+                    $stmt->execute(array($eventId));
                     $nameKeys = $stmt->fetchAll();
                     break;
 
                 case "Sponsor":
-                    $stmt = $dbh->prepare('SELECT name FROM SponsorPackage;');
-                    $stmt->execute();
+                    $stmt = $dbh->prepare('SELECT name FROM SponsorPackage
+                                            WHERE event = ?;');
+                    $stmt->execute(array($eventId));
                     $nameKeys = $stmt->fetchAll();
                     break;
 
                 case "Partner":
-                    $stmt = $dbh->prepare('SELECT name FROM PartnerPackage;');
+                    $stmt = $dbh->prepare('SELECT name FROM PartnerPackage
+                                            WHERE event = ?;');
+                    $stmt->execute(array($eventId));
                     $stmt->execute();
                     $nameKeys = $stmt->fetchAll();
                     break;

@@ -14,7 +14,7 @@
     $eventIsOk = true;
 
     // check if name is unique are unique
-    if(!packageNameIsNew($_POST['name'], $role)) {
+    if(!packageNameIsNew($_POST['name'], $role, $eventId)) {
         $eventIsOk = false;
         $_SESSION['message'] = "Inserted name for package already exists for this event.";
     }
