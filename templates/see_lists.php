@@ -46,7 +46,7 @@
         <?php }?>
     </table>
     <img class="message-box" src="images/message-box.png" alt="logo">
-    <p class="message">Click to change the<br> payment status.</p>
+    <p class="message">Click to<br>change the<br>payment<br>status.</p>
     <?php }
     else{?>
         <p class="empty"> There are no participants enrolled.<br>Have you already created a package for participants?<p>
@@ -160,7 +160,7 @@ else if($role=="Sponsor"){
         <?php }?>
     </table>
     <img class="message-box" src="images/message-box.png" alt="logo">
-    <p class="message">Click to change the<br> payment status.</p>
+    <p class="message">Click to<br>change the<br>payment<br>status.</p>
     <?php }else{?>
         <p class="empty"> There are no sponsors enrolled. <br>Have you already created a package for sponsors?<p>
     <?php }
