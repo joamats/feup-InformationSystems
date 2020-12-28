@@ -6,13 +6,13 @@ INSERT INTO Person(name, email, phone_num)
 VALUES('João Matos', 'joaocarlosm00@gmail.com', 938709463);
 
 INSERT INTO Organizer(id, password, address, vat_num) 
-VALUES(1, 'password', 'Rua', 123456789);
+VALUES(1, 'a176bb680f3b31910032fa8ea2e33107730ffea4', 'Rua', 123456789);
 
 INSERT INTO Person(name, email, phone_num) 
 VALUES('Guilherme Peralta', 'guilucasperalta1991@gmail.com', 123456789);
 
 INSERT INTO Organizer(id, password, address, vat_num) 
-VALUES(2, 'password', 'Rua', 987654321);
+VALUES(2, 'a176bb680f3b31910032fa8ea2e33107730ffea4', 'Rua', 987654321);
 
 
 -- CREATE EventS
@@ -31,18 +31,6 @@ VALUES("Symbio 2021", "26/03/2021", "28/03/2021", "FEUP", "Bioengineering", 1);
 
 INSERT INTO Event(name, date_start, date_end, local, theme, organizer)
 VALUES("TED Talk: Books", "05/11/2020", "05/11/2020", "Porto", "Literature", 1);
-
-
-
-
--- UPDATE EventS with maxNum_participants
-
--- UPDATE Event SET maxNum_participants = 10000 WHERE id = 1;
--- UPDATE Event SET maxNum_participants = 20 WHERE id = 2;
--- UPDATE Event SET maxNum_participants = 50 WHERE id = 3;
--- UPDATE Event SET maxNum_participants = 500 WHERE id = 4;
--- UPDATE Event SET maxNum_participants = 200 WHERE id = 5;
-
 
 
 UPDATE Event SET codeForSpeakers = 'iAmSpeaker1' WHERE id = 1;
@@ -169,11 +157,3 @@ VALUES('Sara Sampaio', 'sara@gmail.com', 1234556789);
 
 INSERT INTO Speaker(id, event, title, profile_pic, talk_subject, talk_abstract)
  VALUES(4, 1, 'Ms.', '4.jpg', 'The role of women in Tech', 'abstract');
-
-
-SELECT * FROM Organizer JOIN Person USING (id);
-SELECT * FROM Event;
-SELECT * FROM ParticipantPackage;
-SELECT * FROM PartnerPackage;
-SELECT * FROM SponsorPackage;
-SELECT * FROM Speaker JOIN Person USING (id);
