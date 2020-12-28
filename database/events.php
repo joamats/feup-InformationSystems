@@ -281,7 +281,6 @@ require_once('config/init.php');
         $local,
         $aboutEvent, 
         $theme,
-        $organizer,
         $eventId
         ) {
 
@@ -293,13 +292,10 @@ require_once('config/init.php');
                                     date_start = ?,
                                     date_end = ?,
                                     local = ?,
-                                    theme = ?,
-                                    codeForSpeakers = ?,
-                                    codeForStaff = ?
+                                    theme = ?
                                     WHERE id = ?
                                     ;');
-            $stmt -> execute(array($name, $date_start, $date_end, $local, $theme, 
-                                    $codeForSpeakers, $codeForStaff, $eventId));
+            $stmt -> execute(array($name, $date_start, $date_end, $local, $theme, $eventId));
 
             // if not null upload aboutEvent too
             if($aboutEvent != null) {

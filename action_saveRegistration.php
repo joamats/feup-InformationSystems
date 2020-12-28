@@ -117,9 +117,9 @@
         header('Location: confirmation_registration.php');
     }
     else if($role == "Organizer"){
-        header('Location: confirmation_registration.php');
+        $_SESSION['mode'] = "Registration";
+        header('Location: images.php');
     }
-    // for organizers and staff, if email is not new    
     else { //organizers are not associated with event
         $_SESSION['eventId']  = $eventId;
         $_SESSION['mode'] = "Registration";

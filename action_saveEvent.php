@@ -66,7 +66,6 @@
                 $_POST['local'],
                 $_POST['aboutEvent'],
                 $_POST['theme'],
-                $userId,
                 $eventId
             );
 

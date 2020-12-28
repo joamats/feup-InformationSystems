@@ -116,7 +116,7 @@
                 <br>
                 <select name="package" required>
                     <?php foreach ($packages_names as $package_name){?>
-                        <option value=<?=$package_name['name']?>><?=$package_name['name']?></option>
+                        <option value="<?=$package_name['name']?>"><?=$package_name['name']?></option>
                     <?php } ?>
                 </select>
             </label>
@@ -124,7 +124,7 @@
         <?php }?>
 
         <br><br>
-        <input type="submit" value="Submit">
+        <input type="submit" value="Next">
     </fieldset>
 </form>
 </body>

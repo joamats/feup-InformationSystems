@@ -54,10 +54,9 @@ if ($_FILES["fileToUpload"]["size"]/1024 > 4096) {
 }
 
 // Allow certain file formats
-if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
-&& $imageFileType != "gif" ) {
+if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "gif" ) {
   $uploadOk = 0;
-  $_SESSION['message']= "File must have a .jpg; .png; .jpeg or .gif extension.";
+  $_SESSION['message']= "File must have a .jpg; .png; or .gif extension.";
 }
 
 

@@ -6,7 +6,6 @@
 <br>
 <h1><?=$title?></h1>
 
-<?php include('templates/error_message.php'); ?>
 
 <form action="action_imagesUpload.php?role=<?=$role?>" method="post" enctype="multipart/form-data">
     <legend>
@@ -18,6 +17,9 @@
             Edit Event Image
         <?php } ?> 
     </legend>
+    
+    <?php include('templates/error_message.php'); ?>
+    <br>
     <label>Upload <?=$prompt?> *
         <br>
         <input id= "fileToUpload" type="file" name="fileToUpload" id="fileToUpload" required>
@@ -25,7 +27,7 @@
         <?php if($_SESSION['mode'] == "Registration"){ ?>
             <input id="submit_button" type="submit" value="Submit" name="submit">
         <?php } elseif($_SESSION['mode'] == "CreateEvent" || $_SESSION['mode'] == "EditEvent"){ ?>
-            <input id="submit_button" type="submit" value="Next" name="submit">
+            <input id="submit_button" type="submit" value="Submit" name="submit">
         <?php } ?> 
     </label>
 </form>
