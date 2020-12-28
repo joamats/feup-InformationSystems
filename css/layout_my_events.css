@@ -1,12 +1,12 @@
-.noEvents{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    
+#noEventsWarning{
+    margin-left:43.5%;
+    margin-top: 15%;
+    margin-bottom: 10%;
+
 }
 
-#noEventsWarning{
-    float: center;
+#createEventButton{
+    margin-left: 45%;
 }
+
 

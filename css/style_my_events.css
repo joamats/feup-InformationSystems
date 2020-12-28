@@ -28,3 +28,9 @@
     padding: 1rem;
 }
 
+#noEventsWarning{
+    font-weight: 700;
+    font-size: 1.7rem;
+    color: var(--orange-dark);
+}
+

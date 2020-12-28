@@ -75,6 +75,6 @@
     include('templates/head.html'); 
     include('templates/header.php');
     include('templates/manage_event.php');
-    include('templates/footer.html');
+    include('templates/footer.php');
     
 ?>

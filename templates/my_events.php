@@ -52,15 +52,16 @@ if($events != null) { ?>
 </section>
 
     <?php } else { ?>
-    <section class = 'noEvents'>
+    <div class = 'noEvents'>
 
-        <b id = "noEventsWarning" > No events found. </b> <br><br>
+        <p id = "noEventsWarning" > No events found. </p>
         <a id ="createEventButton" class = "fancyButton" href="create_event.php">
             Create an event
             <i class="fas fa-arrow-right"></i>
         </a>
 
-    </section>
+    </div>
     <?php }?>
 
-
+</body>
+</html>

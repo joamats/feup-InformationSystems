@@ -19,6 +19,5 @@
         include('templates/head.html'); 
         include('templates/header.php');
         include('templates/my_events.php');
-        include('templates/footer.html');
     }
 ?>

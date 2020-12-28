@@ -4,9 +4,7 @@
 }
 
 div li a{
-    float: center;
     padding: 0 5rem;
-
 }
 #deleteWarning, #deleteWarning:hover{
     margin-top: 0;
