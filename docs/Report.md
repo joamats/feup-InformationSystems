@@ -12,7 +12,7 @@ You can find here detailed documentation about **cBooking**:
   * [Relational Model of the Database](#Relational-Model-of-the-Database)
   * [User Stories](#User-Stories)
   * [UI Mockups](#UI-Mockups)
-  * [Features and Demonstration](#Features-and-Demonstration) 
+  * [Implemented Features and Demonstration](#Implemented-Features-and-Demonstration) 
   * [Project Management](#Project-Management)
 
 The most recent versions of Topic Description, UML Classes Diagram, and Relational Model of the Database are updated here.
@@ -215,13 +215,14 @@ NOT NULL (event)
 
 | Description |  Importance | Effort |
 | :------------- | :----------: | :-----------: |
-| As an organizer, I want to be able to announce  my event, defining all the details for it, so that whoever will be involved in it can register himself. | Must Have | L | 
+| As a cBooking user, I want to see the details about each event, namely date, location, available registration packages, featured speakers, staff, validated sponsors and partners, so that I can be better informed. | Must Have | XL | 
 | As a cBooking user, I want to see all the existing events, so that I can register in the ones I am interested in. | Must Have | XL |
 | As a cBooking user, I want to be able to select the role I will take in an event, so that I am treated accordingly to my role in the event, and I can provide the event organizer with relevant information. | Must Have | M |
-| As an organizer, I want Speakers, Partners and Staff to enter a code (provided by the organization), upon registration, so that only authorized persons and entities can register in my event. | Must Have | S |
+| As an organizer, I want to be able to announce  my event, defining all the details for it, so that whoever will be involved in it can register himself. | Must Have | L | 
 | As an organizer, I want to be able to define registration packages for participants, sponsors and partners, so that different prices, features and perks can be applied to different persons or entities. | Must Have | S |
-| As a cBooking user, I want to see the details about each event, namely date, location, available registration packages, featured speakers, staff, validated sponsors and partners, so that I can be better informed. | Must Have | XL | 
-| As a cBooking user, I want to search events, sorted by a specific detail, so that I can easily find events that I like. | Should Have | S | 
+| As an organizer, I want Speakers, Partners and Staff to enter a code (provided by the organization), upon registration, so that only authorized persons and entities can register in my event. | Should have | S |
+| As a cBooking user, I want to search events, sorted by a specific detail, so that I can easily find events that I like. | Should have | S | 
+| As an organizer, I want to be able to validate the payment of sponsors, so that they are automatically added to the public details of the event. | Should have | M |
 
 
 ## UI Mockups
@@ -229,23 +230,80 @@ NOT NULL (event)
 User Interface Mockups were developed to plan the website's design, using Adobe XD.
 
 ![](uiMockups/índex-cbooking.png)
+
 ![](uiMockups/about-philosophy.png)
+
 ![](uiMockups/about-contacts.png)
+
 ![](uiMockups/events.png)
+
 ![](uiMockups/events-details.png)
+
 ![](uiMockups/events-roleSelection.png)
+
 ![](uiMockups/events-Person-EntityCreation.png)
+
 ![](uiMockups/events-FinalRegistrationCreation.png)
+
 ![](uiMockups/events-Confirmation.png)
+
 ![](uiMockups/createEvent.png)
+
 ![](uiMockups/createEvent-corporateDetails.png)
+
 ![](uiMockups/createEvent-Confirmation.png)
+
 ![](uiMockups/signIn.png)
+
 ![](uiMockups/signIn-ConferenceDashboard.png)
 
-## Features and Demonstration
+## Implemented Features and Demonstration
 
-to insert here the main features and route steps
+* General overview website (index, about, all pages)
+* See all the existing events
+  * Sort by date
+  * Search by name of event and location
+  * Pagination with user-defined number of pages
+* See event details
+  * Speakers and Packages detailed info
+  * Sponsors  and Partners external hyperlink
+* Registration in event according to role
+  * 5 existing roles, according to existing packages
+  * Access codes for Speakers, Staff, Partners
+  * Input check and use of required fields
+    * Sponsors' financial support
+    * Staff's unique emails
+    * Format of fields (email, phone number, VAT number)
+  * Upload of images 
+    * Size and format verification
+    * New name for each image
+* Registration of an organizer (unique email)
+* Login of an organizer or staff, and Logout
+  * Differentiated tools
+  * Security precautions
+    * Access by url without login
+    * Access other people's events
+* Create an Event
+* Manage My Events (Organizer)
+  * See all events organized by me
+  * Event Info Synthesis
+  * Create and delete Package
+    * Verifcation of unique name (inside the event)
+    * Verifcation of support range (sponsors)
+  * Edit event details and image
+  * View and Reset access codes
+  * Lists of all different roles
+    * Delete Options
+    * Change Payment Status (making Sponsors (in)visible)
+  * Info Visualization mode
+  * Delete event
+
+
+
+
+
+
+
 
 ## Project Management
 

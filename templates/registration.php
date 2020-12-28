@@ -42,7 +42,7 @@
             <?php } ?>
             
             <br>
-            <label>Phone Number *
+            <label>Phone Number (9 digits) *
                 <br>
                 <input class="write_input" type="tel" id="phone" name="phone_num" pattern="[0-9]{9}" required>
             </label>
@@ -55,9 +55,9 @@
                 </label>
 
                 <br>
-                <label>VAT Number *
+                <label>VAT Number (9 digits) *
                     <br>
-                    <input class="write_input" type="number" name="vat_num" required>
+                    <input class="write_input" type="tel" name="vat_num" pattern="[0-9]{9}"required>
                 </label>
             <br>
 
@@ -114,7 +114,7 @@
         <?php if($role=="Sponsor" || $role=="Participant" || $role=="Partner"){?>
             <label>Choose a package *
                 <br>
-                <select name="package">
+                <select name="package" required>
                     <?php foreach ($packages_names as $package_name){?>
                         <option value=<?=$package_name['name']?>><?=$package_name['name']?></option>
                     <?php } ?>
