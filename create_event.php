@@ -16,6 +16,5 @@
         include('templates/head.html'); 
         include('templates/header.php');
         include('templates/create_event.php');
-        var_dump($_SESSION['mode']);
     }
 ?>
