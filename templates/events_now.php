@@ -19,11 +19,11 @@
         <label for="name"> Order by: </label>
         <select name="order">
             <?php if($order == "ascendent_date") {?>
-                <option value="ascendent_date"> Date: Ascending</option>
-                <option value="descendent_date"> Date: Descending</option>
+                <option value="ascendent_date"> Date: Oldest first</option>
+                <option value="descendent_date"> Date: Recent first</option>
             <?php } else { ?>
-                <option value="descendent_date"> Date: Descending</option>
-                <option value="ascendent_date"> Date: Ascending</option>
+                <option value="descendent_date"> Date: Recent first</option>
+                <option value="ascendent_date"> Date: Oldest first</option>
             <?php } ?>
         </select>
         <br>
