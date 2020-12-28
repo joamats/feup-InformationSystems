@@ -94,8 +94,8 @@ if ($uploadOk != 0) {
       }
       header('Location: confirmation_registration.php');
     }
-    else { // no success for Registration
-      header('Location: images.php');
+    else {
+        header('Location: ' . $_SERVER['HTTP_REFERER']);
     }
   }
   elseif($mode == "CreateEvent" || $mode == "EditEvent") {
@@ -114,10 +114,14 @@ if ($uploadOk != 0) {
     }
   
     else {
-      header('Location: images.php');
-    }
+      header('Location: ' . $_SERVER['HTTP_REFERER']);
   }
+  }
+} 
+else {
+  header('Location: ' . $_SERVER['HTTP_REFERER']);
 }
+
 
 
 ?>
