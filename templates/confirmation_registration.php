@@ -13,8 +13,11 @@
     Thank you for using cBooking!
 </p>
 <div class="returnToPages">
+    
     <a id="returnHome" href="index.php">Return Home</a>
-    <a href="event_details.php?id=<?=$eventId?>">Return to <?=$eventName?></a>
+    <?php if($_SESSION['role'] != "Organizer") { ?>
+        <a href="event_details.php?id=<?=$eventId?>">Return to <?=$eventName?></a>
+    <?php } ?>
 <div>
 </body>
 </html>

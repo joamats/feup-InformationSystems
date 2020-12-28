@@ -112,12 +112,15 @@
     $_SESSION['role'] = $role;
     $_SESSION['userId'] = $userId;
 
-    if($role == "Participant"){
+    if($role == "Participant" ){
         $_SESSION['eventId']  = $eventId;
         header('Location: confirmation_registration.php');
     }
+    else if($role == "Organizer"){
+        header('Location: confirmation_registration.php');
+    }
     // for organizers and staff, if email is not new    
-    elseif($role !== "Organizer"){ //organizers are not associated with event
+    else { //organizers are not associated with event
         $_SESSION['eventId']  = $eventId;
         $_SESSION['mode'] = "Registration";
         header('Location: images.php');
