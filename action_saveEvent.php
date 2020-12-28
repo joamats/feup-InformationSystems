@@ -13,24 +13,24 @@
 
     if($mode != "EditEvent") {
         // check if codes are unique
-        if(!codeIsNew($_POST['codeForSpeakers'])) {
+        if($_POST['codeForSpeakers']!= '' && !codeIsNew($_POST['codeForSpeakers'])) {
             $eventIsOk = false;
             $_SESSION['message'] = "Inserted code for speakers is already existent.";
         }
 
-        if(!codeIsNew($_POST['codeForPartners'])) {
+        if($_POST['codeForPartners']!= '' && !codeIsNew($_POST['codeForPartners'])) {
             $eventIsOk = false;
             $_SESSION['message'] = "Inserted code for partners is already existent.";
         }
 
-        if(!codeIsNew($_POST['codeForStaff'])) {
+        if($_POST['codeForStaff']!= '' && !codeIsNew($_POST['codeForStaff'])) {
             $eventIsOk = false;
             $_SESSION['message'] = "Inserted code for staff is already existent.";
         }
     }
 
    
-    if($mode != null) { // will be "CreateEvent"
+    if($mode == null) { // will be "CreateEvent"
         
         if($eventIsOk === true) {
         $eventId = insertEventIntoDatabase(

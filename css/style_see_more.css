@@ -2,10 +2,6 @@
     Style see_more
 */
 
-#eventName:hover{
-    color: var(--orange-dark);
-}
-
 h2{
     font-weight: 600;
     font-size: 3rem;

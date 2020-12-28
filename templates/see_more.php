@@ -2,9 +2,9 @@
 <link href="css/style_see_more.css" rel="stylesheet">
 <link href="css/layout_see_more.css" rel="stylesheet">
 
-<a href="event_details.php?id=<?=$eventId?>"> 
-    <h1 id="eventName"> <i class="fas fa-arrow-left"></i> <?=$eventName?></h1>
-</a>
+
+<h1 id="eventName"><?=$eventName?></h1>
+
 <h2><?=$itemTitle?></h2><br>
 <div id="infoWrap">
     <?php if($item == "Speaker") { ?>

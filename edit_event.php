@@ -19,6 +19,7 @@
 
         include('templates/head.html'); 
         include('templates/header.php');
+        var_dump($_SESSION['mode']);
         include('templates/edit_event.php');
     }
 ?>

@@ -45,7 +45,7 @@
         </label>
 
         <br><br>
-        <input type="submit" value="Next">
+        <input type="submit" value="Submit">
     </fieldset>
 </form>
 </body>
