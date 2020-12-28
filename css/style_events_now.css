@@ -28,7 +28,7 @@ h3 > a:hover, .fas:hover {
     padding-bottom: 1rem;
 }
 
-b{
+b, #no_events_found{
     font-weight: 700;
     font-size: 1.3rem;
     color: var(--orange-dark);

@@ -64,7 +64,7 @@
         </article>
     <?php }
     } else { ?>
-        <p>No events found.</p>
+        <p id="no_events_found">No events found.</p>
     <?php }?>
 </section>
 

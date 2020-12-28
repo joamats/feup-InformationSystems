@@ -65,3 +65,8 @@ input{
   padding-bottom:4px;
   width: 8%;
 }
+
+#no_events_found{
+  padding-top:13.5%;
+  padding-bottom:10%;
+}
