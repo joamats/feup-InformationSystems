@@ -1,0 +1,27 @@
+ div li{
+    margin: 1rem 20% 0rem 20%;
+    padding: 0.5rem;
+}
+
+div li a{
+    float: center;
+    padding: 0 5rem;
+
+}
+#deleteWarning, #deleteWarning:hover{
+    margin-top: 0;
+    margin-bottom: 2rem;
+}
+
+#codesInfo {
+    margin-left: 1rem;
+}
+
+li a .fa-times{
+    padding-right: 1rem;
+}
+
+li a .fa-times:hover{
+    padding-right: 1rem;
+}
+

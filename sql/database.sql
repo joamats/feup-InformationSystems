@@ -86,7 +86,7 @@ CREATE TABLE Staff (
 
 CREATE TABLE Entity(
     id integer PRIMARY KEY AUTOINCREMENT,
-    email text NOT NULL, -- different
+    email text NOT NULL,
     name text NOT NULL,
     logotype text,
     website_link text
