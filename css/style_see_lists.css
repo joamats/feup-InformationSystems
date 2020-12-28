@@ -31,9 +31,16 @@ td{
     color:green;
 }
 .not_paid{
-    color:red;
+    color: #c22d26;
+
 }
 
 .delete_button{
-    color:red;
+    color: #c22d26;
+
+}
+
+
+a h1:hover {
+    color: var(--orange-dark);
 }

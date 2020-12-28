@@ -30,7 +30,7 @@
     }
 
    
-    if($mode == null) { // will be "CreateEvent"
+    if($mode == "CreateEvent") { // will be "CreateEvent"
         
         if($eventIsOk === true) {
         $eventId = insertEventIntoDatabase(
