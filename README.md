@@ -20,4 +20,6 @@ A small development report has been developed and can be found [here](docs/Repor
 
 ### December 2020
 
+Grade: 19/20
+
 
